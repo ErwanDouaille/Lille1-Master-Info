@@ -1,0 +1,128 @@
+\documentclass[12pt]{beamer}
+\usepackage{keynote-portfolio} 
+	
+% * * * * * * * * * * * * * * INCLUDE  * * * * * * * * * * * * * * * * *
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath}
+\usepackage{xcolor}  
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{movie15}  
+\usepackage{tikz}
+
+% * * * * * * * * * * * * * LA BARRE DE NAVIGATION  * * * * * * * * * * * * * *
+\setbeamertemplate{navigation symbols}{%
+	\insertslidenavigationsymbol%
+	\insertframenavigationsymbol%
+	\insertsubsectionnavigationsymbol%
+	\insertsectionnavigationsymbol%
+	\insertdocnavigationsymbol%
+	\insertbackfindforwardnavigationsymbol%
+}
+
+% * * * * * * * * * * * * * * * * * TEXTPOS * * * * * * * * * * * * * * * * * *
+\usepackage[absolute,showboxes,overlay]{textpos}
+\TPshowboxestrue                                              % affiche le contour des textblocks
+\TPshowboxesfalse                                             % fait disparaitre le contour des textblocks
+\textblockorigin{2mm}{8mm}                                    % origine des positions pour placer les textblocks
+
+% * * * * * * * * * * * * * * * * * PICTURE * * * * * * * * * * * * * * * * * *
+\usepackage{picture}
+\setlength{\unitlength}{1mm}  
+
+% * * * * * * * * * * * * * DETAILS DE STYLE  * * * * * * * * * * * * * * * * *
+%\beamertemplatetransparentcovered      
+\setbeamertemplate{itemize item}[ball] 
+\setbeamertemplate{itemize subitem}[triangle] 
+   
+\renewcommand{\arraystretch}{1.4}               
+
+\definecolor{monred}{HTML}{9D0909}
+\definecolor{monbleu}{HTML}{000066}        
+\definecolor{monvert}{HTML}{00AE00}
+
+\renewcommand{\footnoterule}{}
+\renewcommand{\thefootnote}{\alph{footnote}}   
+
+% * * * * * * * * * * * * * *  PAGES DE TITRE * * * * * * * * * * * * * * * * *
+\title[Smalltalk]{Smalltalk}
+\author[Erwan Douaille]{Erwan Douaille}
+\institute{University of Lille 1}
+\date{9th october 2013}
+
+
+% * * * * * * * * * * * * * PARAMETRES POUR PDF * * * * * * * * * * * * * * * *
+\hypersetup{% Modifiez la valeur des champs suivants
+	pdfauthor   = {Erwan Douaille},
+	pdftitle    = {Smalltalk introduction},
+	pdfsubject  = {},
+	pdfkeywords = {Smalltalk Erwan Douaille Pharo},
+	pdfcreator  = {PDFLaTeX},
+	pdfproducer = {PDFLaTeX},
+	pdfpagemode = {FullScreen}
+}
+
+% * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+% * * * * * * * * * * * * * *  DEBUT DOCUMENT * * * * * * * * * * * * * * * * *
+% * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+\input{SMALLTALKDefinition.tex}
+\begin{document}
+
+
+% --------- Page de garde ---------
+\begin{frame} 
+	\vbox{
+		\vspace*{0cm}
+		\hbox{ 
+     		\hspace*{8cm}
+			\includegraphics[scale=0.4]{images/byteBalloon.png}
+		}
+	}
+	\titlepage
+\end{frame}
+% ----------------------------
+
+% --------- Sommaire ---------
+\begin{frame}{Contents}
+	\tableofcontents[]
+\end{frame}      
+% ----------------------------
+
+
+\section{History}
+\begin{frame}{History}
+	\begin{itemize}
+		\item Since 1972 from Xerox
+		\item Influences many language such as C++, Ruby, Python, Java ...
+		\item Invented MVC concept
+		\item Design patterns
+		\item First user interface
+		\hbox{ 
+     		\hspace*{-1cm}
+			\includegraphics[scale=0.29]{images/ui.jpg}
+     		\hspace*{1cm}
+			\includegraphics[scale=0.2]{images/compuer.jpg}
+		}
+	\end{itemize}
+\end{frame}
+
+
+\section{Why do i like Smalltalk ?}
+\begin{frame}{Why do i like Smalltalk ?}
+	\begin{center}
+		\includegraphics[scale=0.2]{images/smalltalkLove.jpg}	
+	\end{center}
+	\begin{itemize}
+		\item six keywords: true, false, nil, self, super, and thisContext
+		\item A deep understanding of Object Oriented Programming
+		\item Dinamically typed
+		\item Reflective language
+		\item Debugging by inspection
+	\end{itemize}
+\end{frame}
+
+
+\end{document}

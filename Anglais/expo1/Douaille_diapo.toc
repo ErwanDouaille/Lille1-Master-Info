@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.10pt}
+\select@language {french}
+\beamer@sectionintoc {1}{History}{3}{0}{1}
+\beamer@sectionintoc {2}{Why do i like Smalltalk ?}{4}{0}{2}

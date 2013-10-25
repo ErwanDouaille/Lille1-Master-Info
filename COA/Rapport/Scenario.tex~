@@ -1,0 +1,375 @@
+\chapter{Scenarios}
+
+\section{Etudiants}
+
+\subsection{Notifications}
+
+\subsection*{Notification d’examen}
+Acteur : Albert (Etudiant)
+\begin{itemize}
+\item Le système envoie une notification à Albert, sur un examen de maths dans 30 minutes 
+\item Albert ouvre la notification sur son smartphone 
+\item L’application affiche “Examen en Codage en salle M5 A12 à 10h30”  
+\item Albert sélectionne M5 A12 pour lui permettre de se rendre à l’examen 
+\item L’application affiche la page “Plan” 
+\item L’application affiche une carte indiquant le chemin à suivre pour se rendre à la salle d’examen depuis sa position actuelle 
+\end{itemize}
+
+\subsection*{Annulation de cours}
+Acteur : Benoit (Etudiant)
+\begin{itemize}
+\item Benoit sort du restaurant universitaire, il se dirige vers le lieu de son prochain cours  
+\item Le système envoie une notification à Benoit 
+\item Benoit ouvre la notification sur son smartphone 
+\item L’application affiche “Le cours de Mathématiques du 27/09/2013 13h30-15h00 est annulé”  
+\item Benoit sélectionne l’option “Visualiser mon  emploi du temps”  
+\item L’application ouvre un pdf contenant l’emploi du temps mis à jour 
+\end{itemize}
+
+\subsection*{Ramener un livre emprunté}
+Acteur : Bernard (Etudiant)
+\begin{itemize}
+\item Le système envoie une notification à Bernard 
+\item Bernard ouvre la notification sur son smartphone 
+\item L’application affiche “Le voyage autour du monde à rendre pour le 14/09/2013” 
+\item Bernard sélectionne “rendre le livre maintenant” 
+\item L’application affiche une carte indiquant le chemin à suivre pour se rendre à la bibliothèque depuis sa position actuelle 
+\end{itemize}
+
+\subsection*{Ramener un livre emprunté}
+Acteur : Bernard (Etudiant)
+\begin{itemize}
+\item Le système envoie une notification à Bernard 
+\item Bernard ouvre la notification sur son smartphone 
+\item L’application affiche “Le voyage autour du monde à rendre pour le 14/09/2013” 
+\item Bernard sélectionne “ne pas rendre le livre maintenant” 
+\item L’application affiche “Vous ne pourrez plus emprunter de livre pendant le temps de retard + 2 semaines” 
+\end{itemize}
+
+\newpage
+
+\subsection{Restauration}
+
+\subsection*{Choisir un RU pour consommation instantanée avec guidage}
+Acteur : Hector (Etudiant)
+\begin{itemize}
+\item Hector a faim 
+\item Hector ouvre l’application sur son smarthone 
+\item L’application affiche la liste des sections disponibles 
+\item Hector sélectionne la section “Restauration” 
+\item L’application affiche la liste des restaurants universitaires disponibles 
+\item Hector clique sur le “restaurant universitaire Le Sully” 
+\item L’application affiche une liste déroulante présentant le repas du jour, les horaires d’ouvertures et le taux d’occupation 
+\item Hector clique sur le bouton "Plan"
+\item L’application affiche une carte indiquant le chemin à suivre pour se rendre au restaurant universitaire Le Sully depuis sa position actuelle 
+\end{itemize}
+
+\newpage
+
+\subsection{Plan (géo-localisation)}
+
+\subsection*{Recherche d’un ami}
+Acteur : Charles (Etudiant), Marcel (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Plan” 
+\item L’application affiche une carte ainsi qu’une liste d’onglets 
+\item Charles sélectionne l’onglet “Retrouver un ami” 
+\item L'application affiche une saisie pour le nom et prénom de l'ami recherché 
+\item Charles entre le nom et le prénom de son ami Marcel 
+\item Le système envoie “Charles veut vous rejoindre.  Autorisez le vous à vous localiser ?” à Marcel 
+\item Marcel accepte la requête 
+\item L’application lance le service de guidage 
+\item Charles suit les instructions pour rejoindre Marcel  
+\end{itemize}
+
+\subsection*{Recherche d'un ami}
+Acteur : Charles (Etudiant), Marcel (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Plan” 
+\item L’application affiche une carte ainsi qu’une liste d’onglets 
+\item Charles sélectionne l’onglet “Retrouver un ami” 
+\item L’application affiche une saisie pour le nom et prénom de l'ami recherché
+\item Charles entre le nom et le prénom de son ami Marcel 
+\item Le système envoie “Charles veut vous rejoindre.  Autorisez le vous à vous localiser ?” à Marcel 
+\item Marcel n’entend pas qu’il a reçu une notification 
+\item Au bout de cinq minute d’attente, le système envoie à Charles “Marcel ne peut pas être localisé pour le moment” 
+\end{itemize}
+
+\subsection*{Recherche d’un ami qui ne veut pas être retrouvé}
+Acteur : Charles (Etudiant), Marcel (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item Le système affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Plan” 
+\item Le système affiche la carte ainsi qu’une liste d’onglets 
+\item Charles sélectionne l’onglet “Retrouver un ami” 
+\item L’application affiche une saisie pour le nom et prénom de l'ami recherché 
+\item Charles entre le nom et le prénom de son ami Marcel 
+\item Le système envoie “Charles veut vous rejoindre.  Autorisez le vous à vous localiser ?” à Marcel 
+\item Marcel refuse la requête 
+\item Le système envoie à Charles “Marcel ne veut pas être localisé”
+\end{itemize}
+
+\subsection*{Recherche de bâtiment}
+Acteur: Charles (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Plan” 
+\item L’application affiche la carte ainsi qu’une liste d’onglets 
+\item Charles sélectionne “M1” sur la carte 
+\item L’application affiche une carte indiquant le chemin à suivre pour se rendre au bâtiment “M1” depuis sa position actuelle 
+\item Charles suit les instructions pour rejoindre le bâtiment “M1” 
+\end{itemize}
+
+\subsection*{Recherche de salle}
+Acteur : Charles (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Plan” 
+\item L’application affiche la carte ainsi qu’une liste d’onglets 
+\item Le système détermine par géo-localisation, le bâtiment dans lequel se trouve Charles 
+\item L’application affiche “Vous êtes actuellement au M1” ainsi que la liste des salle du M1 
+\item Charles sélectionne “116” dans la liste des salles 
+\item L’application affiche une carte indiquant le chemin à suivre pour se rendre à la salle “116” depuis sa position actuelle 
+\item Charles suit les instructions pour rejoindre la salle “116” 
+\end{itemize}
+
+\newpage
+
+\subsection{Bibliothèque}
+
+\subsection*{Emprunt de livre}
+Acteur : Charles (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Bibliothèque” 
+\item L’application affiche une liste d’onglets 
+\item Charles sélectionne “Recherche d’un livre” 
+\item L’application affiche une saisie pour le nom du livre 
+\item Charles entre \ref{Le voyage autour du monde} qu’il souhaite emprunter 
+\item L’application affiche une liste d’informations détaillées (auteur, édition, statut, disponibilité, lieu de stockage), le livre est en format physique 
+\item Charles réserve le livre  
+\item Le système envoie une confirmation pour aller le chercher à la bibliothèque 
+\end{itemize}
+
+\subsection*{Emprunt de livre}
+Acteur : Charles (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Bibliothèque” 
+\item L’application affiche une liste d’onglets 
+\item Charles sélectionne “Recherche d’un livre” 
+\item L’application affiche une saisie pour le nom du livre 
+\item Charles fait une recherche sur le livre \ref{Le voyage autour du monde} qu’il souhaite emprunter 
+\item L’application affiche une liste d’informations détaillées (auteur, édition, statut, disponibilité, lieu de stockage), le livre est en format physique ou électronique 
+\item Charles sélectionne le format électronique et appuie sur le bouton “télécharger” 
+\item L’application télécharge le livre sur le smartphone qui est lisible depuis n’importe quel lecteur pdf 
+\end{itemize}
+
+\subsection*{Consulter ses emprunts}
+Acteur : Charles (Etudiant)
+\begin{itemize}
+\item Charles veut consulter ses emprunts 
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Bibliothèque” 
+\item L’application affiche une liste d’onglets 
+\item Charles sélectionne “Consulter mes emprunts” 
+\item L’application affiche la liste de ses emprunts, et des livres qu’il a réservé (Date d’emprunt, Date de rendu) 
+\end{itemize}
+
+\newpage
+
+\subsection{Événements culturels}
+
+\subsection*{Aperçu d’événement}
+Acteur : Charles (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Évènements culturels” 
+\item L’application affiche la liste des évènements culturels à venir 
+\item L’application vérifie les préférences ajoutées  
+\item Charles n’a pas de préférence, l’application affiche la liste des événements à venir par ordre chronologique 
+\end{itemize}
+
+\subsection*{Ajout d’événements dans favoris}
+Acteur : Charles (Etudiant)
+\begin{itemize}
+\item Charles ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne “Évènements culturels” 
+\item L’application vérifie les préférences ajoutées  
+\item Les préférences n’ont pas été ajoutées, il les affiche de façon chronologique 
+\item Charles sélectionne l’événement “Concert des NNBS” 
+\item L’application demande si cet événement doit être placé dans les favoris 
+\item Charles valide la proposition 
+\item L’application crée une nouvelle liste des événements culturels favoris de l’étudiant 
+\end{itemize}
+
+\newpage
+
+\subsection{Sécurité}
+
+\subsection*{Connexion à la plate forme}
+Acteur : Cécile (Etudiante)
+\begin{itemize}
+\item Cécile lance l’application pour la première fois 
+\item L’application affiche une saisie pour le login et le mot de passe 
+\item Cécile entre son login et mot de passe 
+\item L’application vérifie les identifiants 
+\item Cécile est connectée avec les sections disponibles pour les étudiants 
+\end{itemize}
+
+\subsection*{Connexion à la plate forme avec de mauvais identifiants}
+Acteur : Cécile (Etudiante)
+\begin{itemize}
+\item Cécile lance l’application pour la première fois 
+\item L’application affiche une saisie pour le login et le mot de passe 
+\item Cécile entre son login et son mot de passe 
+\item L’application ne trouve pas ses identifiants dans la base de données 
+\item L’application affiche “Erreur de login ou de mot de passe” 
+\end{itemize}
+
+\subsection*{Fermeture automatique d’une salle}
+\begin{itemize}
+\item Il est 21 heures, le système vérifie qu’il n’y a personne dans la salle grâce aux détecteurs de présence 
+\item Le système ferme la salle       
+\end{itemize}
+
+\subsection*{Fermeture automatique des salles}
+Acteur : Serges (Visiteur)
+\begin{itemize}
+\item Il est 21 heures, le système vérifie qu’il n’y a personne dans la salle aux puces sur les smartphones 
+\item Le sytème vérifie grâce aux détecteurs de présence 
+\item Serges est toujours dans la salle, une notification est envoyée à la sécurité du campus 
+\item Le système ferme la salle en attendant une notification de la sécurité 
+\end{itemize}
+
+\subsection*{Fermeture automatique des salles avec une personne dans la salle}
+Acteur : Monsieur Plip (Professeur)
+\begin{itemize}
+\item Il est 21 heures, le système vérifie qu’il n’y a personne dans la salle grâce aux puces sur les smartphones 
+\item Il y a quelqu’un dans la salle, il envoie une notification au smartphone de Monsieur Plip 
+\item Le système vérifie toutes les cinq minutes 
+\item Monsieur Plip n’est toujours pas sorti au bout d’une demi-heure, le système envoie une notification aux agents de sécurité du campus 
+\end{itemize}
+
+\newpage
+
+\section{Non Etudiant (équipe pédagogique/chercheurs)}
+
+Le non étudiant peut accéder aux memes services que l’étudiant 
+
+\newpage
+
+\subsection{Emploi du temps}
+
+\subsection*{Regarder l’emploi du temps}
+Acteur : Bernard (Etudiant)
+\begin{itemize}
+\item Bernard ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Bernard sélectionne la section “Emploi Du Temps” 
+\item L’application affiche une liste d’onglets et l’emploi du temps mis à jour 
+\end{itemize}
+
+\subsection*{Changement d’horaire}
+Acteur : Monsieur Plip (Professeur)
+\begin{itemize}
+\item Monsieur Plip ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Emploi Du Temps” 
+\item L’application affiche une liste d’onglets et l’emploi du temps mis à jour 
+\item Monsieur Plip sélectionne l’onglet “Modification d’horaire” 
+\item L’application affiche une saisie de la date et de l’heure de début 
+\item Monsieur Plip saisit le “05/10” à ”8h00” 
+\item L’application affiche une saisie pour le jour et l’heure de début du cours à changer 
+\item Monsieur Plip sélectionne de déplacer son cours pour le “11/10” à “10h00” 
+\item L’application vérifie la disponibilité et valide la modification 
+\item L’application prévient les étudiants concernés ainsi que le secrétariat 
+\end{itemize}
+
+\subsection*{Changement de salle}
+Acteur : Monsieur Plip (Professeur)
+\begin{itemize}
+\item Monsieur Plip ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Emploi Du Temps” 
+\item L’application affiche une liste d’onglets et l’emploi du temps mis à jour 
+\item Monsieur Plip sélectionne l’onglet “Modification de salle” 
+\item L’application affiche une saisie pour le jour et l’heure de début de cours 
+\item Monsieur Plip saisit le “05/10” à ”8h00” 
+\item L’application affiche une saisie pour la nouvelle salle 
+\item Monsieur Plip sélectionne de déplacer son cours en “A116” 
+\item L’application vérifie la disponibilité et valide la modification 
+\item Le système notifie les étudiants concernés ainsi que le secrétariat 
+\end{itemize}
+
+\subsection*{Changement de salle pour une salle prise}
+Acteur : Monsieur Plip (Professeur)
+\begin{itemize}
+\item Monsieur Plip ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Charles sélectionne la section “Emploi Du Temps” 
+\item L’application affiche une liste d’onglets et l’emploi du temps mis à jour 
+\item Monsieur Plip sélectionne l’onglet “Modification de salle” 
+\item L’application affiche une saisie pour le jour et l’heure de début de cours 
+\item Monsieur Plip saisit le “05/10” à ”8h00” 
+\item L’application affiche une saisie pour la nouvelle salle 
+\item Monsieur Plip sélectionne de déplacer son cours en “A116” 
+\item L’application vérifie la disponibilité et refuse la modification 
+\item L’application affiche un pop-up indiquant la raison du refus 
+\end{itemize}
+
+\newpage
+
+\subsection{Actions sur les bâtiments}
+
+\subsection*{Ouverture de salle}
+Acteur : Monsieur Plip (Professeur)
+\begin{itemize}
+\item Monsieur Plip passe son badge devant la porte 
+\item Le système vérifie le profil du badge 
+\item Le système reçoit le profil professeur 
+\item Le système déverrouille la salle 
+\end{itemize}
+
+\subsection*{Modification de température}
+Acteur : Madame Trombone (Secrétaire)
+\begin{itemize}
+\item Madame Trombone veut modifier la température de son bureau 
+\item Madame Trombone ouvre l’application sur son smartphone 
+\item L’application affiche la liste des sections disponibles 
+\item Madame Trombone sélectionne “Température” 
+\item L‘application affiche une saisie pour la température souhaitée 
+\item Madame Trombone saisit "26" 
+\item Le système enregistre la modification 
+\item La salle a une température de 26 degrès 
+\end{itemize}
+
+\newpage
+
+\subsection{Chauffage}
+
+\subsection*{Routine chauffage}
+\begin{itemize}
+\item Le système lance la routine de gestion de chauffage  Il consulte la base de donnée pour connaître les salles utilisées pour la journée 
+\item Le système évalue la température et commence à chauffer les salles jusqu’à une température acceptable, une heure avant que les salles soient occupées 
+\end{itemize}
+
+\subsection*{Modification d’horaire}
+\begin{itemize}
+\item Le système reçoit une notification sur la modification de l’EDT (l’attribution des salles) 
+\item Le système relance la vérification sur les salles dont le statut est modifiées 
+\item Une salle est chauffée alors qu’il n’y aura personne dedans la prochaine heure 
+\item Le chauffage/La climatisation de la salle s’arrête 
+\end{itemize}

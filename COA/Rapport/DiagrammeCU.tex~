@@ -1,0 +1,72 @@
+%\includepdf[pages=1,scale=0.7,pagecommand=]{cu/Administration.pdf}
+\chapter{Diagramme des cas d'utilisations}
+
+\section{Administration}
+\includegraphics[scale=0.7]{cu/Administration.pdf}
+\begin{itemize}
+\item Gérer les bâtiments: Ajouter, supprimer, modifier un bâtiment, un étage, une salle ainsi que leurs températures
+\item 
+\item Gérer un groupe de personne: gestion du personnel, créer des classes, des sections, affecter des professeurs, des UE, créer les étudiants …
+\item Gérer le niveau d’autorisation: définir le statut d’un personnel
+\end{itemize}
+\newpage
+
+
+\section{Bibliothéque}
+\includegraphics[scale=0.5]{cu/Bibliotheque.pdf}
+\begin{itemize}
+\item Emprunter un média: sous réserve de ne pas avoir emprunté 5 médias
+\item Visualiser un média: effectuer une recherche par critères puis afficher les informations détaillées du média sélectionné.
+\item Rendre un média: obligation de retourner le média à la bibliothèque après 2 semaines
+\end{itemize}
+\newpage
+
+
+\section{Culturels}
+\includegraphics[scale=0.7]{cu/Culturels.pdf}
+\begin{itemize}
+\item Visualiser un événement: effectuer une recherche par critères, puis affiche les informations détaillées de l’événement sélectionné, l’utilisateur peut ajouter l’événement à sa liste de préférences et peut y participer
+\end{itemize}
+\newpage
+
+
+\section{Emploi du temps}
+\includegraphics[scale=0.6]{cu/EDT.pdf}
+\begin{itemize}
+\item Consulter l‘emploi du temps: permettre aux étudiants et à l’équipe pédagogique d'accéder à la visualisation d’un emploi du temps mis à jour 
+\item Gérer un cours: permettre à un utilisateur autorisé de modifier l’emploi du temps qui le concerne, et d’envoyer une notification aux personnes concernées par ces modifications
+\end{itemize}
+\newpage
+
+
+\section{Géo-localisation}
+\includegraphics[scale=0.7]{cu/GPS.pdf}
+\begin{itemize}
+\item Rechercher un ami: effectue une recherche par critère et trace un itinéraire de la position actuelle de l’utilisateur jusque la cible sélectionnée. La géo-localisation d’une personne nécessite l’autorisation de cette dernière via l’envoi d’une notification
+\end{itemize}
+\newpage
+
+
+\section{Notifications}
+\includegraphics[scale=0.4]{cu/Notifications.pdf}
+\begin{itemize}
+\item Recevoir une notification: l’utilisateur reçoit une notification affichant différentes informations. Ces informations contiennent des raccourcis vers différentes fonctionnalités du système. La notification peut aussi contenir des requêtes et des liens
+\item Recevoir une notification demandant de sortir d'une salle :
+\item Recevoir une demande de géo-localisation :
+\end{itemize}
+\newpage
+
+
+\section{Restauration}
+\includegraphics[scale=0.5]{cu/Restauration.pdf}
+\begin{itemize}
+\item Visualiser une liste de restaurants: afficher la liste de restaurants, puis affiche les informations détaillées du restaurant sélectionne. L’utilisateur peut déclencher le guidage pour arriver au restaurant
+\end{itemize}
+
+
+\section{Sécurité}
+\includegraphics[scale=0.6]{cu/Securite.pdf}
+\begin{itemize}
+\item S’authentifier: fournir un login et un mot de passe ou une carte, le système vérifie que le badge a un niveau d’utilisation suffisant
+\item Vérifier une salle: le système(les capteurs) vérifie la présence ou non de personne dans la salle au moment de la fermeture automatique
+\end{itemize}

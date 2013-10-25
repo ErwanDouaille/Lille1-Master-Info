@@ -1,0 +1,149 @@
+
+
+
+
+% Source Code
+%\usepackage{color}
+%\usepackage{textcomp}
+%\usepackage{listings}
+%\usepackage{ulem}
+%\usepackage[T1]{fontenc}
+%\usepackage{times}
+% \usepackage{needspace}
+ 
+
+% Source Code
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{listings}
+
+\definecolor{source}{gray}{0.85}% my comment style
+\newcommand{\myCommentStyle}[1]{{\footnotesize\sffamily\color{gray!100!white} #1}}
+%\newcommand{\myCommentStyle}[1]{{\footnotesize\sffamily\color{black!100!white} #1}}
+
+% my string style
+\newcommand{\myStringStyle}[1]{{\footnotesize\sffamily\color{violet!100!black} #1}}
+%\newcommand{\myStringStyle}[1]{{\footnotesize\sffamily\color{black!100!black} #1}}
+
+% my symbol style
+\newcommand{\mySymbolStyle}[1]{{\footnotesize\sffamily\color{violet!100!black} #1}}
+%\newcommand{\mySymbolStyle}[1]{{\footnotesize\sffamily\color{black!100!black} #1}}
+
+% my keyword style
+\newcommand{\myKeywordStyle}[1]{{\footnotesize\sffamily\color{green!70!black} #1}}
+%\newcommand{\myKeywordStyle}[1]{{\footnotesize\sffamily\color{black!70!black} #1}}
+
+% my global style
+\newcommand{\myGlobalStyle}[1]{{\footnotesize\sffamily\color{blue!100!black} #1}}
+%\newcommand{\myGlobalStyle}[1]{{\footnotesize\sffamily\color{black!100!black} #1}}
+
+% my number style
+\newcommand{\myNumberStyle}[1]{{\footnotesize\sffamily\color{brown!100!black} #1}}
+%\newcommand{\myNumberStyle}[1]{{\footnotesize\sffamily\color{black!100!black} #1}}
+
+\lstset{
+language={},
+% characters
+tabsize=3,
+escapechar={!},
+keepspaces=true,
+breaklines=true,
+alsoletter={\#},
+literate={\$}{{{\$}}}1,
+breakautoindent=true,
+columns=fullflexible,
+showstringspaces=false,
+% background
+frame=single,
+aboveskip=1em, % automatic space before
+framerule=0pt,
+basicstyle=\footnotesize\sffamily\color{black},
+keywordstyle=\myKeywordStyle,% keyword style
+commentstyle=\myCommentStyle,% comment style
+frame=single,%
+backgroundcolor=\color{source},
+% numbering
+stepnumber=1,
+numbersep=10pt,
+numberstyle=\tiny,
+numberfirstline=true,
+% caption
+captionpos=b,
+% formatting (html)
+moredelim=[is][\bfseries]{<b>}{</b>},
+moredelim=[is][\textit]{<i>}{</i>},
+moredelim=[is][\underbar]{<u>}{</u>},
+moredelim=[is][\color{red}\uwave]{<wave>}{</wave>},
+moredelim=[is][\color{red}\sout]{<del>}{</del>},
+moredelim=[is][\color{blue}\underbar]{<ins>}{</ins>},
+% smalltalk stuff
+morecomment=[s][\myCommentStyle]{"}{"},
+%    morecomment=[s][\myvs]{|}{|},
+morestring=[b][\myStringStyle]',
+moredelim=[is][]{<sel>}{</sel>},
+moredelim=[is][]{<rcv>}{</rcv>},
+moredelim=[is][\itshape]{<symb>}{</symb>},
+moredelim=[is][\scshape]{<class>}{</class>},
+morekeywords={true,false,nil,self,super,thisContext},
+identifierstyle=\idstyle,
+}
+
+\makeatletter
+\newcommand*\idstyle[1]{%
+\expandafter\id@style\the\lst@token{#1}\relax%
+}
+\def\id@style#1#2\relax{%
+\ifnum\pdfstrcmp{#1}{\#}=0%
+% this is a symbol
+\mySymbolStyle{\the\lst@token}%
+\else%
+\edef\tempa{\uccode`#1}%
+\edef\tempb{`#1}%
+\ifnum\tempa=\tempb%
+% this is a global
+\myGlobalStyle{\the\lst@token}%
+\else%
+\the\lst@token%
+\fi%
+\fi%
+}
+\makeatother
+
+
+%\newcommand{\ct}{\lstinline[backgroundcolor=\color{white}]}
+%\newcommand{\needlines}[1]{\Needspace{#1\baselineskip}}
+\newcommand{\lct}{\texttt}
+
+\lstnewenvironment{smalltalk}{%
+    \lstset{%
+    % frame=lines,
+    frame=single,
+    framerule=0pt,
+    mathescape=false
+    }%
+    \noindent%
+    \minipage{\linewidth}%
+}{%
+    \endminipage%
+}%
+
+
+\lstnewenvironment{codeWithLineNumbers}{%
+    \lstset{%
+    % frame=lines,
+    frame=single,
+    framerule=0pt,
+    mathescape=false,
+    numbers=left
+    }%
+    \noindent%
+    \minipage{\linewidth}%
+}{%
+    \endminipage%
+}%
+
+
+
+\newenvironment{codeNonSmalltalk}
+{\begin{alltt}\sffamily}
+{\end{alltt}\normalsize}

@@ -1,0 +1,58 @@
+\documentclass[a4paper,10pt]{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACKAGE 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{varioref}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{ifthen}
+\usepackage{xstring}
+\usepackage{calc}
+\usepackage{pgfopts}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage{colortbl}
+\bibliographystyle{plain}
+\frenchbsetup{StandardLists=true}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDF INFO 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+	pdfauthor   = {Florian Danvin, Benoit Boutin, Aurelie Desmet, Erwan Douaille et Maxime Douillyez},
+	pdftitle    = {Rapport 1, Conception Objet Avancee},
+	pdfsubject  = {Universitée du futur},
+	pdfkeywords = {},
+	pdfcreator  = {PDFLaTeX},
+	pdfproducer = {PDFLaTeX}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\author{Florian Danvin, Benoit Boutin, Aurelie Desmet, Erwan Douaille et Maxime Douillyez}
+\title{}
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
+
+\begin{document}
+
+\input{Couverture.tex}
+
+\tableofcontents
+\thispagestyle{empty}	
+\newpage
+\setcounter{page}{1} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contenu futur
+\input{Introduction.tex}
+\input{Scenario.tex}
+\input{DiagrammeCU.tex}
+\input{Diagramme.tex}
+\input{Glossaire.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contenu futur
+
+\end{document}
