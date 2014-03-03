@@ -1,0 +1,4 @@
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/m1/douylliez/Bureau/V4M1_new/pulse.vhf,-w,/home/m1/douylliez/Bureau/V4M1_new/pulse.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/m1/douylliez/Bureau/V4M1_new/stacknew.vhf,-w,/home/m1/douylliez/Bureau/V4M1_new/stacknew.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/m1/douylliez/Bureau/V4M1_new/reg32.vhf,-w,/home/m1/douylliez/Bureau/V4M1_new/reg32.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/m1/douylliez/Bureau/V4M1_new/netring.vhf,-w,/home/m1/douylliez/Bureau/V4M1_new/netring.sch

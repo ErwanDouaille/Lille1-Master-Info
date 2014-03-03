@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/m1/douaille/AEV/tp2/homade/Nexys3v3.ncd
+OUTFILE=/home/m1/douaille/AEV/tp2/homade/Nexys3v3.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/m1/douaille/AEV/tp2/homade
+LICENSE=WebPack
+USER_INFO=0_0_579

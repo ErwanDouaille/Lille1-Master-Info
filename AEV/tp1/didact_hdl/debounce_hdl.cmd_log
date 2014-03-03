@@ -1,0 +1,2 @@
+vhdtdtfi -prj didact_hdl -o /home/m1/douaille/didact_hdl/debounce_hdl.vhi -lib work /home/m1/douaille/didact_hdl//debounce_hdl.vhd -module debounce_hdl -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 
+vhdtdtfi -prj didact_hdl -o /home/m1/douaille/didact_hdl/debounce_hdl.vhi -lib work /home/m1/douaille/didact_hdl//debounce_hdl.vhd -module debounce_hdl -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 

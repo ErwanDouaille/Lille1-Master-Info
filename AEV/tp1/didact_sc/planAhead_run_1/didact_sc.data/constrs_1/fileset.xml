@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DARoots Version="1" Minor="7">
+	<FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+		<Filter Type="Constrs"/>
+		<File Path="/home/m1/douaille/didact_sc/ipcore_dir/rom_msa.ncf">
+		</File>
+		<File Path="/home/m1/douaille/didact_sc/didact_top.ucf">
+		</File>
+		<Config>
+			<Option Name="TargetPart" Val="xc6slx16csg324-3"/>
+		</Config>
+	</FileSet>
+</DARoots>
+

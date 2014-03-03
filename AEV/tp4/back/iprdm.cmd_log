@@ -1,0 +1,1 @@
+vhdtdtfi -lib work random.vhd -lib work iprdm.vhd -prj V4M1 -o iprdm.spl -module iprdm -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 

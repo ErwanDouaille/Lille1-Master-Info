@@ -1,0 +1,74 @@
+#-----------------------------------------------------------
+# PlanAhead v12.4
+# Build 108585 by hdbuild on Tue Nov  9 16:43:51 PST 2010
+# Start of session at: Fri Oct  4 10:58:35 2013
+# Process ID: 6334
+# Log file: /home/m1/douaille/didact_sc/planAhead_run_1/planAhead.log
+# Journal file: /home/m1/douaille/didact_sc/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [HD-Licensing 0] Attempting to get a license: PlanAhead
+INFO: [HD-Licensing 1] Got a license: PlanAhead
+INFO: [HD-Licensing 3] Your PlanAhead license expires in -491 day(s)
+INFO: [HD-ArchReader 0] Loading parts and site information from /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/arch.xml
+INFO: [HD-RTPRIM 0] Parsing RTL primitives file '/usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/rtl/prims/rtl_prims.xml'
+INFO: [HD-RTPRIM 1] Finished Parsing RTL primitives file '/usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/rtl/prims/rtl_prims.xml'
+start_gui -source /home/m1/douaille/didact_sc/pa.fromNetlist.tcl
+# create_project -name didact_sc -dir "/home/m1/douaille/didact_sc/planAhead_run_1" -part xc6slx16csg324-3
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "/home/m1/douaille/didact_sc/didact_top.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {/home/m1/douaille/didact_sc} {ipcore_dir} }
+# add_files "ipcore_dir/rom_msa.ncf" -fileset [get_property constrset [current_run]]
+# set_param project.pinAheadLayout  yes
+# set_param project.paUcfFile  "didact_top.ucf"
+# add_files "didact_top.ucf" -fileset [get_property constrset [current_run]]
+# open_netlist_design
+INFO: Run is defaulting to constrset part: xc6slx16csg324-3
+INFO: [HD-EDIFIN 0] Parsing Edif File './.HDI-PlanAhead-6334-a15p14/ngc2edif/didact_top.edif'
+INFO: [HD-EDIFIN 1] Finished Parsing Edif File './.HDI-PlanAhead-6334-a15p14/ngc2edif/didact_top.edif'
+INFO: [HD-EDIFIN 4] Reading core file '/home/m1/douaille/didact_sc/ipcore_dir/rom_msa.ngc' for (cell view 'rom_msa', library 'didact_top_lib', file 'didact_top.ngc')
+INFO: [HD-EDIFIN 0] Parsing Edif File './.HDI-PlanAhead-6334-a15p14/ngc2edif/rom_msa.edif'
+INFO: [HD-EDIFIN 1] Finished Parsing Edif File './.HDI-PlanAhead-6334-a15p14/ngc2edif/rom_msa.edif'
+WARN: [HD-NETLIST 3] Netlist 'didact_top' is not ideal for floorplanning, since the cellview 'didact_top' defined in file 'didact_top.ngc' contains large number of primitives. Please consider enabling hierarchy in synthesis before floorplan. You can enable hierarchy in XST by setting '-keep_hierarchy=yes' or '-netlist_hierarchy=rebuilt' flags.
+INFO: [HD-ArchReader 7] Loading clock regions from /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockRegion.xml
+INFO: [HD-ArchReader 8] Loading clock buffers from /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockBuffers.xml
+INFO: [HD-ArchReader 3] Loading package from /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/spartan6lx/xc6slx16/csg324/Package.xml
+INFO: [HD-ArchReader 13] Loading package pin functions from /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/PinFunctions.xml...
+INFO: [HD-ArchReader 4] Loading io standards from /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/IOStandards.xml
+INFO: [HD-ArchReader 12] Loading device configuration modes from /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/spartan6/ConfigModes.xml
+INFO: [HD-GDRC 0] Loading list of drcs for the architecture : /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/drc.xml
+INFO: [HD-UCFReader 0] Parsing UCF File : ./ipcore_dir/rom_msa.ncf
+INFO: [HD-UCFReader 1] Finished Parsing UCF File : ./ipcore_dir/rom_msa.ncf
+INFO: [HD-UCFReader 0] Parsing UCF File : ./didact_top.ucf
+INFO: [HD-UCFReader 1] Finished Parsing UCF File : ./didact_top.ucf
+
+DESIGN RULE CHECK VIOLATION REPORT
+   Build: PlanAhead v12.4 by hdbuild
+          on  Tue Nov  9 16:43:51 PST 2010
+  Report: by douaille on host a15p14, pid 6334
+          on Fri Oct  4 10:58:50 2013
+
+REPORT SUMMARY
+            Netlist: netlist
+          Floorplan: <none>
+      Design limits: <entire design considered>
+             Checks: Unknown block name
+                     Unknown Unisim pin name
+                     Mismatching Attribute
+           Max vios: <unlimited>
+         Vios found: 1
+
+REPORT DETAILS
+ULMA#1
+Mismatching Attribute - <no location>
+The following attributes are incorrect on instance dcm_inst/dcm_sp_inst: DCM_SPFACTORY_JF: The hex value is not one of the allowed values.
+Related Vios: <none>
+
+INFO: [HD-LIB 0] Reading timing library /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/spartan6.lib .
+INFO: [HD-LIB 1] Done reading timing library /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/./parts/xilinx/spartan6/spartan6.lib .
+startgroup
+set_property loc PAD156 [get_ports clkin]
+set_property is_fixed true  [get_ports clkin]
+endgroup
+exit
+INFO: [HD-Application 0] Exiting PlanAhead...
+INFO: [HD-Licensing 2] Releasing license: PlanAhead

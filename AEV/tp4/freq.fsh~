@@ -1,0 +1,26 @@
+
+
+read function
+	f lit
+	waitbtn
+	switch
+	leddup
+return
+
+slave 
+
+
+begin 
+
+master 
+
+begin
+repeat
+	10 lit
+	do
+		read call
+	loop
+	bufout
+again
+endprogram
+

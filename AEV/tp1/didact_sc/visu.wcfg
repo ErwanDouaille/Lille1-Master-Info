@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/m1/douaille/didact_sc/didact_top_didact_top_sch_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="didact_top_didact_top_sch_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/clkin" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clkin</obj_property>
+      <obj_property name="ObjectShortName">clkin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/bouton1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bouton1</obj_property>
+      <obj_property name="ObjectShortName">bouton1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/bouton2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bouton2</obj_property>
+      <obj_property name="ObjectShortName">bouton2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/bouton3" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bouton3</obj_property>
+      <obj_property name="ObjectShortName">bouton3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/q_del" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">q_del[7:0]</obj_property>
+      <obj_property name="ObjectShortName">q_del[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/UUT/etatsuiv" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">etatsuiv[2:0]</obj_property>
+      <obj_property name="ObjectShortName">etatsuiv[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/UUT/etatpres" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">etatpres[2:0]</obj_property>
+      <obj_property name="ObjectShortName">etatpres[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/didact_top_didact_top_sch_tb/UUT/enable_del" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">enable_del</obj_property>
+      <obj_property name="ObjectShortName">enable_del</obj_property>
+   </wvobject>
+</wave_config>

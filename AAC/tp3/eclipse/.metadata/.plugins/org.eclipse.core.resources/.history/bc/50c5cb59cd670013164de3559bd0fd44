@@ -1,0 +1,81 @@
+import java.io.*;
+
+
+public class ParseFile {
+	
+	public String filename;
+	public BufferedReader br;
+	private Formule formule = new Formule();
+	
+	public ParseFile(String filename){
+		this.filename = filename;
+		
+		try{
+			InputStream ips=new FileInputStream(this.filename); 
+			InputStreamReader ipsr=new InputStreamReader(ips);
+			this.br = new BufferedReader(ipsr);
+		}		
+		catch (Exception e){
+			System.out.println(e.toString());
+		}
+	}
+
+	private void extractFile() throws IOException {
+		String ligne;
+		while ((ligne=this.br.readLine())!=null){
+			this.parseLine(ligne);
+		}		
+	}
+	
+	private void parseLine(String line){
+		String[] tokens;
+		if(line.charAt(0)=='c'){
+			System.out.println(line);
+		} else if(line.charAt(0)=='p'){
+			tokens = line.split(" ");
+			this.setFormuleWith(tokens);
+		} else{
+			tokens = line.split("  ");
+			this.createClause(tokens);
+		}
+	}
+	
+	private void createClause(String[] line) {
+		Clause clause = new Clause();
+		for(int i=0;i<line.length;i++){
+			System.out.println(line[i]);
+			Integer value = Integer.parseInt(line[i]);
+			if(!(value==0)){
+				Littoral l = new Littoral(Math.abs(value), !(value>0));
+				clause.addLittoral(l);				
+			}
+		}
+		this.formule.addClause(clause);
+	}
+
+	private void setFormuleWith(String[] tokens) {
+		this.formule.setNbVar(Integer.parseInt(tokens[2]));
+		this.formule.setNbClause(Integer.parseInt(tokens[3]));
+	}
+
+	private void closeFile(){
+		try {
+			this.br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String args[]){
+		ParseFile file = new ParseFile("test.cnf");
+		try {
+			file.extractFile();
+			file.formule.afficheFormule();
+			file.closeFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+}

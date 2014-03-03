@@ -1,0 +1,4 @@
+vhdtdtfi -lib work diviseur_clk.vhd -prj didact_sc -o diviseur_clk.spl -module diviseur_clk -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 diviseur_clk.spl /home/m1/douaille/didact_sc/diviseur_clk.sym 
+vhdtdtfi -lib work diviseur_clk.vhd -prj didact_sc -o diviseur_clk.spl -module diviseur_clk -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 diviseur_clk.spl /home/m1/douaille/didact_sc/diviseur_clk.sym 

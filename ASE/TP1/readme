@@ -1,0 +1,35 @@
+DOUAILLE Erwan
+MIRANDA	Yoan
+
+effectuer make pour compiler le tp et obtenir les 2 executables:
+display_stack permet d'executer le fichier display-stack.c
+try_mul permet l'execution du programme de multiplication utilisant les fonctions try et throw
+
+Question 2
+Suite à une execution de display-stack, on visualise le résultat suivant
+esp: 0xbfb79f90  ebp: 0xbfb79fc8 
+a: 0xbfb79f90  b: 0xbfb79f94  c: 0xbfb79f98
+la: 0xbfb79f7c  lb: 0xbfb79f78  lc: 0xbfb79f74
+
+on a donc: 
+
+lc 
+lb
+la
+?
+?
+esp
+a
+b
+c
+ebp
+
+On voit donc que le changement de contexte à bien eu lieu, les variables locales n'etant pas incluses entre les %esp et %ebp originaux.
+Les variables locales sont egalement empilés dans le sens inverse par rapport aux attributs.
+
+TRY ET THROW:
+le programme try_mul est fonctionnelle.
+
+  
+
+

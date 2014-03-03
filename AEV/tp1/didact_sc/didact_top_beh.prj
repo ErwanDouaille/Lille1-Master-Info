@@ -1,0 +1,7 @@
+vhdl work "ipcore_dir/dcm1.vhd"
+vhdl work "ipcore_dir/rom_msa.vhd"
+vhdl work "msa_sc.vhf"
+vhdl work "encodeur_sc.vhf"
+vhdl work "diviseur_clk.vhd"
+vhdl work "debounce_sc.vhf"
+vhdl work "didact_top.vhf"

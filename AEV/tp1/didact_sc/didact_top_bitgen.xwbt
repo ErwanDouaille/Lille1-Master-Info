@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/m1/douaille/didact_sc/didact_top.ncd
+OUTFILE=/home/m1/douaille/didact_sc/didact_top.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/m1/douaille/didact_sc
+LICENSE=WebPack
+USER_INFO=0_0_579

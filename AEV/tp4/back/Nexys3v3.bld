@@ -1,0 +1,429 @@
+Release 12.4 ngdbuild M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Command Line: /usr/local/Xilinx/12.4/ISE_DS/ISE/bin/lin/unwrapped/ngdbuild
+-intstyle ise -dd _ngo -aul -aut -nt timestamp -uc Nexys3.ucf -p
+xc6slx16-csg324-3 Nexys3v3.ngc Nexys3v3.ngd
+
+Reading NGO file "/home/m1/douylliez/Bureau/V4M1_new/Nexys3v3.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "Nexys3.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:59 - Constraint <Net "a_to_g[7]" LOC = M13 ;>
+   [Nexys3.ucf(28)]: NET "a_to_g[7]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem:204 - A target design object for the Locate constraint
+   '<Net "a_to_g[7]" LOC = M13 ;> [Nexys3.ucf(28)]' could not be found and so
+   the Locate constraint will be removed.
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<31>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<30>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<29>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<28>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<27>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<26>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<25>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<24>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<23>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<22>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<21>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<20>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<19>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<18>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<17>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<16>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<15>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<14>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<13>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<12>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<11>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<10>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<9>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<8>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<7>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<6>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<5>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<4>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<3>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<2>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<1>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/oversized<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_219<12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_31<7>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/XLXN_31<6>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/count<7>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[1].One_salve/Slave_HSUcore/execution_stack/count<6>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<31>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<30>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<29>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<28>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<27>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<26>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<25>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<24>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<23>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<22>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<21>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<20>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<19>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<18>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<17>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<16>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<15>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<14>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<13>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<12>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<11>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<10>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<9>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<8>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<7>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<6>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<5>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<4>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<3>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<2>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<1>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/oversized<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_219<12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_31<7>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/XLXN_31<6>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/count<7>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/slaves[0].One_salve/Slave_HSUcore/execution_stack/count<6>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<31>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<30>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<29>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<28>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<27>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<26>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<25>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<24>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<23>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<22>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<21>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<20>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<19>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<18>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<17>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<16>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<15>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<14>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<13>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<12>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<11>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<10>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<9>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<8>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<7>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<6>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<5>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<4>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<3>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<2>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<1>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'my_Master/Inst_HSUcore/oversized<0>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<31>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<30>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<29>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<28>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<27>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<26>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<25>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<24>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<23>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<22>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<21>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<20>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<19>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<18>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<17>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<16>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<15>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<14>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<13>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_219<12>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_31<7>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/XLXN_31<6>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/count<7>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'my_Master/Inst_HSUcore/execution_stack/count<6>' has no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings: 169
+
+Total memory usage is 120336 kilobytes
+
+Writing NGD file "Nexys3v3.ngd" ...
+Total REAL time to NGDBUILD completion:  6 sec
+Total CPU time to NGDBUILD completion:   5 sec
+
+Writing NGDBUILD log file "Nexys3v3.bld"...

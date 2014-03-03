@@ -1,0 +1,5 @@
+MODULE netring
+	SUBMODULE reg32
+		INSTANCE shift_register
+	SUBMODULE Mux4
+		INSTANCE muxin

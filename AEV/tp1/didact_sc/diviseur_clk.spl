@@ -1,0 +1,7 @@
+[Inputs]
+clkin
+[Outputs]
+clk2hz
+clk16hz
+clk2khz
+[BiDir]

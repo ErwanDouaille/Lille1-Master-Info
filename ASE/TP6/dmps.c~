@@ -1,0 +1,50 @@
+/*
+Author:
+	DOUAILLE Erwan
+	MIRANDA Yoan
+*/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "hardware.h"
+#include "drive.h"
+#include <time.h> 
+
+static void
+empty_it()
+{
+    return;
+}
+
+int main(){
+	int nbSec,nbCyl,cylinder,secteur,sectorsize,i;
+	unsigned char* buff;
+	if(init_hardware("hardware.ini") == 0) {
+		fprintf(stderr, "Error in hardware initialization\n");
+		exit(EXIT_FAILURE);
+    	}
+
+	/* Interreupt handlers */
+	for(i=0; i<16; i++)
+		IRQVECTOR[i] = empty_it;
+
+	/* Allows all IT */
+	_mask(1);
+	_out(HDA_CMDREG,CMD_DSKINFO);
+	nbCyl=_in(HDA_DATAREGS)<<8;
+	nbCyl+=_in(HDA_DATAREGS+1);
+	nbSec=_in(HDA_DATAREGS+2)<<8;
+	nbSec+=_in(HDA_DATAREGS+3);
+	sectorsize=_in(HDA_DATAREGS+4)<<8;
+	sectorsize+=_in(HDA_DATAREGS+5);
+	buff=malloc(sectorsize);
+	srand(time(NULL));
+ 	cylinder=rand()%nbCyl;
+	secteur=rand()%nbSec;
+	read_sector(cylinder,secteur,buff);
+	printf("Lecture du cylindre %d secteur %d\n",cylinder,secteur);
+	dump(buff,sectorsize,0,1); 
+	printf("\n");
+	
+	return 0;
+}

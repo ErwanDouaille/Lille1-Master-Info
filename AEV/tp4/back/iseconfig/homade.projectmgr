@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="homade" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/CUnit - Behavioral C:|Users|jld|Documents|TPM1|homade|CUnit.vhd</ClosedNode>
+         <ClosedNode>/HMaster - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|HSP.vhd/One_salve - HSlave - Behavioral/Inst_Hmemory64 - Hmemory64 - Behavioral</ClosedNode>
+         <ClosedNode>/HMaster - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|HSP.vhd/One_salve - HSlave - Behavioral/Inst_IPFunit - IP_Funit - Behavioral</ClosedNode>
+         <ClosedNode>/HMaster - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|HSP.vhd/One_salve - HSlave - Behavioral/Inst_IP_Tic - IP_Tic - Behavioral</ClosedNode>
+         <ClosedNode>/HMaster - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|HSP.vhd/One_salve - HSlave - Behavioral/Inst_IPdataStack - IP_datastack - Behavioral</ClosedNode>
+         <ClosedNode>/HMaster - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|HSP.vhd/One_salve - HSlave - Behavioral/Inst_IPfibo - IP_fibo - FSM_fibo</ClosedNode>
+         <ClosedNode>/HMaster - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|HSP.vhd/One_salve - HSlave - Behavioral/Slave_HSUcore - HSUcore - Behavioral</ClosedNode>
+         <ClosedNode>/HMaster - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|HSP.vhd/One_salve - HSlave - Behavioral/Slave_prom - slavedual_prom - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/UART_Wrapper - Wrapper_RAM - rom_io</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/HSU_CUnit - CUnit - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/HSU_hstack - hstack - hstack_arch/ram3p - FIFO3port - Behavioral/Inst_stack - stack/XLXI_1 - Ram8 - rtl</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/HSU_hstack - hstack - hstack_arch/ram3p - FIFO3port - Behavioral/Inst_stack - stack/XLXI_2 - Ram8 - rtl</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/HSU_hstack - hstack - hstack_arch/ram3p - FIFO3port - Behavioral/Inst_stack - stack/XLXI_3 - Ram8 - rtl</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/HSU_hstack - hstack - hstack_arch/ram3p - FIFO3port - Behavioral/Inst_stack - stack/XLXI_4 - Ram8 - rtl</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_Hmemory64 - Hmemory64 - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IPFunit - IP_Funit - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IP_Com32 - IP_com32 - FSM</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IP_Tic - IP_Tic - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IP_Wait - IP_Wait - FSM</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IPdataStack - IP_datastack - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IPfibo - IP_fibo - FSM_fibo</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IPwaitBt - IP_waitbt - FSM</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_sync_prom - slavedual_prom - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_Hmemory64 - Hmemory64 - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPFunit - IP_Funit - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IP_Tic - IP_Tic - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPdataStack - IP_datastack - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPfibo - IP_fibo - FSM_fibo</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_HSUcore - HSUcore - Behavioral/HSU_CUnit - CUnit - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_HSUcore - HSUcore - Behavioral/HSU_hstack - hstack - hstack_arch/ram3p - FIFO3port - Behavioral/Inst_stack - stack</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_prom - slavedual_prom - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/sreg - shift_reg - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|TPM1|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/sreg0 - shift_reg - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/HSU_CUnit - CUnit - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/execution_stack - stacknew</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_Hmemory64 - Hmemory64 - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IPFunit - IP_Funit - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IP_Com32 - IP_com32 - FSM</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IP_Tic - IP_Tic - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IP_Wait - IP_Wait - FSM</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IPdataStack - IP_datastack - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_IPwaitBt - IP_waitbt - FSM</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/Inst_sync_prom - slavedual_prom - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_Hmemory64 - Hmemory64 - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPFunit - IP_Funit - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IP_Tic - IP_Tic - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPdataStack - IP_datastack - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPfibo - IP_fibo - FSM_fibo</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_HSUcore - HSUcore - Behavioral/HSU_CUnit - CUnit - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_HSUcore - HSUcore - Behavioral/execution_stack - stacknew</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_prom - slavedual_prom - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/sreg - shift_reg - Behavioral</ClosedNode>
+         <ClosedNode>/Nexys3v3 - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|Nexys3v3.vhd/my_Master - HMaster - Behavioral/sreg0 - shift_reg - Behavioral</ClosedNode>
+         <ClosedNode>/stack C:|Users|jld|Documents|TPM1|homade|stack.sch</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Nexys3v3 - Behavioral (C:/Users/jld/Documents/xilinx/Homade/V4/homade/Nexys3v3.vhd)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000171000000020000000000000000000000000000000064ffffffff000000810000000000000002000001710000000100000000000000000000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>Nexys3v3 - Behavioral (C:/Users/jld/Documents/xilinx/Homade/V4/homade/Nexys3v3.vhd)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000171000000010000000100000000000000000000000064ffffffff000000810000000000000001000001710000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design/Map</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route</ClosedNode>
+         <ClosedNode>Implement Design/Translate</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>IPcode.vhd</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000004d2000000040101000100000000000000000000000064ffffffff000000810000000000000004000000aa00000001000000000000009d0000000100000000000000660000000100000000000003250000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>IPcode.vhd</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/FIFO3port - Behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|FIFO3port.vhd</ClosedNode>
+         <ClosedNode>/stacknew_stacknew_sch_tb - behavioral C:|Users|jld|Documents|xilinx|Homade|V4|homade|stack_tb.vhd</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/UART_Wrapper - Wrapper_RAM - rom_io</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/HSU_CUnit - CUnit - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_HSUcore - HSUcore - Behavioral/execution_stack - stacknew</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_Hmemory64 - Hmemory64 - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_IP_Com32 - IP_com32 - FSM</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_IP_Tic - IP_Tic - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_IP_Wait - IP_Wait - FSM</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_IPdataStack - IP_datastack - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_IPfibo - IP_fibo - FSM_fibo</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_IPwaitBt - IP_waitbt - FSM</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/Inst_sync_prom - slavedual_prom - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_Hmemory64 - Hmemory64 - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPFunit - IP_Funit - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPdataStack - IP_datastack - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Inst_IPfibo - IP_fibo - FSM_fibo</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_HSUcore - HSUcore - Behavioral/HSU_CUnit - CUnit - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_HSUcore - HSUcore - Behavioral/execution_stack - stacknew</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/One_salve - HSlave - Behavioral/Slave_prom - slavedual_prom - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/sreg - shift_reg - Behavioral</ClosedNode>
+         <ClosedNode>/testbench - behavior C:|Users|jld|Documents|xilinx|Homade|V4|homade|nexyx3_w_tb.vhd/Nexys3_tb - Nexys3v3 - Behavioral/my_Master - HMaster - Behavioral/sreg0 - shift_reg - Behavioral</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Inst_IPwaitBt - IP_waitbt - FSM (C:/Users/jld/Documents/xilinx/Homade/V4/homade/IPwaitBT1.vhd)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001e7000000020000000000000000000000000000000064ffffffff000000810000000000000002000001e70000000100000000000000000000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Inst_IPwaitBt - IP_waitbt - FSM (C:/Users/jld/Documents/xilinx/Homade/V4/homade/IPwaitBT1.vhd)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000171000000010000000100000000000000000000000064ffffffff000000810000000000000001000001710000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>View HDL Instantiation Template</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000171000000010000000100000000000000000000000064ffffffff000000810000000000000001000001710000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>View HDL Instantiation Template</CurrentItem>
+   </ItemView>
+   <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
+   <CurrentView>Implementation</CurrentView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>ISim Simulator</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000171000000010000000100000000000000000000000064ffffffff000000810000000000000001000001710000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <CopyAdditionalFiles/>
+</Project>
+<?xml version="1.0" encoding="utf-8"?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="homade" >
+   <!--This is an ISE project configuration file.-->
+</Project>

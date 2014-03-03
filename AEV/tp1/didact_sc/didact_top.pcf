@@ -1,0 +1,59 @@
+//! **************************************************************************
+// Written by: Map M.81d on Fri Oct 04 11:13:49 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "Q_del<0>" LOCATE = SITE "U16" LEVEL 1;
+COMP "Q_del<1>" LOCATE = SITE "V16" LEVEL 1;
+COMP "bouton1" LOCATE = SITE "D9" LEVEL 1;
+COMP "bouton2" LOCATE = SITE "B8" LEVEL 1;
+COMP "Q_del<2>" LOCATE = SITE "U15" LEVEL 1;
+COMP "bouton3" LOCATE = SITE "C4" LEVEL 1;
+COMP "Q_del<3>" LOCATE = SITE "V15" LEVEL 1;
+COMP "Q_del<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "Q_del<5>" LOCATE = SITE "N11" LEVEL 1;
+COMP "Q_del<6>" LOCATE = SITE "R11" LEVEL 1;
+COMP "Q_del<7>" LOCATE = SITE "T11" LEVEL 1;
+COMP "clkin" LOCATE = SITE "V10" LEVEL 1;
+COMP "rst" LOCATE = SITE "C9" LEVEL 1;
+TIMEGRP dcm_inst_clkfx = BEL "dcm_inst/clkout1_buf" BEL "msa_inst/Q2_inst" BEL
+        "msa_inst/Q1_inst" BEL "msa_inst/Q0_inst" BEL
+        "diviseur_inst/cnt16hz_18" BEL "diviseur_inst/cnt16hz_17" BEL
+        "diviseur_inst/cnt16hz_16" BEL "diviseur_inst/cnt16hz_15" BEL
+        "diviseur_inst/cnt16hz_14" BEL "diviseur_inst/cnt16hz_13" BEL
+        "diviseur_inst/cnt16hz_12" BEL "diviseur_inst/cnt16hz_11" BEL
+        "diviseur_inst/cnt16hz_10" BEL "diviseur_inst/cnt16hz_9" BEL
+        "diviseur_inst/cnt16hz_8" BEL "diviseur_inst/cnt16hz_7" BEL
+        "diviseur_inst/cnt16hz_6" BEL "diviseur_inst/cnt16hz_5" BEL
+        "diviseur_inst/cnt16hz_4" BEL "diviseur_inst/cnt16hz_3" BEL
+        "diviseur_inst/cnt16hz_2" BEL "diviseur_inst/cnt16hz_1" BEL
+        "diviseur_inst/cnt16hz_0" BEL "diviseur_inst/cnt2hz_21" BEL
+        "diviseur_inst/cnt2hz_20" BEL "diviseur_inst/cnt2hz_19" BEL
+        "diviseur_inst/cnt2hz_18" BEL "diviseur_inst/cnt2hz_17" BEL
+        "diviseur_inst/cnt2hz_16" BEL "diviseur_inst/cnt2hz_15" BEL
+        "diviseur_inst/cnt2hz_14" BEL "diviseur_inst/cnt2hz_13" BEL
+        "diviseur_inst/cnt2hz_12" BEL "diviseur_inst/cnt2hz_11" BEL
+        "diviseur_inst/cnt2hz_10" BEL "diviseur_inst/cnt2hz_9" BEL
+        "diviseur_inst/cnt2hz_8" BEL "diviseur_inst/cnt2hz_7" BEL
+        "diviseur_inst/cnt2hz_6" BEL "diviseur_inst/cnt2hz_5" BEL
+        "diviseur_inst/cnt2hz_4" BEL "diviseur_inst/cnt2hz_3" BEL
+        "diviseur_inst/cnt2hz_2" BEL "diviseur_inst/cnt2hz_1" BEL
+        "diviseur_inst/cnt2hz_0" BEL "diviseur_inst/cnt2khz_11" BEL
+        "diviseur_inst/cnt2khz_10" BEL "diviseur_inst/cnt2khz_9" BEL
+        "diviseur_inst/cnt2khz_8" BEL "diviseur_inst/cnt2khz_7" BEL
+        "diviseur_inst/cnt2khz_6" BEL "diviseur_inst/cnt2khz_5" BEL
+        "diviseur_inst/cnt2khz_4" BEL "diviseur_inst/cnt2khz_3" BEL
+        "diviseur_inst/cnt2khz_2" BEL "diviseur_inst/cnt2khz_1" BEL
+        "diviseur_inst/cnt2khz_0" BEL "diviseur_inst/clk16hz" BEL
+        "diviseur_inst/clk2hz" BEL "diviseur_inst/clk2khz" BEL
+        "diviseur_inst/div2khz_temp" BEL "diviseur_inst/div16hz_temp" BEL
+        "diviseur_inst/div2hz_temp";
+PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
+        PINNAME DIVCLK;
+PIN dcm_inst/dcm_sp_inst_pins<3> = BEL "dcm_inst/dcm_sp_inst" PINNAME CLKIN;
+TIMEGRP clkin = PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "dcm_inst/dcm_sp_inst_pins<3>";
+TS_clkin = PERIOD TIMEGRP "clkin" 10 ns HIGH 50%;
+TS_dcm_inst_clkfx = PERIOD TIMEGRP "dcm_inst_clkfx" TS_clkin / 0.16 HIGH 50%;
+SCHEMATIC END;
+

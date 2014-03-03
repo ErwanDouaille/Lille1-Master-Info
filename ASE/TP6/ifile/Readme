@@ -1,0 +1,11 @@
+ $Id: Readme,v 1.1 2009/11/16 05:38:07 marquet Exp $ 
+------------------------------------------------------------
+
+Couche ifile fournie "sans garantie ;-)" aux étudiants pour tester
+leurs développements. 
+
+- des fichiers #include "*+sol.h" ne sont pas fournis. Ils sont
+à remplacer par vos propres #include.
+
+- les extraits de code en tourés de #ifdef SOL ne vous concernent pas.
+

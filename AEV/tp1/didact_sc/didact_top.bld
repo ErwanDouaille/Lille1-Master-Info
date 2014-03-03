@@ -1,0 +1,50 @@
+Release 12.4 ngdbuild M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Command Line: /usr/local/Xilinx/12.4/ISE_DS/ISE/bin/lin/unwrapped/ngdbuild
+-intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc didact_top.ucf -p
+xc6slx16-csg324-3 didact_top.ngc didact_top.ngd
+
+Reading NGO file "/home/m1/douaille/didact_sc/didact_top.ngc" ...
+Loading design module "ipcore_dir/rom_msa.ngc"...
+Applying constraints in "ipcore_dir/rom_msa.ncf" to module
+"ipcore_dir/rom_msa.ngc"...
+Checking Constraint Associations...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "didact_top.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'clkin', used in period specification
+   'TS_clkin', was traced into DCM_SP instance dcm_inst/dcm_sp_inst. The
+   following new TNM groups and period specifications were generated at the
+   DCM_SP output(s): 
+   CLKFX: <TIMESPEC TS_dcm_inst_clkfx = PERIOD "dcm_inst_clkfx" TS_clkin / 0.16
+   HIGH 50%>
+
+Done...
+
+INFO:NgdBuild:1222 - Setting CLKIN_PERIOD attribute associated with DCM instance
+   dcm_inst/dcm_sp_inst to 10.000000 ns based on the period specification
+   (<TIMESPEC TS_clkin = PERIOD "clkin" 10 ns HIGH 50 %;> [didact_top.ucf(2)]).
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 88076 kilobytes
+
+Writing NGD file "didact_top.ngd" ...
+Total REAL time to NGDBUILD completion:  1 sec
+Total CPU time to NGDBUILD completion:   1 sec
+
+Writing NGDBUILD log file "didact_top.bld"...

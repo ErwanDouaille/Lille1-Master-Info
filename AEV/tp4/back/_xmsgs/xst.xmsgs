@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/uart_driver.vhd" Line 222: <arg fmt="%s" index="1">next_data_add</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/Hmemory64.vhd" Line 407: <arg fmt="%s" index="1">prog_instr</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd" Line 90: Using initial value <arg fmt="%s" index="1">&apos;0&apos;</arg> for <arg fmt="%s" index="2">ipdwt</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd" Line 403: <arg fmt="%s" index="1">w_bit</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd" Line 408: <arg fmt="%s" index="1">w_bit</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd" Line 371: Assignment to <arg fmt="%s" index="1">count</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/CUnit.vhd" Line 192: Assignment to <arg fmt="%s" index="1">control</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/HSUcore.vhd" Line 85: Net &lt;<arg fmt="%s" index="1">bool_T</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/IPfibo.vhd" Line 169: <arg fmt="%s" index="1">current_state</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/funit32.vhd" Line 70: Assignment to <arg fmt="%s" index="1">avector</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd" Line 320: Net &lt;<arg fmt="%s" index="1">count[6]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd" Line 321: Net &lt;<arg fmt="%s" index="1">count_supp[5]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/m1/douylliez/Bureau/V4M1_new/IPwaitBT1.vhd" Line 156: <arg fmt="%s" index="1">current_state</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/uart_driver.vhd</arg>&quot; line <arg fmt="%d" index="2">200</arg>: Output port &lt;<arg fmt="%s" index="3">clk</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">uart_baudClock_inst</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/HSP.vhd</arg>&quot; line <arg fmt="%d" index="2">495</arg>: Output port &lt;<arg fmt="%s" index="3">ortree</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_Hmemory64</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/HSP.vhd</arg>&quot; line <arg fmt="%d" index="2">495</arg>: Output port &lt;<arg fmt="%s" index="3">write_en</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_Hmemory64</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/HSP.vhd</arg>&quot; line <arg fmt="%d" index="2">654</arg>: Output port &lt;<arg fmt="%s" index="3">oversized</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_HSUcore</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="2774" delta="new" >HDL ADVISOR - <arg fmt="%s" index="1">KEEP</arg> <arg fmt="%s" index="2">property</arg> attached to signal <arg fmt="%s" index="3">PC</arg> may hinder XST clustering optimizations.
+</msg>
+
+<msg type="info" file="Xst" num="2774" delta="new" >HDL ADVISOR - <arg fmt="%s" index="1">KEEP</arg> <arg fmt="%s" index="2">property</arg> attached to signal <arg fmt="%s" index="3">rom&lt;0&gt;</arg> may hinder XST clustering optimizations.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd</arg>&quot; line <arg fmt="%d" index="2">421</arg>: Output port &lt;<arg fmt="%s" index="3">write_en</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_Hmemory64</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd</arg>&quot; line <arg fmt="%d" index="2">442</arg>: Output port &lt;<arg fmt="%s" index="3">SPMDcode</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Slave_HSUcore</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd</arg>&quot; line <arg fmt="%d" index="2">442</arg>: Output port &lt;<arg fmt="%s" index="3">oversized</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Slave_HSUcore</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/Hsalve.vhd</arg>&quot; line <arg fmt="%d" index="2">442</arg>: Output port &lt;<arg fmt="%s" index="3">SPMDtrig</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Slave_HSUcore</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="new" >Signal &apos;<arg fmt="%s" index="1">count</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">HSlave</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="new" >Signal &apos;<arg fmt="%s" index="1">count_supp</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">HSlave</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">000001</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">keep1</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">/home/m1/douylliez/Bureau/V4M1_new/HSUcore.vhd</arg>&quot; line <arg fmt="%d" index="2">160</arg>: Output port &lt;<arg fmt="%s" index="3">offset</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">HSU_CUnit</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">bool_T</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">pop_predicat</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">offset</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="2774" delta="new" >HDL ADVISOR - <arg fmt="%s" index="1">KEEP</arg> <arg fmt="%s" index="2">property</arg> attached to signal <arg fmt="%s" index="3">rom&lt;0&gt;</arg> may hinder XST clustering optimizations.
+</msg>
+
+<msg type="info" file="Xst" num="2774" delta="new" >HDL ADVISOR - <arg fmt="%s" index="1">KEEP</arg> <arg fmt="%s" index="2">property</arg> attached to signal <arg fmt="%s" index="3">rom&lt;0&gt;</arg> may hinder XST clustering optimizations.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">count&lt;7:6&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="2774" delta="new" >HDL ADVISOR - <arg fmt="%s" index="1">KEEP</arg> <arg fmt="%s" index="2">property</arg> attached to signal <arg fmt="%s" index="3">rom&lt;0&gt;</arg> may hinder XST clustering optimizations.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">c&lt;31:16&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="2774" delta="new" >HDL ADVISOR - <arg fmt="%s" index="1">KEEP</arg> <arg fmt="%s" index="2">property</arg> attached to signal <arg fmt="%s" index="3">rom&lt;0&gt;</arg> may hinder XST clustering optimizations.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">fetch_next</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">current_statew</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">decode_next</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">current_statew</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">XLXI_94</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">execution_stack</arg>&gt;.
+It will be removed from the design.
+</msg>
+
+<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">XLXI_94</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">execution_stack</arg>&gt;.
+It will be removed from the design.
+</msg>
+
+<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">XLXI_94</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">execution_stack</arg>&gt;.
+It will be removed from the design.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">IPdone</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Inst_IPwaitBt</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">32 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;IPDone_i_clk_DFF_232&gt; &lt;IPDone_i_clk_DFF_233&gt; &lt;IPDone_i_clk_DFF_234&gt; &lt;IPDone_i_clk_DFF_235&gt; &lt;IPDone_i_clk_DFF_236&gt; &lt;IPDone_i_clk_DFF_237&gt; &lt;IPDone_i_clk_DFF_238&gt; &lt;IPDone_i_clk_DFF_239&gt; &lt;IPDone_i_clk_DFF_240&gt; &lt;IPDone_i_clk_DFF_241&gt; &lt;IPDone_i_clk_DFF_242&gt; &lt;IPDone_i_clk_DFF_243&gt; &lt;IPDone_i_clk_DFF_244&gt; &lt;IPDone_i_clk_DFF_245&gt; &lt;IPDone_i_clk_DFF_248&gt; &lt;IPDone_i_clk_DFF_246&gt; &lt;IPDone_i_clk_DFF_247&gt; &lt;IPDone_i_clk_DFF_249&gt; &lt;IPDone_i_clk_DFF_250&gt; &lt;IPDone_i_clk_DFF_251&gt; &lt;IPDone_i_clk_DFF_252&gt; &lt;IPDone_i_clk_DFF_253&gt; &lt;IPDone_i_clk_DFF_254&gt; &lt;IPDone_i_clk_DFF_255&gt; &lt;IPDone_i_clk_DFF_256&gt; &lt;IPDone_i_clk_DFF_257&gt; &lt;IPDone_i_clk_DFF_258&gt; &lt;IPDone_i_clk_DFF_259&gt; &lt;IPDone_i_clk_DFF_260&gt; &lt;IPDone_i_clk_DFF_261&gt; &lt;IPDone_i_clk_DFF_262&gt; &lt;IPDone_i_clk_DFF_263&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">val_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">HSU_CUnit</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;val_1&gt; &lt;val_2&gt; &lt;val_3&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;1&gt;</arg> <arg fmt="%s" index="4">val&lt;1&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;2&gt;</arg> <arg fmt="%s" index="4">val&lt;2&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;3&gt;</arg> <arg fmt="%s" index="4">val&lt;3&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">IPdone</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Inst_IPfibo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">32 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;IPdone_i_clk_DFF_194&gt; &lt;IPdone_i_clk_DFF_195&gt; &lt;IPdone_i_clk_DFF_196&gt; &lt;IPdone_i_clk_DFF_197&gt; &lt;IPdone_i_clk_DFF_198&gt; &lt;IPdone_i_clk_DFF_201&gt; &lt;IPdone_i_clk_DFF_199&gt; &lt;IPdone_i_clk_DFF_200&gt; &lt;IPdone_i_clk_DFF_202&gt; &lt;IPdone_i_clk_DFF_203&gt; &lt;IPdone_i_clk_DFF_204&gt; &lt;IPdone_i_clk_DFF_205&gt; &lt;IPdone_i_clk_DFF_206&gt; &lt;IPdone_i_clk_DFF_207&gt; &lt;IPdone_i_clk_DFF_210&gt; &lt;IPdone_i_clk_DFF_208&gt; &lt;IPdone_i_clk_DFF_209&gt; &lt;IPdone_i_clk_DFF_211&gt; &lt;IPdone_i_clk_DFF_212&gt; &lt;IPdone_i_clk_DFF_213&gt; &lt;IPdone_i_clk_DFF_214&gt; &lt;IPdone_i_clk_DFF_215&gt; &lt;IPdone_i_clk_DFF_216&gt; &lt;IPdone_i_clk_DFF_219&gt; &lt;IPdone_i_clk_DFF_217&gt; &lt;IPdone_i_clk_DFF_218&gt; &lt;IPdone_i_clk_DFF_220&gt; &lt;IPdone_i_clk_DFF_221&gt; &lt;IPdone_i_clk_DFF_222&gt; &lt;IPdone_i_clk_DFF_223&gt; &lt;IPdone_i_clk_DFF_224&gt; &lt;IPdone_i_clk_DFF_225&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">val_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">HSU_CUnit</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;val_1&gt; &lt;val_2&gt; &lt;val_3&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;1&gt;</arg> <arg fmt="%s" index="4">val&lt;1&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;2&gt;</arg> <arg fmt="%s" index="4">val&lt;2&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;3&gt;</arg> <arg fmt="%s" index="4">val&lt;3&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">IPdone</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Inst_IPfibo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">32 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;IPdone_i_clk_DFF_194&gt; &lt;IPdone_i_clk_DFF_195&gt; &lt;IPdone_i_clk_DFF_196&gt; &lt;IPdone_i_clk_DFF_197&gt; &lt;IPdone_i_clk_DFF_198&gt; &lt;IPdone_i_clk_DFF_201&gt; &lt;IPdone_i_clk_DFF_199&gt; &lt;IPdone_i_clk_DFF_200&gt; &lt;IPdone_i_clk_DFF_202&gt; &lt;IPdone_i_clk_DFF_203&gt; &lt;IPdone_i_clk_DFF_204&gt; &lt;IPdone_i_clk_DFF_205&gt; &lt;IPdone_i_clk_DFF_206&gt; &lt;IPdone_i_clk_DFF_207&gt; &lt;IPdone_i_clk_DFF_210&gt; &lt;IPdone_i_clk_DFF_208&gt; &lt;IPdone_i_clk_DFF_209&gt; &lt;IPdone_i_clk_DFF_211&gt; &lt;IPdone_i_clk_DFF_212&gt; &lt;IPdone_i_clk_DFF_213&gt; &lt;IPdone_i_clk_DFF_214&gt; &lt;IPdone_i_clk_DFF_215&gt; &lt;IPdone_i_clk_DFF_216&gt; &lt;IPdone_i_clk_DFF_219&gt; &lt;IPdone_i_clk_DFF_217&gt; &lt;IPdone_i_clk_DFF_218&gt; &lt;IPdone_i_clk_DFF_220&gt; &lt;IPdone_i_clk_DFF_221&gt; &lt;IPdone_i_clk_DFF_222&gt; &lt;IPdone_i_clk_DFF_223&gt; &lt;IPdone_i_clk_DFF_224&gt; &lt;IPdone_i_clk_DFF_225&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">val_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">HSU_CUnit</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;val_1&gt; &lt;val_2&gt; &lt;val_3&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/Inst_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;1&gt;</arg> <arg fmt="%s" index="4">val&lt;1&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/Inst_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;2&gt;</arg> <arg fmt="%s" index="4">val&lt;2&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">my_Master/Inst_HSUcore/HSU_CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;3&gt;</arg> <arg fmt="%s" index="4">val&lt;3&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">IPdone</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Inst_IPfibo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">32 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;IPdone_i_clk_DFF_194&gt; &lt;IPdone_i_clk_DFF_195&gt; &lt;IPdone_i_clk_DFF_196&gt; &lt;IPdone_i_clk_DFF_197&gt; &lt;IPdone_i_clk_DFF_198&gt; &lt;IPdone_i_clk_DFF_201&gt; &lt;IPdone_i_clk_DFF_199&gt; &lt;IPdone_i_clk_DFF_200&gt; &lt;IPdone_i_clk_DFF_202&gt; &lt;IPdone_i_clk_DFF_203&gt; &lt;IPdone_i_clk_DFF_204&gt; &lt;IPdone_i_clk_DFF_205&gt; &lt;IPdone_i_clk_DFF_206&gt; &lt;IPdone_i_clk_DFF_207&gt; &lt;IPdone_i_clk_DFF_210&gt; &lt;IPdone_i_clk_DFF_208&gt; &lt;IPdone_i_clk_DFF_209&gt; &lt;IPdone_i_clk_DFF_211&gt; &lt;IPdone_i_clk_DFF_212&gt; &lt;IPdone_i_clk_DFF_213&gt; &lt;IPdone_i_clk_DFF_214&gt; &lt;IPdone_i_clk_DFF_215&gt; &lt;IPdone_i_clk_DFF_216&gt; &lt;IPdone_i_clk_DFF_219&gt; &lt;IPdone_i_clk_DFF_217&gt; &lt;IPdone_i_clk_DFF_218&gt; &lt;IPdone_i_clk_DFF_220&gt; &lt;IPdone_i_clk_DFF_221&gt; &lt;IPdone_i_clk_DFF_222&gt; &lt;IPdone_i_clk_DFF_223&gt; &lt;IPdone_i_clk_DFF_224&gt; &lt;IPdone_i_clk_DFF_225&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram__n0123</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_ram</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_RAM</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_RAM64bit</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_RAM</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram__n0037</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_a_to_g</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">IPdone</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">IP_waitbt</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">32 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;IPDone_i_clk_DFF_232&gt; &lt;IPDone_i_clk_DFF_235&gt; &lt;IPDone_i_clk_DFF_233&gt; &lt;IPDone_i_clk_DFF_234&gt; &lt;IPDone_i_clk_DFF_236&gt; &lt;IPDone_i_clk_DFF_237&gt; &lt;IPDone_i_clk_DFF_238&gt; &lt;IPDone_i_clk_DFF_239&gt; &lt;IPDone_i_clk_DFF_240&gt; &lt;IPDone_i_clk_DFF_241&gt; &lt;IPDone_i_clk_DFF_244&gt; &lt;IPDone_i_clk_DFF_242&gt; &lt;IPDone_i_clk_DFF_243&gt; &lt;IPDone_i_clk_DFF_245&gt; &lt;IPDone_i_clk_DFF_246&gt; &lt;IPDone_i_clk_DFF_247&gt; &lt;IPDone_i_clk_DFF_248&gt; &lt;IPDone_i_clk_DFF_249&gt; &lt;IPDone_i_clk_DFF_250&gt; &lt;IPDone_i_clk_DFF_253&gt; &lt;IPDone_i_clk_DFF_251&gt; &lt;IPDone_i_clk_DFF_252&gt; &lt;IPDone_i_clk_DFF_254&gt; &lt;IPDone_i_clk_DFF_255&gt; &lt;IPDone_i_clk_DFF_256&gt; &lt;IPDone_i_clk_DFF_257&gt; &lt;IPDone_i_clk_DFF_258&gt; &lt;IPDone_i_clk_DFF_259&gt; &lt;IPDone_i_clk_DFF_262&gt; &lt;IPDone_i_clk_DFF_260&gt; &lt;IPDone_i_clk_DFF_261&gt; &lt;IPDone_i_clk_DFF_263&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">wr_en</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Hmemory64</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;W48&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">val_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">CUnit</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;val_1&gt; &lt;val_2&gt; &lt;val_3&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;1&gt;</arg> <arg fmt="%s" index="4">val&lt;1&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;2&gt;</arg> <arg fmt="%s" index="4">val&lt;2&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">CUnit</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">val&lt;0&gt;</arg> and <arg fmt="%s" index="3">val&lt;3&gt;</arg> <arg fmt="%s" index="4">val&lt;3&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">IPdone_i_clk_DFF_195</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">IP_fibo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">32 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;IPdone&gt; &lt;IPdone_i_clk_DFF_194&gt; &lt;IPdone_i_clk_DFF_196&gt; &lt;IPdone_i_clk_DFF_197&gt; &lt;IPdone_i_clk_DFF_200&gt; &lt;IPdone_i_clk_DFF_198&gt; &lt;IPdone_i_clk_DFF_199&gt; &lt;IPdone_i_clk_DFF_201&gt; &lt;IPdone_i_clk_DFF_202&gt; &lt;IPdone_i_clk_DFF_203&gt; &lt;IPdone_i_clk_DFF_204&gt; &lt;IPdone_i_clk_DFF_205&gt; &lt;IPdone_i_clk_DFF_206&gt; &lt;IPdone_i_clk_DFF_209&gt; &lt;IPdone_i_clk_DFF_207&gt; &lt;IPdone_i_clk_DFF_208&gt; &lt;IPdone_i_clk_DFF_210&gt; &lt;IPdone_i_clk_DFF_211&gt; &lt;IPdone_i_clk_DFF_212&gt; &lt;IPdone_i_clk_DFF_213&gt; &lt;IPdone_i_clk_DFF_214&gt; &lt;IPdone_i_clk_DFF_215&gt; &lt;IPdone_i_clk_DFF_218&gt; &lt;IPdone_i_clk_DFF_216&gt; &lt;IPdone_i_clk_DFF_217&gt; &lt;IPdone_i_clk_DFF_219&gt; &lt;IPdone_i_clk_DFF_220&gt; &lt;IPdone_i_clk_DFF_221&gt; &lt;IPdone_i_clk_DFF_222&gt; &lt;IPdone_i_clk_DFF_223&gt; &lt;IPdone_i_clk_DFF_224&gt; &lt;IPdone_i_clk_DFF_225&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1809" delta="new" >Unable to fit FSM &lt;<arg fmt="%s" index="1">etat</arg>&gt; in BRAM (reset is asynchronous).
+</msg>
+
+<msg type="warning" file="Xst" num="1809" delta="new" >Unable to fit FSM &lt;<arg fmt="%s" index="1">prom_state</arg>&gt; in BRAM (reset is asynchronous).
+</msg>
+
+<msg type="warning" file="Xst" num="1809" delta="new" >Unable to fit FSM &lt;<arg fmt="%s" index="1">prom_state1</arg>&gt; in BRAM (reset is asynchronous).
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">wr_adr_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Hmemory64</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">19 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;wr_adr_13&gt; &lt;wr_adr_14&gt; &lt;wr_adr_15&gt; &lt;wr_adr_16&gt; &lt;wr_adr_17&gt; &lt;wr_adr_18&gt; &lt;wr_adr_19&gt; &lt;wr_adr_20&gt; &lt;wr_adr_21&gt; &lt;wr_adr_22&gt; &lt;wr_adr_23&gt; &lt;wr_adr_24&gt; &lt;wr_adr_25&gt; &lt;wr_adr_26&gt; &lt;wr_adr_27&gt; &lt;wr_adr_28&gt; &lt;wr_adr_29&gt; &lt;wr_adr_30&gt; &lt;wr_adr_31&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;13&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;13&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;14&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;14&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;15&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;15&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;16&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;16&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;17&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;17&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;18&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;18&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;19&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;19&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;20&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;20&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;21&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;21&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;22&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;22&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;23&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;23&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;24&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;24&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;25&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;25&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;26&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;26&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;27&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;27&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;28&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;28&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;29&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;29&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;30&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;30&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">Hmemory64</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">wr_adr&lt;12&gt;</arg> and <arg fmt="%s" index="3">wr_adr&lt;31&gt;</arg> <arg fmt="%s" index="4">wr_adr&lt;31&gt;</arg> signal will be lost.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">j_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Wrapper_RAM</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j1_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Wrapper_RAM</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="3002" delta="new" >This design contains one or more registers/latches that are directly
+incompatible with the <arg fmt="%s" index="1">Spartan6</arg> architecture. The two primary causes of this is
+either a register or latch described with both an asynchronous set and
+asynchronous reset, or a register or latch described with an asynchronous
+set or reset which however has an initialization value of the opposite 
+polarity (i.e. asynchronous reset with an initialization value of 1).
+ While this circuit can be built, it creates a sub-optimal implementation
+in terms of area, power and performance. For a more optimal implementation
+Xilinx highly recommends one of the following:
+
+       1) Remove either the set or reset from all registers and latches
+          if not needed for required functionality
+       2) Modify the code in order to produce a synchronous set
+          and/or reset (both is preferred)
+       3) Ensure all registers have the same initialization value as the
+          described asynchronous set or reset polarity
+       4) Use the -async_to_sync option to transform the asynchronous
+          set/reset to synchronous operation
+          (timing simulation highly recommended when using this option)
+</msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_waitbt</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IPrdm</arg>: <arg fmt="%d" index="2">33</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_MEcom</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_switch</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_Snum</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_get</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_fibo</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_datastack</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_pushpop</arg>: <arg fmt="%d" index="2">96</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_identity</arg>: <arg fmt="%d" index="2">96</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_stack</arg>: <arg fmt="%d" index="2">96</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_Tic</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">IP_Funit</arg>: <arg fmt="%d" index="2">64</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_waitbt</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_fibo</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_datastack</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_Tic</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IPrdm</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_switch</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_MEcom</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_Funit</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_stack</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_identity</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_pushpop</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_Snum</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1906" delta="new" >Unit <arg fmt="%s" index="1">IP_get</arg> is merged (output ports from interface drive multi-sources)
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">instruction_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Wrapper_RAM</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">instruction_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Wrapper_RAM</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">endwait</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">HSU_CUnit</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">endwait</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">HSU_CUnit</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">XLXI_94</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">execution_stack</arg>&gt;.
+It will be removed from the design.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_93</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_93</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">XLXI_94</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">execution_stack</arg>&gt;.
+It will be removed from the design.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_93</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_93</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">XLXI_94</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">execution_stack</arg>&gt;.
+It will be removed from the design.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_93</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_93</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">clk</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">uart_baudClock_inst</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">rx_d1_LD</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">UART_Wrapper</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_29_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_31_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_30_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_28_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_27_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_26_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_25_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_24_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_23_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_22_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_21_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_20_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_19_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_18_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_17_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_16_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_15_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_12_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_14_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_13_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_11_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_10_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_9_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_8_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_7_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_6_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_5_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_4_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_3_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_2_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_0_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_1_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_29_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_31_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_30_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_28_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_27_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_26_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_25_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_24_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_23_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_22_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_21_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_20_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_19_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_18_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_17_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_16_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_15_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_0_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_1_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_29_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_31_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_30_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_28_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_27_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_26_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_25_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_24_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_23_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_22_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_21_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_20_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_19_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_18_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_17_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_16_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_15_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_0_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_1_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Inst_Hmemory64</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_10_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_9_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_8_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_7_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_6_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_3_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_5_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_4_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_2_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_1_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_0_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_M_11_dummy0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UART_Wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1336" delta="new" > (*) More than 100% of Device resources are used
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

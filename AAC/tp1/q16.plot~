@@ -1,5 +1,5 @@
 set term png;
-set xrange [0:50];
+set xrange [0:200];
 set yrange[0:200];
 set output 'q16.png';
 plot 'q16.txt' using 1:2 title 'log' with lines, \

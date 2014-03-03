@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<DARoots Version="1" Minor="7">
+	<FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+		<Filter Type="EDIFSrcs"/>
+		<File Path="/home/m1/douaille/didact_sc/didact_top.ngc">
+			<FileInfo RelPath="didact_top.ngc"/>
+		</File>
+		<File Path="/home/m1/douaille/didact_sc/ipcore_dir/rom_msa.ngc">
+			<FileInfo RelPath="rom_msa.ngc"/>
+		</File>
+		<Config>
+			<Option Name="DesignMode" Val="GateLvl"/>
+			<Option Name="GateLvlMode" Val="EDIF"/>
+			<Option Name="TopFile" Val="/home/m1/douaille/didact_sc/didact_top.ngc"/>
+		</Config>
+	</FileSet>
+</DARoots>
+

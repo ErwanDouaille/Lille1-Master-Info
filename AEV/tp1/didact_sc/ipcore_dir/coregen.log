@@ -1,0 +1,10 @@
+Project, 'coregen', initialised from file
+'/home/m1/douaille/didact_sc/ipcore_dir/coregen.cgp'.
+Customizing IP...
+Release 12.4 - Xilinx CORE Generator IP GUI Launcher M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+Initializing IP model...
+Loading device for application Rf_Device from file '6slx16.nph' in environment
+/usr/local/Xilinx/12.4/ISE_DS/ISE/.
+Finished initialising IP model.
+Cancelled Customization.

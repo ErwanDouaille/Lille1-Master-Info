@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="NetListWriters" num="298" delta="new" >No output is written to <arg fmt="%s" index="1">Nexys3v3.xncf</arg>, ignored.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">Mmux_GND_61_o_GND_61_o_mux_22_OUT_rs_cy</arg><arg fmt="%s" index="2">&lt;3 : 1&gt;</arg> on block <arg fmt="%s" index="3">FIFO3port_NO2</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">Mmux_stack_ptr[5]_stack_ptr[5]_mux_13_OUT_rs_cy</arg><arg fmt="%s" index="2">&lt;3 : 1&gt;</arg> on block <arg fmt="%s" index="3">FIFO3port_NO2</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">GND_56_o_PWR_25_o_mux_24_OUT</arg><arg fmt="%s" index="2">[3 : 1]</arg> on block <arg fmt="%s" index="3">CUnit_NO2</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">Mmux_GND_61_o_GND_61_o_mux_22_OUT_rs_cy</arg><arg fmt="%s" index="2">&lt;3 : 1&gt;</arg> on block <arg fmt="%s" index="3">FIFO3port_NO1</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">Mmux_stack_ptr[5]_stack_ptr[5]_mux_13_OUT_rs_cy</arg><arg fmt="%s" index="2">&lt;3 : 1&gt;</arg> on block <arg fmt="%s" index="3">FIFO3port_NO1</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">GND_56_o_PWR_25_o_mux_24_OUT</arg><arg fmt="%s" index="2">[3 : 1]</arg> on block <arg fmt="%s" index="3">CUnit_NO1</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">data_in</arg><arg fmt="%s" index="2">&lt;63 : 0&gt;</arg> on block <arg fmt="%s" index="3">slavedual_prom_NO2</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">Mmux_GND_61_o_GND_61_o_mux_22_OUT_rs_cy</arg><arg fmt="%s" index="2">&lt;3 : 1&gt;</arg> on block <arg fmt="%s" index="3">FIFO3port</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">Mmux_stack_ptr[5]_stack_ptr[5]_mux_13_OUT_rs_cy</arg><arg fmt="%s" index="2">&lt;3 : 1&gt;</arg> on block <arg fmt="%s" index="3">FIFO3port</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">GND_56_o_PWR_25_o_mux_24_OUT</arg><arg fmt="%s" index="2">[3 : 1]</arg> on block <arg fmt="%s" index="3">CUnit</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">data_in</arg><arg fmt="%s" index="2">&lt;63 : 0&gt;</arg> on block <arg fmt="%s" index="3">slavedual_prom_NO1</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+<msg type="warning" file="NetListWriters" num="306" delta="new" >Signal bus <arg fmt="%s" index="1">data_in</arg><arg fmt="%s" index="2">&lt;63 : 0&gt;</arg> on block <arg fmt="%s" index="3">slavedual_prom</arg> is not reconstructed, because there are some missing bus signals.
+</msg>
+
+</messages>
+

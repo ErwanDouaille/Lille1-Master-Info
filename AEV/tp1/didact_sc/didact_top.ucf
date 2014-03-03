@@ -1,0 +1,16 @@
+NET "clkin" TNM_NET = "clkin";
+TIMESPEC TS_clkin = PERIOD "clkin" 10 ns HIGH 50 %;
+# PlanAhead Generated physical constraints
+NET "Q_del[0]" LOC = U16;
+NET "Q_del[1]" LOC = V16;
+NET "Q_del[2]" LOC = U15;
+NET "Q_del[3]" LOC = V15;
+NET "Q_del[4]" LOC = M11;
+NET "Q_del[5]" LOC = N11;
+NET "Q_del[6]" LOC = R11;
+NET "Q_del[7]" LOC = T11;
+NET "bouton1" LOC = D9;
+NET "bouton2" LOC = B8;
+NET "bouton3" LOC = C4;
+NET "clkin" LOC = V10;
+NET "rst" LOC = C9;

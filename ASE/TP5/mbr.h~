@@ -1,0 +1,23 @@
+#include "hw_ini.h"
+#include "hardware.h"
+#include "drive.h"
+#include <string.h>
+
+#define MBR_MAGIC OxA5E
+
+enum voltype_e{VT_NO_VOL,VT_BASE,VT_AUX,VT_OTHER};
+
+struct vol_descr_s{
+	unsigned vol_cylinder;
+	unsigned vol_secteur;
+	unsigned vol_nsecteur;
+	enum voltype_e vol_voltype;
+};
+
+
+struct mbr_s{
+	unsigned mbr_magic;
+	struct vol_descr_s mbr_vols[MAXVOL];
+};
+
+struct mbr_s mbr;

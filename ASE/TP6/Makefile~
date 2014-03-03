@@ -1,0 +1,82 @@
+# $Id: Makefile,v 1.1 2002/12/06 14:25:18 marquet Exp $
+##############################################################################
+
+ROOTDIR=/home/enseign/ASE
+
+CC	=  gcc
+CFLAGS	=  -Wall  -ansi -pedantic
+CFLAGS  += -std=iso9899:1999
+CFLAGS  += -g
+LIBDIR  =  -L$(ROOTDIR)/lib
+INCDIR  =  -I$(ROOTDIR)/include
+CFLAGS  += -I$(INCDIR)
+LIBS    = -lhardware
+
+###------------------------------
+### Main targets 
+###------------------------------------------------------------
+BINARIES= mkhd dmps frmt vm mkvol #if_pfile if_nfile if_cfile if_dfile
+OBJECTS	= $(addsuffix .o,\
+	  drive mbr tools  mount)#ifile
+
+all: $(BINARIES) $(OBJECTS)
+
+###------------------------------
+### Binaries
+###------------------------------------------------------------
+#if_cfile : if_cfile.o $(OBJECTS)
+#if_nfile : if_nfile.o $(OBJECTS)
+#if_dfile : if_dfile.o $(OBJECTS)
+#if_pfile : if_pfile.o $(OBJECTS)
+
+mkhd: mkhd.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBDIR) $(LIBS)
+dmps: dmps.o drive.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBDIR) $(LIBS)
+frmt: frmt.o drive.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBDIR) $(LIBS)
+vm: vm.o mbr.o drive.o 
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBDIR) $(LIBS)
+mkvol: mkvol.o mbr.o drive.o 
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBDIR) $(LIBS)
+
+% : %.o
+	$(CC) -o $@ $^ -L$(LIBDIR) $(LIBS)
+
+###------------------------------
+### #include dependences 
+###------------------------------------------------------------
+# you may fill these lines with "make depend"
+
+#ifileif_cfile.o: if_cfile.c ifile.h inode.h tools.h mount.h
+#ifileif_dfile.o: if_dfile.c ifile.h inode.h tools.h mount.h
+#ifileif_nfile.o: if_nfile.c ifile.h inode.h tools.h mount.h
+#ifileif_pfile.o: if_pfile.c ifile.h inode.h tools.h mount.h
+#ifileifile.o: ifile.c inode.h tools.h ifile.h 
+mount.o: mount.c config.h tools.h 
+tools.o: tools.c tools.h
+
+mkhd.o: mkhd.c 
+dmps.o: dmps.c 
+frmt.o: frmt.c 
+vm.o: vm.c 
+
+drive.o: drive.c drive.h
+mbr.o: mbr.c drive.h mbr.h
+mkvol.o: mkvol.c drive.h mbr.h
+
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< $(INCDIR)
+
+###------------------------------
+### Misc.
+###------------------------------------------------------------
+.PHONY: clean realclean depend
+clean:
+	$(RM) *.o $(BINARIES)
+realclean: clean 
+	$(RM) vdiskA.bin vdiskB.bin
+depend : 
+	$(CC) -MM $(INCDIR) *.c
+ 

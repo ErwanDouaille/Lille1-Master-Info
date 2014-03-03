@@ -1,0 +1,361 @@
+Release 12.4 par M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+a15p14::  Fri Oct 18 11:18:32 2013
+
+par -w -intstyle ise -ol high -mt off Nexys3v3_map.ncd Nexys3v3.ncd
+Nexys3v3.pcf 
+
+
+Constraints file: Nexys3v3.pcf.
+Loading device for application Rf_Device from file '6slx16.nph' in environment /usr/local/Xilinx/12.4/ISE_DS/ISE/.
+   "Nexys3v3" is an NCD, version 3.2, device xc6slx16, package csg324, speed -3
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:54 - 'xc6slx16' is a WebPack part.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue
+to function, but you no longer qualify for Xilinx software updates or new releases.
+
+----------------------------------------------------------------------
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+
+INFO:Par:282 - No user timing constraints were detected or you have set the option to ignore timing constraints ("par
+   -x"). Place and Route will run in "Performance Evaluation Mode" to automatically improve the performance of all
+   internal clocks in this design. Because there are not defined timing requirements, a timing score will not be
+   reported in the PAR report in this mode. The PAR timing summary will list the performance achieved for each clock.
+   Note: For the fastest runtime, set the effort level to "std".  For best performance, set the effort level to "high".
+
+Device speed data version:  "PRODUCTION 1.15 2010-12-02".
+
+
+
+Device Utilization Summary:
+
+Slice Logic Utilization:
+  Number of Slice Registers:                 2,441 out of  18,224   13%
+    Number used as Flip Flops:               2,429
+    Number used as Latches:                     12
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      7,362 out of   9,112   80%
+    Number used as logic:                    6,566 out of   9,112   72%
+      Number using O6 output only:           5,075
+      Number using O5 output only:             241
+      Number using O5 and O6:                1,250
+      Number used as ROM:                        0
+    Number used as Memory:                     762 out of   2,176   35%
+      Number used as Dual Port RAM:            762
+        Number using O6 output only:           444
+        Number using O5 output only:             0
+        Number using O5 and O6:                318
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             0
+    Number used exclusively as route-thrus:     34
+      Number with same-slice register load:     11
+      Number with same-slice carry load:        23
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 2,211 out of   2,278   97%
+  Number of LUT Flip Flop pairs used:        7,603
+    Number with an unused Flip Flop:         5,273 out of   7,603   69%
+    Number with an unused LUT:                 241 out of   7,603    3%
+    Number of fully used LUT-FF pairs:       2,089 out of   7,603   27%
+    Number of slice register sites lost
+      to control set restrictions:               0 out of  18,224    0%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        34 out of     232   14%
+    Number of LOCed IOBs:                       33 out of      34   97%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          3 out of      64    4%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       3 out of      16   18%
+    Number used as BUFGs:                        3
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     248    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     248    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            3 out of      32    9%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 7 secs 
+Finished initial Timing Analysis.  REAL time: 7 secs 
+
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Inst_Hmemory64/Inst_returnstack/Mram_RAM2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Inst_Hmemory64/Inst_returnstack/Mram_RAM1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_Hmemory64/Inst_returnstack/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal my_Master/Inst_IPdataStack/Inst_datastack/Mram_RAM5_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Inst_Hmemory64/Inst_returnstack/Mram_RAM1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram4_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_IPdataStack/Inst_datastack/Mram_RAM4_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram5_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram5_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_IPdataStack/Inst_datastack/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal my_Master/Inst_IPdataStack/Inst_datastack/Mram_RAM1_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM3_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM5_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Inst_Hmemory64/Inst_returnstack/Mram_RAM2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram5_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram5_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram5_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_Hmemory64/Inst_returnstack/Mram_RAM1_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram4_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram5_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram3_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram5_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_IPdataStack/Inst_datastack/Mram_RAM3_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram5_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram4_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram5_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram4_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM3_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM4_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram4_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram4_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram4_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM4_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram2_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram1_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram2_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram4_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram5_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Inst_IPdataStack/Inst_datastack/Mram_RAM5_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram2_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram2_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram1_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram5_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram4_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram4_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram3_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram3_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram3_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram1_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram1_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram2_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram4_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram1_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram1_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram2_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram3_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram5_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram4_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/Inst_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram1_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram2_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_2/Mram_ram3_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram3_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram3_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[0].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram3_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_3/Mram_ram3_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram2_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_4/Mram_ram3_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram1_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal my_Master/slaves[1].One_salve/Slave_HSUcore/HSU_hstack/ram3p/Inst_stack/XLXI_1/Mram_ram3_RAMD_D1_O has no load.
+    PAR will not attempt to route this signal.
+Starting Router
+
+
+Phase  1  : 44060 unrouted;      REAL time: 8 secs 
+
+Phase  2  : 40004 unrouted;      REAL time: 9 secs 
+
+Phase  3  : 13880 unrouted;      REAL time: 28 secs 
+
+Phase  4  : 18092 unrouted; (Par is working to improve performance)     REAL time: 48 secs 
+
+Updating file: Nexys3v3.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 mins 28 secs 
+
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 mins 28 secs 
+
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 mins 28 secs 
+
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 mins 28 secs 
+
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 mins 30 secs 
+
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 mins 32 secs 
+Total REAL time to Router completion: 1 mins 32 secs 
+Total CPU time to Router completion: 1 mins 35 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+INFO:Par:459 - The Clock Report is not displayed in the non timing-driven mode.
+Timing Score: 488 (Setup: 488, Hold: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net UAR | SETUP       |         N/A|     3.448ns|     N/A|           0
+  T_Wrapper/baud_clk                        | HOLD        |     0.405ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     1.804ns|     N/A|         488
+  190                                       | HOLD        |     0.457ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    19.567ns|     N/A|           0
+  25                                        | HOLD        |     0.308ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net mcl | SETUP       |         N/A|     2.862ns|     N/A|           0
+  k_BUFGP                                   | HOLD        |     0.509ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+1 constraint not met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 81 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 1 mins 34 secs 
+Total CPU time to PAR completion: 1 mins 37 secs 
+
+Peak Memory Usage:  258 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 83
+Number of info messages: 2
+
+Writing design to file Nexys3v3.ncd
+
+
+
+PAR done!

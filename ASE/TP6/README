@@ -1,0 +1,9 @@
+DOUAILLE Erwan
+MIRANDA Yoan
+
+./mkvol fonctionne.
+./vm fonctionne.
+
+Pour vm, toutes les options fonctionnent, list, new, del ...
+
+Pour une raison inconnue il nous faut faire 2 fois le save_mbr() pour sauvegarder. Hormis ce problème tout fonctionne :)

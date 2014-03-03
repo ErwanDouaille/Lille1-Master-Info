@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="enable_bank">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2012-11-7T12:29:2</timestamp>
+    <pin polarity="Input" x="0" y="-416" name="pop1" />
+    <pin polarity="Input" x="0" y="-352" name="pop2" />
+    <pin polarity="Input" x="0" y="-288" name="pop3" />
+    <pin polarity="Input" x="0" y="-224" name="push1" />
+    <pin polarity="Input" x="0" y="-160" name="push2" />
+    <pin polarity="Input" x="0" y="-96" name="push3" />
+    <pin polarity="Input" x="0" y="-32" name="sel(1:0)" />
+    <pin polarity="Input" x="0" y="32" name="adr(3:0)" />
+    <pin polarity="Output" x="384" y="-416" name="ena0" />
+    <pin polarity="Output" x="384" y="-368" name="ena1" />
+    <pin polarity="Output" x="384" y="-320" name="ena2" />
+    <pin polarity="Output" x="384" y="-272" name="ena3" />
+    <pin polarity="Output" x="384" y="-192" name="adr0(3:0)" />
+    <pin polarity="Output" x="384" y="-128" name="adr1(3:0)" />
+    <pin polarity="Output" x="384" y="-64" name="adr2(3:0)" />
+    <pin polarity="Output" x="384" y="0" name="adr3(3:0)" />
+    <pin polarity="Output" x="384" y="80" name="selin0(1:0)" />
+    <pin polarity="Output" x="384" y="144" name="selin1(1:0)" />
+    <pin polarity="Output" x="384" y="208" name="selin2(1:0)" />
+    <pin polarity="Output" x="384" y="272" name="selin3(1:0)" />
+    <pin polarity="Output" x="384" y="336" name="selout0(1:0)" />
+    <pin polarity="Output" x="384" y="400" name="selout1(1:0)" />
+    <pin polarity="Output" x="384" y="464" name="selout2(1:0)" />
+    <graph>
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-456" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-416" type="pin pop1" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-352" type="pin pop2" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-288" type="pin pop3" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-224" type="pin push1" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin push2" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin push3" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin sel(1:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="32" type="pin adr(3:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-416" type="pin ena0" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-368" type="pin ena1" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-320" type="pin ena2" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-272" type="pin ena3" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-192" type="pin adr0(3:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-128" type="pin adr1(3:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-64" type="pin adr2(3:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="0" type="pin adr3(3:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="80" type="pin selin0(1:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="144" type="pin selin1(1:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="208" type="pin selin2(1:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="272" type="pin selin3(1:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="336" type="pin selout0(1:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="400" type="pin selout1(1:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="464" type="pin selout2(1:0)" />
+        <rect width="64" x="0" y="20" height="24" />
+        <line x2="0" y1="32" y2="32" x1="64" />
+        <line x2="0" y1="-416" y2="-416" x1="64" />
+        <line x2="0" y1="-352" y2="-352" x1="64" />
+        <line x2="0" y1="-288" y2="-288" x1="64" />
+        <line x2="0" y1="-224" y2="-224" x1="64" />
+        <line x2="0" y1="-160" y2="-160" x1="64" />
+        <line x2="0" y1="-96" y2="-96" x1="64" />
+        <rect width="64" x="0" y="-44" height="24" />
+        <line x2="0" y1="-32" y2="-32" x1="64" />
+        <line x2="384" y1="-416" y2="-416" x1="320" />
+        <rect width="256" x="64" y="-448" height="952" />
+        <line x2="384" y1="-368" y2="-368" x1="320" />
+        <line x2="384" y1="-320" y2="-320" x1="320" />
+        <line x2="384" y1="-272" y2="-272" x1="320" />
+        <rect width="64" x="320" y="-204" height="24" />
+        <line x2="384" y1="-192" y2="-192" x1="320" />
+        <rect width="64" x="320" y="-140" height="24" />
+        <line x2="384" y1="-128" y2="-128" x1="320" />
+        <rect width="64" x="320" y="-76" height="24" />
+        <line x2="384" y1="-64" y2="-64" x1="320" />
+        <rect width="64" x="320" y="-12" height="24" />
+        <line x2="384" y1="0" y2="0" x1="320" />
+        <rect width="64" x="320" y="68" height="24" />
+        <line x2="384" y1="80" y2="80" x1="320" />
+        <rect width="64" x="320" y="132" height="24" />
+        <line x2="384" y1="144" y2="144" x1="320" />
+        <rect width="64" x="320" y="196" height="24" />
+        <line x2="384" y1="208" y2="208" x1="320" />
+        <rect width="64" x="320" y="260" height="24" />
+        <line x2="384" y1="272" y2="272" x1="320" />
+        <rect width="64" x="320" y="324" height="24" />
+        <line x2="384" y1="336" y2="336" x1="320" />
+        <rect width="64" x="320" y="388" height="24" />
+        <line x2="384" y1="400" y2="400" x1="320" />
+        <rect width="64" x="320" y="452" height="24" />
+        <line x2="384" y1="464" y2="464" x1="320" />
+    </graph>
+</symbol>

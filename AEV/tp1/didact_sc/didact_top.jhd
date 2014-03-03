@@ -1,0 +1,15 @@
+MODULE didact_top
+	SUBMODULE debounce_sc
+		INSTANCE debounce1_inst
+	SUBMODULE debounce_sc
+		INSTANCE debounce2_inst
+	SUBMODULE debounce_sc
+		INSTANCE debounce3_inst
+	SUBMODULE dcm1
+		INSTANCE dcm_inst
+	SUBMODULE diviseur_clk
+		INSTANCE diviseur_inst
+	SUBMODULE encodeur_sc
+		INSTANCE XLXI_3
+	SUBMODULE msa_sc
+		INSTANCE msa_inst

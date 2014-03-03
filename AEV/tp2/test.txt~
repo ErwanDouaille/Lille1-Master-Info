@@ -1,0 +1,23 @@
+hmd:
+
+0c00:0000 1100 0000 0000 branchement absolue
+0000:0000 0000 0000 0000 
+0004:0000 0000 0000 0100 adresse du branchement
+
+ffff:1111 1111 1111 1111 DELIMITEUR
+
+201f:0010 0000 0001 1111 Litéraux push sur la pile
+
+a402:1010 0100 0000 0010 Declenchement d'IP WaitBTN
+
+8804:1000 1000 0000 0100 Lecture switch + affichage
+
+8003:1000 0000 0000 0011 affiche les led derrière les switch
+
+a002:1010 0000 0000 0010 Bufout, affiche sur les segment
+
+03fb:0000 0011 1111 1011 Branchement relatif BR
+
+1c00:0001 1100 0000 0000 HaLT
+
+ffff:1111 1111 1111 1111 DELIMITEUR

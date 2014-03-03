@@ -1,0 +1,3 @@
+MODULE msa_sc
+	SUBMODULE rom_msa
+		INSTANCE rom_inst

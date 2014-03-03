@@ -1,0 +1,8 @@
+vhdl isim_temp "ipcore_dir/dcm1.vhd"
+vhdl isim_temp "ipcore_dir/rom_msa.vhd"
+vhdl isim_temp "msa_sc.vhf"
+vhdl isim_temp "encodeur_sc.vhf"
+vhdl isim_temp "diviseur_clk.vhd"
+vhdl isim_temp "debounce_sc.vhf"
+vhdl isim_temp "didact_top.vhf"
+vhdl isim_temp "didact_top_tb.vhd"

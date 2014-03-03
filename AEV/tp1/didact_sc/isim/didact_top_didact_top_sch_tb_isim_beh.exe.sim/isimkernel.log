@@ -1,0 +1,31 @@
+Command line:
+   didact_top_didact_top_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58291
+
+Fri Sep 27 12:37:56 2013
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 117.055 Meg
+
+ Total Signals          : 462
+ Total Nets             : 693
+ Total Signal Drivers   : 255
+ Total Blocks           : 86
+ Total Primitive Blocks : 74
+ Total Processes        : 183
+ Total Traceable Variables  : 234
+ Total Scalar Nets and Variables : 5650
+Total Line Count : 1002
+Total Line Count : 1002
+Total Line Count : 1002
+
+ Total Simulation Time: 50.19 sec
+
+ Current Memory Usage: 124.404 Meg
+
+Fri Sep 27 12:40:00 2013
+

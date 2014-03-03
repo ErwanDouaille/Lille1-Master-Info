@@ -722,13 +722,13 @@ public class Mesure {
 				M1.rapportLogKLog((double)1);
 				res[0] = M1.getRes();
 
-				M1.rapportLogKLog((double)2);
+				M1.rapportLogKLog((double)5);
 				res[1] = M1.getRes();
 
-				M1.rapportLogKLog((double)3);
+				M1.rapportLogKLog((double)10);
 				res[2] = M1.getRes();
 
-				M1.rapportLogKLog((double)4);
+				M1.rapportLogKLog((double)20);
 				res[3] = M1.getRes();
 
 				M1.output(res);
@@ -744,10 +744,10 @@ public class Mesure {
 				M1.rapportNepsiLog((double)2);
 				res[1] = M1.getRes();
 
-				M1.rapportNepsiLog((double)3);
+				M1.rapportNepsiLog((double)4);
 				res[2] = M1.getRes();
 
-				M1.rapportNepsiLog((double)4);
+				M1.rapportNepsiLog((double)8);
 				res[3] = M1.getRes();
 
 				M1.output(res);
@@ -763,10 +763,10 @@ public class Mesure {
 				M1.rapportLogNepsi((double)2);
 				res[1] = M1.getRes();
 
-				M1.rapportLogNepsi((double)3);
+				M1.rapportLogNepsi((double)4);
 				res[2] = M1.getRes();
 
-				M1.rapportLogNepsi((double)4);
+				M1.rapportLogNepsi((double)8);
 				res[3] = M1.getRes();
 
 				M1.output(res);
@@ -782,10 +782,10 @@ public class Mesure {
 				M1.rapportNpK2pN((double)2);
 				res[1] = M1.getRes();
 
-				M1.rapportNpK2pN((double)3);
+				M1.rapportNpK2pN((double)4);
 				res[2] = M1.getRes();
 
-				M1.rapportNpK2pN((double)4);
+				M1.rapportNpK2pN((double)8);
 				res[3] = M1.getRes();
 
 				M1.output(res);
@@ -801,10 +801,10 @@ public class Mesure {
 				M1.rapport2pNNpK((double)2);
 				res[1] = M1.getRes();
 
-				M1.rapport2pNNpK((double)3);
+				M1.rapport2pNNpK((double)4);
 				res[2] = M1.getRes();
 
-				M1.rapport2pNNpK((double)4);
+				M1.rapport2pNNpK((double)8);
 				res[3] = M1.getRes();
 
 				M1.output(res);
@@ -817,13 +817,13 @@ public class Mesure {
 				M1.rapportKpN2pN((double)3);
 				res[0] = M1.getRes();
 
-				M1.rapportKpN2pN((double)4);
+				M1.rapportKpN2pN((double)6);
 				res[1] = M1.getRes();
 
-				M1.rapportKpN2pN((double)5);
+				M1.rapportKpN2pN((double)9);
 				res[2] = M1.getRes();
 
-				M1.rapportKpN2pN((double)6);
+				M1.rapportKpN2pN((double)12);
 				res[3] = M1.getRes();
 
 				M1.output(res);
@@ -836,18 +836,32 @@ public class Mesure {
 				M1.rapport2pNKpN((double)3);
 				res[0] = M1.getRes();
 
-				M1.rapport2pNKpN((double)4);
+				M1.rapport2pNKpN((double)6);
 				res[1] = M1.getRes();
 
-				M1.rapport2pNKpN((double)5);
+				M1.rapport2pNKpN((double)9);
 				res[2] = M1.getRes();
 
-				M1.rapport2pNKpN((double)6);
+				M1.rapport2pNKpN((double)12);
 				res[3] = M1.getRes();
 
 				M1.output(res);
 				break;
-			
+			case 28:
+				nbCourbe = 2;
+				res = new double[nbCourbe][size0.length];
+				M1 = new Mesure(size0, min);
+				
+				M1.mesureMystereT();
+				res[0] = M1.getRes();
+
+				M1.mesureMystereT();
+				res[1] = M1.getRes();
+
+				M1.output(res);
+				break;
+				
+					
 
 			default:
 				break;

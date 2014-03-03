@@ -1,0 +1,39 @@
+xst -intstyle ise -ifn "/home/m1/douaille/didact_sc/didact_top.xst" -ofn "/home/m1/douaille/didact_sc/didact_top.syr" 
+xst -intstyle ise -ifn "/home/m1/douaille/didact_sc/didact_top.xst" -ofn "/home/m1/douaille/didact_sc/didact_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 didact_top.ngc didact_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o didact_top_map.ncd didact_top.ngd didact_top.pcf 
+par -w -intstyle ise -ol high -mt off didact_top_map.ncd didact_top.ncd didact_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml didact_top.twx didact_top.ncd -o didact_top.twr didact_top.pcf 
+sch2sym -intstyle ise -family spartan6 -refsym didact_top /home/m1/douaille/didact_sc/didact_top.sch /home/m1/douaille/didact_sc/didact_top.sym 
+sch2hdl -sympath /home/m1/douaille/didact_sc/ipcore_dir -intstyle ise -family spartan6 -flat -suppress -vhdl didact_top_drc.vhf -w /home/m1/douaille/didact_sc/didact_top.sch 
+sch2hdl -sympath /home/m1/douaille/didact_sc/ipcore_dir -intstyle ise -family spartan6 -flat -suppress -vhdl didact_top_drc.vhf -w /home/m1/douaille/didact_sc/didact_top.sch 
+sch2sym -intstyle ise -family spartan6 -refsym didact_top /home/m1/douaille/didact_sc/didact_top.sch /home/m1/douaille/didact_sc/didact_top.sym 
+sch2hdl -sympath /home/m1/douaille/didact_sc/ipcore_dir -intstyle ise -family spartan6 -flat -suppress -vhdl didact_top_drc.vhf -w /home/m1/douaille/didact_sc/didact_top.sch 
+sch2sym -intstyle ise -family spartan6 -refsym didact_top /home/m1/douaille/didact_sc/didact_top.sch /home/m1/douaille/didact_sc/didact_top.sym 
+sch2hdl -sympath /home/m1/douaille/didact_sc/ipcore_dir -intstyle ise -family spartan6 -flat -suppress -vhdl didact_top_drc.vhf -w /home/m1/douaille/didact_sc/didact_top.sch 
+sch2hdl -sympath /home/m1/douaille/didact_sc/ipcore_dir -intstyle ise -family spartan6 -flat -suppress -vhdl didact_top_drc.vhf -w /home/m1/douaille/didact_sc/didact_top.sch 
+sch2hdl -sympath /home/m1/douaille/didact_sc/ipcore_dir -intstyle ise -family spartan6 -flat -suppress -vhdl didact_top_drc.vhf -w /home/m1/douaille/didact_sc/didact_top.sch 
+sch2hdl -sympath /home/m1/douaille/didact_sc/ipcore_dir -intstyle ise -family spartan6 -flat -suppress -vhdl didact_top_drc.vhf -w /home/m1/douaille/didact_sc/didact_top.sch 
+sch2sym -intstyle ise -family spartan6 -refsym didact_top /home/m1/douaille/didact_sc/didact_top.sch /home/m1/douaille/didact_sc/didact_top.sym 
+sch2hdl -sympath /home/m1/douaille/didact_sc/ipcore_dir -intstyle ise -family spartan6 -flat -suppress -vhdl didact_top_drc.vhf -w /home/m1/douaille/didact_sc/didact_top.sch 
+xst -intstyle ise -ifn "/home/m1/douaille/didact_sc/didact_top.xst" -ofn "/home/m1/douaille/didact_sc/didact_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc6slx16-csg324-3 didact_top.ngc didact_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc didact_top.ucf -p xc6slx16-csg324-3 didact_top.ngc didact_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o didact_top_map.ncd didact_top.ngd didact_top.pcf 
+par -w -intstyle ise -ol high -mt off didact_top_map.ncd didact_top.ncd didact_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml didact_top.twx didact_top.ncd -o didact_top.twr didact_top.pcf -ucf didact_top.ucf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc didact_top.ucf -p xc6slx16-csg324-3 didact_top.ngc didact_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o didact_top_map.ncd didact_top.ngd didact_top.pcf 
+par -w -intstyle ise -ol high -mt off didact_top_map.ncd didact_top.ncd didact_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml didact_top.twx didact_top.ncd -o didact_top.twr didact_top.pcf -ucf didact_top.ucf 
+xst -intstyle ise -ifn "/home/m1/douaille/didact_sc/didact_top.xst" -ofn "/home/m1/douaille/didact_sc/didact_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc didact_top.ucf -p xc6slx16-csg324-3 didact_top.ngc didact_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o didact_top_map.ncd didact_top.ngd didact_top.pcf 
+par -w -intstyle ise -ol high -mt off didact_top_map.ncd didact_top.ncd didact_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml didact_top.twx didact_top.ncd -o didact_top.twr didact_top.pcf -ucf didact_top.ucf 
+xst -intstyle ise -ifn "/home/m1/douaille/didact_sc/didact_top.xst" -ofn "/home/m1/douaille/didact_sc/didact_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc didact_top.ucf -p xc6slx16-csg324-3 didact_top.ngc didact_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o didact_top_map.ncd didact_top.ngd didact_top.pcf 
+par -w -intstyle ise -ol high -mt off didact_top_map.ncd didact_top.ncd didact_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml didact_top.twx didact_top.ncd -o didact_top.twr didact_top.pcf -ucf didact_top.ucf 
+bitgen -intstyle ise -f didact_top.ut didact_top.ncd 

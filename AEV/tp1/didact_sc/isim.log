@@ -1,0 +1,34 @@
+ISim log file
+Running: /home/m1/douaille/didact_sc/didact_top_didact_top_sch_tb_isim_beh.exe -gui -tclbatch isim.cmd -wdb /home/m1/douaille/didact_sc/didact_top_didact_top_sch_tb_isim_beh.wdb 
+ISim M.81d (signature 0x141a37e9)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+Finished circuit initialization process.
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# restart
+# run 30.00ms
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+Finished circuit initialization process.
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Stopped at time : 16060540 ns : File "/home/m1/douaille/didact_sc/didact_top_tb.vhd" Line 55
+# run 30.00ms
+Stopped at time : 19402620 ns : File "/home/m1/douaille/didact_sc/didact_top_tb.vhd" Line 55
+# restart
+# run 30.00ms
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+Finished circuit initialization process.
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /didact_top_didact_top_sch_tb/UUT/msa_inst/rom_inst/U0/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# exit 0

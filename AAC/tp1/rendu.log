@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.9.29)  30 SEP 2013 22:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.9.29)  29 SEP 2013 23:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -558,49 +558,49 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.
 code.tex
 File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
-) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box35
-\beforetitleunit=\skip52
-\aftertitleunit=\skip53
-\ttl@plus=\dimen151
-\ttl@minus=\dimen152
-\ttl@toksa=\toks26
-\titlewidth=\dimen153
-\titlewidthlast=\dimen154
-\titlewidthfirst=\dimen155
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks27
-\verbatim@line=\toks28
-\verbatim@in@stream=\read2
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count111
-\lst@gtempboxa=\box36
-\lst@token=\toks29
+\lst@gtempboxa=\box35
+\lst@token=\toks26
 \lst@length=\count112
-\lst@currlwidth=\dimen156
+\lst@currlwidth=\dimen151
 \lst@column=\count113
 \lst@pos=\count114
-\lst@lostspace=\dimen157
-\lst@width=\dimen158
+\lst@lostspace=\dimen152
+\lst@width=\dimen153
 \lst@newlines=\count115
 \lst@lineno=\count116
-\lst@maxwidth=\dimen159
+\lst@maxwidth=\dimen154
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count117
 \lst@skipnumbers=\count118
-\lst@framebox=\box37
+\lst@framebox=\box36
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box37
+\beforetitleunit=\skip52
+\aftertitleunit=\skip53
+\ttl@plus=\dimen155
+\ttl@minus=\dimen156
+\ttl@toksa=\toks27
+\titlewidth=\dimen157
+\titlewidthlast=\dimen158
+\titlewidthfirst=\dimen159
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks28
+\verbatim@line=\toks29
+\verbatim@in@stream=\read2
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -897,35 +897,35 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 ) (./rendu.aux)
 \openout1 = `rendu.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Info: Redefining \degres on input line 40.
-LaTeX Info: Redefining \dots on input line 40.
-LaTeX Info: Redefining \up on input line 40.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Info: Redefining \degres on input line 36.
+LaTeX Info: Redefining \dots on input line 36.
+LaTeX Info: Redefining \up on input line 36.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 40.
+(frenchb.ldf)                of your document, on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -958,7 +958,7 @@ e
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count138
 \AtBeginShipoutBox=\box39
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -968,9 +968,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
 
 (./rendu.out) (./rendu.out)
 \@outlinefile=\write4
@@ -1011,16 +1011,10 @@ LaTeX Info: Redefining \nameref on input line 40.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
 <q1.png, id=7, 642.4pt x 481.8pt>
 File: q1.png Graphic file (type png)
  <use q1.png>
-Package pdftex.def Info: q1.png used on input line 62.
+Package pdftex.def Info: q1.png used on input line 43.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
 
 
@@ -1031,156 +1025,156 @@ Package Fancyhdr Warning: \headheight is too small (14.0pt):
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- <./q1.png>] [2]
-<q5.png, id=29, 642.4pt x 481.8pt>
+ <./q1.png>]
+<q5.png, id=18, 642.4pt x 481.8pt>
 File: q5.png Graphic file (type png)
  <use q5.png>
-Package pdftex.def Info: q5.png used on input line 82.
+Package pdftex.def Info: q5.png used on input line 63.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
- [3 <./q5.png>]
-<q10.png, id=36, 642.4pt x 481.8pt>
+ [2 <./q5.png>]
+<q10.png, id=25, 642.4pt x 481.8pt>
 File: q10.png Graphic file (type png)
  <use q10.png>
-Package pdftex.def Info: q10.png used on input line 103.
+Package pdftex.def Info: q10.png used on input line 84.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
 
-<q11.png, id=37, 642.4pt x 481.8pt>
+<q11.png, id=26, 642.4pt x 481.8pt>
 File: q11.png Graphic file (type png)
  <use q11.png>
-Package pdftex.def Info: q11.png used on input line 109.
+Package pdftex.def Info: q11.png used on input line 90.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
- [4 <./q10.png> <./q11.png>]
-<q13.png, id=44, 642.4pt x 481.8pt>
+ [3 <./q10.png> <./q11.png>]
+<q13.png, id=33, 642.4pt x 481.8pt>
 File: q13.png Graphic file (type png)
  <use q13.png>
-Package pdftex.def Info: q13.png used on input line 120.
+Package pdftex.def Info: q13.png used on input line 101.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
 
-<q14.png, id=45, 642.4pt x 481.8pt>
+<q14.png, id=34, 642.4pt x 481.8pt>
 File: q14.png Graphic file (type png)
  <use q14.png>
-Package pdftex.def Info: q14.png used on input line 126.
+Package pdftex.def Info: q14.png used on input line 107.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
- [5 <./q13.png> <./q14.png>]
-<q16.png, id=52, 642.4pt x 481.8pt>
+ [4 <./q13.png> <./q14.png>]
+<q16.png, id=41, 642.4pt x 481.8pt>
 File: q16.png Graphic file (type png)
  <use q16.png>
-Package pdftex.def Info: q16.png used on input line 137.
+Package pdftex.def Info: q16.png used on input line 118.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
- [6 <./q16.png>]
-<q161.png, id=58, 642.4pt x 481.8pt>
+ [5 <./q16.png>]
+<q161.png, id=47, 642.4pt x 481.8pt>
 File: q161.png Graphic file (type png)
  <use q161.png>
-Package pdftex.def Info: q161.png used on input line 146.
+Package pdftex.def Info: q161.png used on input line 127.
 (pdftex.def)             Requested size: 192.72148pt x 144.5411pt.
 
-<q162.png, id=59, 642.4pt x 481.8pt>
+<q162.png, id=48, 642.4pt x 481.8pt>
 File: q162.png Graphic file (type png)
  <use q162.png>
-Package pdftex.def Info: q162.png used on input line 148.
+Package pdftex.def Info: q162.png used on input line 129.
 (pdftex.def)             Requested size: 192.72148pt x 144.5411pt.
 
-<q163.png, id=60, 642.4pt x 481.8pt>
+<q163.png, id=49, 642.4pt x 481.8pt>
 File: q163.png Graphic file (type png)
  <use q163.png>
-Package pdftex.def Info: q163.png used on input line 152.
+Package pdftex.def Info: q163.png used on input line 133.
 (pdftex.def)             Requested size: 192.72148pt x 144.5411pt.
 
-<q164.png, id=61, 642.4pt x 481.8pt>
+<q164.png, id=50, 642.4pt x 481.8pt>
 File: q164.png Graphic file (type png)
  <use q164.png>
-Package pdftex.def Info: q164.png used on input line 154.
+Package pdftex.def Info: q164.png used on input line 135.
 (pdftex.def)             Requested size: 192.72148pt x 144.5411pt.
 
-<q165.png, id=62, 642.4pt x 481.8pt>
+<q165.png, id=51, 642.4pt x 481.8pt>
 File: q165.png Graphic file (type png)
  <use q165.png>
-Package pdftex.def Info: q165.png used on input line 158.
+Package pdftex.def Info: q165.png used on input line 139.
 (pdftex.def)             Requested size: 192.72148pt x 144.5411pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 163.
+LaTeX Font Info:    Try loading font information for U+msa on input line 144.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 163.
+LaTeX Font Info:    Try loading font information for U+msb on input line 144.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [7 <./q161.png> <./q162.png> <./q163.png> <./q164.png> <./q165.png>]
-<q18.png, id=74, 642.4pt x 481.8pt>
+) [6 <./q161.png> <./q162.png> <./q163.png> <./q164.png> <./q165.png>]
+<q18.png, id=62, 642.4pt x 481.8pt>
 File: q18.png Graphic file (type png)
  <use q18.png>
-Package pdftex.def Info: q18.png used on input line 170.
+Package pdftex.def Info: q18.png used on input line 151.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
- [8 <./q18.png>]
-<q20.png, id=81, 642.4pt x 481.8pt>
+ [7 <./q18.png>]
+<q20.png, id=70, 642.4pt x 481.8pt>
 File: q20.png Graphic file (type png)
  <use q20.png>
-Package pdftex.def Info: q20.png used on input line 180.
+Package pdftex.def Info: q20.png used on input line 161.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
 
-<q21.png, id=82, 642.4pt x 481.8pt>
+<q21.png, id=71, 642.4pt x 481.8pt>
 File: q21.png Graphic file (type png)
  <use q21.png>
-Package pdftex.def Info: q21.png used on input line 186.
+Package pdftex.def Info: q21.png used on input line 167.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
-LaTeX Font Info:    Calculating math sizes for size <7.79993> on input line 190
+LaTeX Font Info:    Calculating math sizes for size <7.79993> on input line 171
 .
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.45992> not available
-(Font)              size <5> substituted on input line 190.
+(Font)              size <5> substituted on input line 171.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.89996> not available
-(Font)              size <5> substituted on input line 190.
+(Font)              size <5> substituted on input line 171.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.45992> not available
-(Font)              size <5> substituted on input line 190.
+(Font)              size <5> substituted on input line 171.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.89996> not available
-(Font)              size <5> substituted on input line 190.
+(Font)              size <5> substituted on input line 171.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.45992> not available
-(Font)              size <5> substituted on input line 190.
+(Font)              size <5> substituted on input line 171.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.89996> not available
-(Font)              size <5> substituted on input line 190.
+(Font)              size <5> substituted on input line 171.
 
-[9 <./q20.png> <./q21.png>] <q23.png, id=90, 642.4pt x 481.8pt>
+[8 <./q20.png> <./q21.png>] <q23.png, id=79, 642.4pt x 481.8pt>
 File: q23.png Graphic file (type png)
  <use q23.png>
-Package pdftex.def Info: q23.png used on input line 197.
+Package pdftex.def Info: q23.png used on input line 178.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
 
-<q24.png, id=91, 642.4pt x 481.8pt>
+<q24.png, id=80, 642.4pt x 481.8pt>
 File: q24.png Graphic file (type png)
  <use q24.png>
-Package pdftex.def Info: q24.png used on input line 203.
+Package pdftex.def Info: q24.png used on input line 184.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
- [10 <./q23.png> <./q24.png>]
-<q26.png, id=98, 642.4pt x 481.8pt>
+ [9 <./q23.png> <./q24.png>]
+<q26.png, id=87, 642.4pt x 481.8pt>
 File: q26.png Graphic file (type png)
  <use q26.png>
-Package pdftex.def Info: q26.png used on input line 214.
+Package pdftex.def Info: q26.png used on input line 195.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
 
-<q27.png, id=99, 642.4pt x 481.8pt>
+<q27.png, id=88, 642.4pt x 481.8pt>
 File: q27.png Graphic file (type png)
  <use q27.png>
-Package pdftex.def Info: q27.png used on input line 220.
+Package pdftex.def Info: q27.png used on input line 201.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
- [11 <./q26.png> <./q27.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
+ [10 <./q26.png> <./q27.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
 
 (./rendu.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
 Package rerunfilecheck Info: File `rendu.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1188,27 +1182,26 @@ Package rerunfilecheck Info: File `rendu.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.10004pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 246.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 225.
  ) 
 Here is how much of TeX's memory you used:
- 17582 strings out of 495059
- 295116 string characters out of 3182030
- 382760 words of memory out of 3000000
- 20419 multiletter control sequences out of 15000+200000
- 11952 words of font info for 47 fonts, out of 3000000 for 9000
+ 17183 strings out of 495059
+ 291425 string characters out of 3182030
+ 364064 words of memory out of 3000000
+ 20034 multiletter control sequences out of 15000+200000
+ 12090 words of font info for 47 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,11n,55p,649b,1114s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,11n,55p,649b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on rendu.pdf (11 pages, 146267 bytes).
+fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on rendu.pdf (10 pages, 138459 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

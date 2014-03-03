@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan6 -refsym msa_sc /home/m1/douaille/didact_sc/msa_sc.sch /home/m1/douaille/didact_sc/msa_sc.sym 

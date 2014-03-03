@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="diviseur_clk">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2013-9-20T9:48:43</timestamp>
+    <pin polarity="Input" x="0" y="-160" name="clkin" />
+    <pin polarity="Output" x="384" y="-160" name="clk2hz" />
+    <pin polarity="Output" x="384" y="-96" name="clk16hz" />
+    <pin polarity="Output" x="384" y="-32" name="clk2khz" />
+    <graph>
+        <rect width="256" x="64" y="-192" height="192" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-200" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin clkin" />
+        <line x2="0" y1="-160" y2="-160" x1="64" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-160" type="pin clk2hz" />
+        <line x2="384" y1="-160" y2="-160" x1="320" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-96" type="pin clk16hz" />
+        <line x2="384" y1="-96" y2="-96" x1="320" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-32" type="pin clk2khz" />
+        <line x2="384" y1="-32" y2="-32" x1="320" />
+    </graph>
+</symbol>

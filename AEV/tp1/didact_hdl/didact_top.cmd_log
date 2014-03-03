@@ -1,0 +1,2 @@
+vhdtdtfi -prj didact_hdl -o /home/m1/douaille/didact_hdl/didact_top.vhi -lib work /home/m1/douaille/didact_hdl//didact_top.vhd -module didact_top -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 
+vhdtdtfi -prj didact_hdl -o /home/m1/douaille/didact_hdl/didact_top.vhi -lib work /home/m1/douaille/didact_hdl//didact_top.vhd -module didact_top -template /usr/local/Xilinx/12.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 

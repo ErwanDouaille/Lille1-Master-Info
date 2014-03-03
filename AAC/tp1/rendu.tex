@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usepackage{listings}
+\usepackage{xcolor}
 \definecolor{grey}{rgb}{0.9,0.9,0.9}
 \usepackage{titlesec}
 \usepackage{verbatim}
@@ -12,13 +14,7 @@
 \usepackage{textcomp}
 \usepackage{hyperref}
 \usepackage{ amssymb }
-\usepackage{xcolor}
-\usepackage{listings}
-\lstset{basicstyle=\ttfamily,
-  showstringspaces=false,
-  commentstyle=\color{red},
-  keywordstyle=\color{blue}
-}
+
 
 \frenchbsetup{StandardLists=true}
 \newcommand{\marge}{18mm}
@@ -39,22 +35,7 @@
 
 \begin{document}
 
-\section*{README}
-
-Pour effectuer la mesure sur la q1
-\begin{lstlisting}[language=bash]
-> java -Xint Mesure 1 > q1.txt
-\end{lstlisting}
-Pour effectuer la mesure sur la q5
-\begin{lstlisting}[language=bash]
-> java -Xint Mesure 5 > q5.txt
-\end{lstlisting}
-Et ainsi de suite ...
-
-Concernant les graphiques ils peuvent être généré via:
-\begin{lstlisting}[language=bash]
-> gnuplot gnuplotGeneration.plot
-\end{lstlisting}
+\section*{{\Huge{}}}
 
 \section*{Question 1}
 \begin{figure}[!ht]
@@ -223,13 +204,11 @@ log n $\in$ $\mathcal{O}$(n\up{$\varepsilon$})
 \section*{Question 28}
 2\up{n} $\in$ $\mathcal{O}$(k\up{n})
 
-\section*{Question 29}
 
 
 
-
-%$\Theta$ $\Omega$
-%$\mathcal{O}$
+$\Theta$ $\Omega$
+$\mathcal{O}$
 
 \newpage
 

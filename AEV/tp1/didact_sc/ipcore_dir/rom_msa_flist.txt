@@ -1,0 +1,18 @@
+# Output products list for <rom_msa>
+_xmsgs/pn_parser.xmsgs
+dist_mem_gen_ds322.pdf
+dist_mem_gen_readme.txt
+rom_msa.asy
+rom_msa.gise
+rom_msa.mif
+rom_msa.ngc
+rom_msa.sym
+rom_msa.v
+rom_msa.veo
+rom_msa.vhd
+rom_msa.vho
+rom_msa.xco
+rom_msa.xise
+rom_msa_flist.txt
+rom_msa_readme.txt
+rom_msa_xmdf.tcl

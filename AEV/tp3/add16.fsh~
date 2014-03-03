@@ -1,0 +1,40 @@
+
+variable read
+variable print
+
+slave
+
+begin
+
+master
+
+read function
+	f lit
+	waitbtn
+	switch
+	leddup
+return
+
+print function
+    bufoutdup
+return
+
+begin
+	repeat
+		TicRaz
+		read call
+		8 lit
+		H<-
+		read call
+		or
+		read call
+		8 lit
+		H<-
+		read call
+		or	
+		add	
+		Tic
+		print call
+	again
+endprogram
+

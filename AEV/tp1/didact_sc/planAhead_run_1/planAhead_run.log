@@ -1,0 +1,42 @@
+
+****** PlanAhead v12.4
+  **** Build 108585 by hdbuild on Tue Nov  9 16:43:51 PST 2010
+    ** Copyright 1986-1999, 2001-2010 Xilinx, Inc. All Rights Reserved.
+
+Release 12.4 - ngc2edif M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Release 12.4 - ngc2edif M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+Reading design didact_top.ngc ...
+WARNING:NetListWriters:298 - No output is written to didact_top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file didact_top.edif ...
+ngc2edif: Total memory usage is 23492 kilobytes
+
+Release 12.4 - ngc2edif M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Release 12.4 - ngc2edif M.81d (lin)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+Reading design rom_msa.ngc ...
+WARNING:NetListWriters:298 - No output is written to rom_msa.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file rom_msa.edif ...
+ngc2edif: Total memory usage is 23264 kilobytes
+
+INFO: [HD-Licensing 0] Attempting to get a license: PlanAhead
+INFO: [HD-Licensing 1] Got a license: PlanAhead
+INFO: [HD-Licensing 3] Your PlanAhead license expires in -491 day(s)
+INFO: [HD-ArchReader 0] Loading parts and site information from /usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/arch.xml
+INFO: [HD-RTPRIM 0] Parsing RTL primitives file '/usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/rtl/prims/rtl_prims.xml'
+INFO: [HD-RTPRIM 1] Finished Parsing RTL primitives file '/usr/local/Xilinx/12.4/ISE_DS/PlanAhead/parts/xilinx/rtl/prims/rtl_prims.xml'
+starting gui ...
+INFO: [HD-Application 0] Exiting PlanAhead...
+INFO: [HD-Licensing 2] Releasing license: PlanAhead

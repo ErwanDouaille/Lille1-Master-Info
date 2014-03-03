@@ -1,0 +1,24 @@
+#include "mbr.h"
+#include <assert.h>
+
+void save_mbr(){
+	assert(sizeof(struct mbr_s)<=HDA_SECTORSIZE);
+	unsigned char buffer[HDA_SECTORSIZE];
+	memcpy(buffer,&mbr,sizeof(struct mbr_s));
+	write_sector(0,0,buffer);
+}
+
+void load_mbr(){
+	int i;
+	unsigned char buffer[HDA_SECTORSIZE];
+	assert(sizeof(struct mbr_s)<=HDA_SECTORSIZE);
+	read_sector_n(0,0,&mbr,sizeof(mbr));
+	memcpy(&mbr,buffer,sizeof(HDA_SECTORSIZE));
+	if(mbr.mbr_magic!=MBR_MAGIC){
+		mbr.mbr_magic=MBR_MAGIC;
+		for(i=0;i<MAXVOL;i++)
+			mbr.mbr_vols[i].vol_voltype=VT_NO_VOL;
+	}
+}
+
+

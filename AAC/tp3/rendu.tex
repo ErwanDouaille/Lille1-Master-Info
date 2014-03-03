@@ -1,0 +1,105 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\definecolor{grey}{rgb}{0.9,0.9,0.9}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{amsmath}
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+
+\frenchbsetup{StandardLists=true}
+\newcommand{\marge}{18mm}
+\usepackage[left=\marge,right=\marge,top=\marge,bottom=\marge]{geometry}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\chead{
+  \textbf{Binome :} Douaille Erwan $\&$ Miranda Yoan
+  \hspace{2em}
+  \textbf{Groupe :} M1 Info groupe 4}
+\renewcommand{\headrulewidth}{0pt}
+\linespread{1.3}
+\setlength{\columnseprule}{0.2pt}
+
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+\begin{document}
+\section*{README}
+
+\section*{Question 0}
+
+(v[1] || !v[5] || v[4]) && (!v[1] || v[5] || v[3] || v[4]) && (!v[3] || !v[4])
+
+Satisfiable pour V1 vrai, V3 vrai, V4 faux, V5 faux.
+
+(v[1] || !v[2]) && (!v[1] || !v[2]) && (!v[1] || v[2]) && (v[1] || v[2])
+
+Cette formule n'est pas satisfiable. En effet, les clauses (!v[1] || !v[2]) et (v[1] || v[2]) sont opposées : les deux littoraux doivent donc avoir des valeurs contraires pour etre satisfaite.
+Cependant, les clauses (v[1] || !v[2]) et (!v[1] || v[2]) forcent les littoraux à avoir des valeurs identiques pour etre satisfaites.
+On est donc dans l'impossiblité d'affecter des valeurs aux littoraux pour rendre la formule satisfiable.
+
+
+
+\section*{Question 1}
+
+\subsection*{Certificat:}
+Une affectation à un boolean pour chaque variable.
+Liste de v[n]:\\
+v[1] \textrightarrow true\\
+v[2] \textrightarrow true\\
+v[n] \textrightarrow true\\
+
+\begin{itemize}
+	\item 1 bit pour coder un boolean
+	\item Taille certificat $\leqslant$ 2 n
+	\item Taille des données $\geqslant$ n + n
+\end{itemize}
+La structure de donnée est un tableau de boolean
+
+\section*{Question 2}
+
+La compléxité est N
+
+\section*{Question 3}
+
+
+
+\section*{Question 4}
+
+C'est beaucoup plus long. Compléxité de 2^n * n
+
+\section*{Question 6}
+
+\subsection{SAT 1}
+
+Dans le cas d'une clause à un littoral, on va créer une clause à 3 littoraux en utilisant du "bourrage". On copie le littoral 3 fois.
+
+\subsection{SAT 2}
+
+Pour une clause de 2 littoral, on copie les 2 littoraux dans une clause et on ajoute le troisième qui est une copie d'un des deux premiers (choisit aléatoirement).
+
+\subsection{SAT 3}
+
+SAT 3, rien à faire.
+
+\subsection{SAT N>3}
+
+Dans le cas où plus de 3 littoraux constituent une clause, il faut creer plusieurs clauses.
+La premiere clause reprend les deux premiers littoraux et un "littoral de jointure". Ensuite,
+tant que plus de deux littoraux n'ont pas encore été traitées,on cree une nouvelle clause contenant la negation du littoral de jointure de la clause precendente, le premier littoral pas encore traité et un nouveau littoral de jointure. Lorsqu'il ne reste plus que les deux derniers litteraux, on prend la dernier litteral de jointuer et les deux derniers litteraux.
+On obtient maintenant un ensemble de clause correspondant à la clause de la SAT d'origine.
+
+\end{document}

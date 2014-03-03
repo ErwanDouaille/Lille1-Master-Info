@@ -1,0 +1,58 @@
+Running: /usr/local/Xilinx/12.4/ISE_DS/ISE/bin/lin/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/m1/douaille/didact_sc/didact_top_didact_top_sch_tb_isim_beh.exe -prj /home/m1/douaille/didact_sc/didact_top_didact_top_sch_tb_beh.prj work.didact_top_didact_top_sch_tb 
+ISim M.81d (signature 0x141a37e9)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/m1/douaille/didact_sc/ipcore_dir/dcm1.vhd" into library work
+Parsing VHDL file "/home/m1/douaille/didact_sc/ipcore_dir/rom_msa.vhd" into library work
+Parsing VHDL file "/home/m1/douaille/didact_sc/msa_sc.vhf" into library work
+Parsing VHDL file "/home/m1/douaille/didact_sc/encodeur_sc.vhf" into library work
+Parsing VHDL file "/home/m1/douaille/didact_sc/diviseur_clk.vhd" into library work
+Parsing VHDL file "/home/m1/douaille/didact_sc/debounce_sc.vhf" into library work
+Parsing VHDL file "/home/m1/douaille/didact_sc/didact_top.vhf" into library work
+Parsing VHDL file "/home/m1/douaille/didact_sc/didact_top_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 39100 KB
+Fuse CPU Usage: 250 ms
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package numeric_std from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Using precompiled package textio from library std
+Using precompiled package vital_timing from library ieee
+Using precompiled package vital_primitives from library ieee
+Compiling package vcomponents
+Compiling package vpkg
+Compiling architecture ibufg_v of entity ibufg [\IBUFG("DONT_CARE","0",true,"DEF...]
+Compiling architecture dcm_sp_clock_divide_by_2_v of entity dcm_sp_clock_divide_by_2 [dcm_sp_clock_divide_by_2_default]
+Compiling architecture dcm_sp_maximum_period_check_v of entity dcm_sp_maximum_period_check [\dcm_sp_maximum_period_check("*"...]
+Compiling architecture dcm_sp_maximum_period_check_v of entity dcm_sp_maximum_period_check [\dcm_sp_maximum_period_check("*"...]
+Compiling architecture dcm_sp_clock_lost_v of entity dcm_sp_clock_lost [dcm_sp_clock_lost_default]
+Compiling architecture dcm_sp_v of entity dcm_sp [\DCM_SP(true,"*",true,false,2.0,...]
+Compiling architecture bufg_v of entity bufg [bufg_default]
+Compiling architecture xilinx of entity dcm1 [dcm1_default]
+Compiling architecture fd_v of entity fd [\FD('0')\]
+Compiling architecture inv_v of entity inv [inv_default]
+Compiling architecture and3_v of entity and3 [and3_default]
+Compiling architecture behavioral of entity debounce_sc_muser_didact_top [debounce_sc_muser_didact_top_def...]
+Compiling architecture behavioral of entity diviseur_clk [diviseur_clk_default]
+Compiling architecture fdc_v of entity fdc [\FDC('0')\]
+Compiling architecture behavioral of entity dist_mem_gen_v5_1 [\dist_mem_gen_v5_1("spartan6",6,...]
+Compiling architecture rom_msa_a of entity rom_msa [rom_msa_default]
+Compiling architecture buf_v of entity buf [buf_default]
+Compiling architecture behavioral of entity msa_sc_muser_didact_top [msa_sc_muser_didact_top_default]
+Compiling architecture behavioral of entity sr8ce_hxilinx_didact_top [sr8ce_hxilinx_didact_top_default]
+Compiling architecture lut3_v of entity lut3 [\LUT3("01000100")(0,7)\]
+Compiling architecture or3_v of entity or3 [or3_default]
+Compiling architecture behavioral of entity encodeur_sc_muser_didact_top [encodeur_sc_muser_didact_top_def...]
+Compiling architecture behavioral of entity didact_top [didact_top_default]
+Compiling architecture behavioral of entity didact_top_didact_top_sch_tb
+Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
+Compiled 59 VHDL Units
+Built simulation executable /home/m1/douaille/didact_sc/didact_top_didact_top_sch_tb_isim_beh.exe
+Fuse Memory Usage: 82160 KB
+Fuse CPU Usage: 360 ms
+GCC CPU Usage: 1780 ms

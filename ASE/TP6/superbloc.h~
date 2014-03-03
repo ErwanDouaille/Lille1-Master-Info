@@ -1,0 +1,26 @@
+#define super 0
+#define SUPERMAGIC 0xABCD
+#include"vm.c"
+
+struct super_s{
+	unsigned super_magic;
+	unsigned super_id;
+	char super_name[32];
+	unsigned super_root_inumber;
+	unsigned super_first_free;
+};
+
+struct free_bloc_s{
+	unsigned fb_nbbloc;
+	unsigned fb_next;
+};
+
+static struct super_s super;
+
+void init_super(unsigned int);
+
+void load_super(unsigned int);
+
+unsigned int new_bloc();
+
+void free_bloc(unsigned int);
