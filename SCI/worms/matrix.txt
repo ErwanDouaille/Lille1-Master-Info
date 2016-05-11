@@ -1,0 +1,32 @@
+; This file can be used to define your own interaction
+; matrix and update matrix.
+; SYNTAX:
+; <source> <interaction> <priority>
+; OR: <source> <interaction> <priority> UPDATE
+; OR: <source> <interaction> <priority> <target> <distance> [<target-selection-policy>]
+;
+; NB1: this file is read as a CSV file, thus you can use any field separator char 
+; since you put it in the second argument of the ioda:load-matrices command.
+;
+; NB2: any non-letter, non-digit character at the beginning
+; of the line introduces a comment line. Empty lines are ignored.
+;
+
+
+worms	Move		20
+worms	Shoot		20
+worms	Fall 		30
+worms	Sink		40
+worms	StopFalling	40	walls	Infinity	BEST:altitude
+worms	Crash		50	walls	Infinity	BEST:altitude
+
+sea	Remove	10	worms	Infinity
+
+heads	UpdateInfo	10	UPDATE
+targets	UpdateAngle	10	UPDATE
+worms	UpdateShape	10	UPDATE
+worms	Die		50	UPDATE
+teams 	Die		50 	UPDATE
+
+fishes	Swim		10
+clouds	Flow		10

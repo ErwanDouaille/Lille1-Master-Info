@@ -1,0 +1,85 @@
+; This file can be used to define your own interactions.
+; SYNTAX:
+; [EXCLUSIVE|PARALLEL] INTERACTION <name>
+; [TRIGGER <tr1> ... <tr_n>]
+; [...]
+; [TRIGGER <tr'1> ... <tr'_n>]
+; [CONDITION <cond1> ... <cond_n>]
+; [...]
+; [CONDITION <cond'1> ... <cond'_n>]
+; [ACTIONS <act1> ... <act_n>]
+; END
+;
+; NB1: tr_i and cond_i are abstract condition primitives,
+; which must be implemented by concrete reporters, while
+; act_i are abstract action primitives, which must be
+; implemented by concrete commands.
+;
+; NB2: any non-letter, non-digit character at the beginning
+; of the line introduces a comment line. Empty lines are ignored.
+;
+
+INTERACTION	Move
+  TRIGGER	move-command?
+  CONDITION	can-move?
+  ACTIONS	do-move
+END
+
+INTERACTION	Shoot
+  TRIGGER	shoot-command?
+  ACTIONS	do-shoot
+END
+
+INTERACTION	Fall
+  TRIGGER	nothing-below?
+  ACTIONS	increase-vspeed decrease-hspeed advance
+END
+
+INTERACTION	StopFalling
+  TRIGGER	target:below?
+  CONDITION	falling?
+  ACTIONS	reset-speed
+END
+
+INTERACTION	Crash
+  TRIGGER	target:below?
+  CONDITION	falling? excessive-speed?
+  ACTIONS	reset-speed reduce-health 
+END
+
+INTERACTION	Sink
+  TRIGGER	in-water?
+  ACTIONS	water-speed advance
+END
+
+INTERACTION	Remove
+  TRIGGER	target:on-sea-floor?
+  ACTIONS	target:die
+END
+
+INTERACTION	UpdateShape
+  ACTIONs	update-shape
+END
+  
+
+INTERACTION	UpdateInfo
+  ACTIONS	update-health update-shape
+END
+
+INTERACTION	UpdateAngle
+  TRIGGER	my-worm-is-active?
+  ACTIONS	update-angle
+END
+
+INTERACTION	Die
+  TRIGGER	bad-health?
+  ACTIONS	die
+END
+
+INTERACTION	Swim
+  ACTIONS	turn-sometimes advance
+END
+
+INTERACTION	Flow
+  ACTIONS	advance
+END

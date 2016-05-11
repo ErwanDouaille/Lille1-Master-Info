@@ -1,0 +1,1180 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; This include file is part of the IODA NetLogo extension 2.3, 
+; a NetLogo implementation of the 'Interaction-Oriented Design of Agent
+; simulations' methodology (IODA). Works with NetLogo 5.1.
+; General principles, implementation details, examples are available on the website:
+; http://www2.lifl.fr/SMAC/projects/ioda/
+; 
+; Please cite IODA methodology and tools as follows:  
+; Yoann Kubera and Philippe Mathieu and Sebastien Picault (2011), 
+; "IODA: an interaction-oriented approach for multi-agent based simulations",
+; Journal of Autonomous Agents and Multi-Agent Systems (JAAMAS) vol. 23(3), p. 303-343
+; Springer DOI: 10.1007/s10458-010-9164-z
+; 
+; (c) 2008-2014 Sebastien PICAULT and Philippe MATHIEU
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+extensions [ ioda table ] ; the Java extension providing compiled datatypes and primitives
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; GLOBAL VARIABLES AND AGENT ATTRIBUTES
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+globals [ 
+  ioda:dead-agents            ; the list of agents that died during the simulation step
+  ioda:performed-interactions ; the list of interactions that have been performed during the interaction selection step
+  ioda:metric                 ; a string corresponding to the metric used for distance measures
+  ioda:metric-factor          ; 1, 1, sqrt(2) resp. for Von Neumann, Euclidean and Moore metrics (internal use)
+  ioda:ordering-policy-for-update    ; the agent ordering policy used to sort agents before the update step (random by default)
+  ioda:ordering-policy-for-selection ; the agent ordering policy used to sort agents before the interaction selection step (random by default)
+;!; 2_3 changes
+  ioda:neighborhoods		     ; the table containing the convenient reporters for perception capabilities
+  				                   ; (keys: [breed reporter], values: a list of reporter tasks, each one computing
+				                     ; a set of neighbors of one of the target breeds)
+  ioda:primitive-tasks       ; the table containing the tasks associated with concrete primitives
+                             ; (keys: the name of the concrete primitive; values: the corresponding task)
+  ioda:distance-task         ; the reporter task in charge of computing distances between two
+                             ; agents (depends on the metric - internal use)
+  ioda:performed-updates     ; the list of interactions that have been performed during the update step
+]
+
+turtles-own [
+  ioda:operative?	     		; false if this turtle has already performed an interaction or if it has been
+  			     		; the target of an exclusive interaction within the current time step
+  ioda:alive?  ; true if this turtle can participate in interaction selection process 
+               ; false otherwise (usually because this agent no more "exists" and is to be removed from the simulation)
+  ioda:neighbors ; contains the list of surrounding alive agents which belong to a target breed 
+                 ; this list is filtered by each source agent through a breed-dependent procedure
+                 ; (A_BREED::filter-neighbors), e.g. according to the distance between source and target
+  ioda:target  ; contains the agent that is a target (or potential target) for performing an interaction with this turtle as the source
+               ; this variable is set by the simulation engine, and should be used by any breed-dependent IODA primitive
+               ; possible values: nobody, a turtle or a patch  
+  ioda:decision ; contains a list [interaction target] corresponding to the interaction/target pair that 
+                ; was chosen at the end of the interaction selection process   
+]
+
+patches-own [
+  ioda:patch-operative?	     		; true if this patch has already performed an interaction or if it has been
+  			     		; the target of an exclusive interaction within the current time step
+  ioda:patch-neighbors ; contains the list of surrounding alive agents which belong to a target breed 
+                 ; this list is filtered by each source agent through a breed-dependent procedure
+                 ; (A_BREED::filter-neighbors), e.g. according to the distance between source and target
+  ioda:patch-target  ; contains the agent that is a target (or potential target) for performing an interaction with this patch as the source
+               ; this variable is set by the simulation engine, and should be used by any breed-dependent IODA primitive
+               ; possible values: nobody, a turtle or a patch               
+  ioda:patch-alive?  ; true if this patch can participate in interaction selection process 
+               ; false otherwise (usually because this agent no more "exists" and must not participate in the simulation)
+  ioda:patch-decision ; contains a list [interaction target] corresponding to the interaction/target pair that 
+                      ; was chosen at the end of the interaction selection process   
+]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; PROCEDURES DEDICATED TO METRIC
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; internal use
+to ioda:compile-distance-task
+  ifelse (ioda:metric = "Euclidean")
+    [ set ioda:distance-task task [[distance ?2 ] of ?1] 
+      set ioda:metric-factor 1 ]
+    [ ifelse (ioda:metric = "Moore")
+        [ set ioda:distance-task 
+            task [ioda:moore-distance (ioda:get-coords ?1) (ioda:get-coords ?2)]
+          set ioda:metric-factor sqrt 2
+        ]
+        [ set ioda:distance-task 
+            task [ioda:vonneumann-distance (ioda:get-coords ?1) (ioda:get-coords ?2)]
+          set ioda:metric-factor 1
+        ]  
+    ]
+end
+
+to-report ioda:world-wraps-x?
+  report ([patch-at world-width 0] of patch 0 0 != nobody)
+ end
+
+to-report ioda:world-wraps-y?
+  report ([patch-at 0 world-height] of patch 0 0 != nobody)
+end
+
+to-report ioda:wrap-topology
+  report map [ ifelse-value ? [1] [0]] (list ioda:world-wraps-x? ioda:world-wraps-y?)
+end
+
+
+to-report ioda:moore-distance [ ioda-coord1 ioda-coord2 ]
+  report max (map [min (list (abs (?1 - ?2)) (?3 - ?4 * abs(?1 - ?2)))] 
+    ioda-coord1 ioda-coord2 (list world-width world-height) ioda:wrap-topology)
+end
+
+to-report ioda:moorex-distance [ ioda-coord1 ioda-coord2 ]
+  report max (map [min (list (abs (?1 - ?2)) (?3 - ?4 * abs(?1 - ?2)))] 
+    ioda-coord1 ioda-coord2 (list world-width world-height) ioda:wrap-topology)
+end
+
+to-report ioda:vonneumann-distance [ ioda-coord1 ioda-coord2 ]
+  report reduce + (map [min (list (abs (?1 - ?2)) (?3 - ?4 * abs(?1 - ?2)))] 
+    ioda-coord1 ioda-coord2 (list world-width world-height) ioda:wrap-topology)
+end
+
+to-report ioda:get-coords [ ioda-agent ]
+  report ifelse-value (is-patch? ioda-agent)
+    [ [(list pxcor pycor)] of ioda-agent ]
+    [ [(list xcor ycor)] of ioda-agent ]
+end  
+  
+;to-report ioda:compute-patch-distance [ ioda-patch1 ioda-patch2 ] 
+;  ifelse (ioda:metric = "Euclidean") 
+;    [ report [distance ioda-patch2] of ioda-patch1 ]
+;    [ ifelse (ioda:metric = "Moore") 
+;        [ report max (list abs([pxcor] of ioda-patch1 - [pxcor] of ioda-patch2) 
+;                           abs([pycor] of ioda-patch1 - [pycor] of ioda-patch2)) ]
+;        [ report abs([pxcor] of ioda-patch1 - [pxcor] of ioda-patch2) 
+;               + abs([pycor] of ioda-patch1 - [pycor] of ioda-patch2)]
+;    ]
+;end   
+
+; internal use
+;to-report ioda:compute-turtle-distance [ ioda-turtle1 ioda-turtle2 ] 
+;  ifelse (ioda:metric = "Euclidean") 
+;    [ report [distance ioda-turtle2] of ioda-turtle1 ]
+;    [ ifelse (ioda:metric = "Moore") 
+;        [ report max (list abs([xcor] of ioda-turtle1 - [xcor] of ioda-turtle2) 
+;                           abs([ycor] of ioda-turtle1 - [ycor] of ioda-turtle2)) ]
+;        [ report abs([xcor] of ioda-turtle1 - [xcor] of ioda-turtle2) 
+;               + abs([ycor] of ioda-turtle1 - [ycor] of ioda-turtle2)]
+;    ]
+;end   
+ 
+; defines the metric used to compute distances
+to ioda:set-metric [ ioda-metric-name ]
+  ifelse (member? ioda-metric-name ["Euclidean" "Moore" "Von Neumann"])
+    [ set ioda:metric ioda-metric-name 
+      ioda:compile-distance-task]
+    [ user-message (word "Unknown metric: " ioda-metric-name)
+      stop ]
+end
+
+to-report ioda:distance [ioda-agent]
+  report (runresult ioda:distance-task self ioda-agent)
+end
+
+;; the distance between X and a patch is actually the distance
+;; between the patch where X is situated and the other patch
+;to-report ioda:distance [ioda-agent]
+;  let ioda-mypatch ioda:my-patch 
+;  let ioda-otherpatch ioda:patch-here-of ioda-agent
+;  ifelse ((is-patch? self) or (is-patch? ioda-agent))
+;    [ report ioda:compute-patch-distance ioda-mypatch ioda-otherpatch ]
+;    [ report ioda:compute-turtle-distance self ioda-agent]
+;end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; PROCEDURES DEDICATED TO IODA AGENTS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to ioda:init-agent
+  ioda:make-operative false
+  ioda:set-my-target []
+  ioda:set-alive true
+end
+
+to ioda:die 
+  ifelse (is-turtle? self)
+    [ set ioda:alive? false
+      set ioda:dead-agents (turtle-set self ioda:dead-agents)]
+    [ set ioda:patch-alive? false ]
+end
+
+to-report ioda:concrete-primitive [ioda-agent ioda-abstract-primitive]
+  report (word ioda:breed-of ioda-agent "::" ioda-abstract-primitive)
+end
+
+;!; 2.3 change
+to-report ioda:concrete-primitive-task [ ioda-agent ioda-abstract-primitive ]
+  report ioda:get-task ioda:concrete-primitive ioda-agent ioda-abstract-primitive
+end
+
+to-report ioda:get-task [ ioda-primitive ]
+  if (not table:has-key? ioda:primitive-tasks ioda-primitive)
+    [ let ioda-task runresult (word "task " ioda-primitive)
+      ; output-show (word "Caching primitive... " ioda-primitive)
+      table:put ioda:primitive-tasks ioda-primitive ioda-task
+      report ioda-task ]
+  report table:get ioda:primitive-tasks ioda-primitive
+end
+
+; alive 
+to ioda:set-alive [ioda-value]
+  ioda:set-alive-of self ioda-value
+end
+
+to-report ioda:is-alive?
+  report ioda:is-alive?-of self
+end
+
+; alive (internal use)
+to ioda:set-alive-of [ioda-agent ioda-value]
+  ifelse (is-patch? ioda-agent)
+    [ ask ioda-agent [ set ioda:patch-alive? ioda-value ]]
+    [ ask ioda-agent [ set ioda:alive? ioda-value ]]
+end
+
+to-report ioda:is-alive?-of [ioda-agent]
+  ifelse (is-patch? ioda-agent)
+    [ report [ioda:patch-alive?] of ioda-agent ]
+    [ report [ioda:alive?] of ioda-agent]
+end
+
+; breed
+to-report ioda:my-breed 
+  report ioda:breed-of self
+end
+
+; breed (internal use)
+to-report ioda:breed-of [ioda-agent]
+  ifelse (is-patch? ioda-agent)         
+    [report patches] 
+    [report [breed] of ioda-agent]         
+end
+
+; operative 
+to-report ioda:is-operative? 
+  report ioda:is-operative?-of self
+end
+
+to ioda:make-operative [ioda-value]
+  ioda:make-operative-of self ioda-value
+end
+
+; operative (internal use)
+to ioda:make-operative-of [ioda-agent ioda-value]
+   ifelse (is-patch? ioda-agent) 
+     [ ask ioda-agent [set ioda:patch-operative? ioda-value]]
+     [ ask ioda-agent [set ioda:operative? ioda-value]]
+end
+
+to-report ioda:is-operative?-of [ioda-agent]
+  ifelse (is-patch? ioda-agent)
+    [report [ioda:patch-operative?] of ioda-agent]
+    [report [ioda:operative?] of ioda-agent]
+end
+
+to-report ioda:my-patch 
+ report ioda:patch-here-of self
+end
+
+; internal use
+to-report ioda:patch-here-of [ioda-agent]
+  ifelse (is-patch? ioda-agent)
+    [ report ioda-agent ]
+    [ report [patch-here] of ioda-agent]
+end
+
+
+; neighbors
+to-report ioda:my-neighbors 
+  report ioda:neighbors-of self
+end
+
+to ioda:set-my-neighbors [ioda-alist]
+  ioda:set-neighbors-of self ioda-alist
+end
+
+; neighbors (internal use)
+to-report ioda:neighbors-of [ioda-agent]
+  ifelse (is-patch? ioda-agent)
+    [ report [ioda:patch-neighbors] of ioda-agent ]
+    [ report [ioda:neighbors] of ioda-agent ]
+end
+
+to ioda:set-neighbors-of [ioda-agent ioda-alist]
+  ifelse (is-patch? ioda-agent)
+    [ ask ioda-agent [set ioda:patch-neighbors ioda-alist]]
+    [ ask ioda-agent [set ioda:neighbors ioda-alist]]
+end
+ 
+; target   
+to-report ioda:my-target 
+    report ioda:target-of self
+end
+
+to ioda:set-my-target [target]
+  ioda:set-target-of self target
+end
+
+; target (internal-use)
+to-report ioda:target-of [ioda-agent]
+  ifelse (is-patch? ioda-agent) 
+    [ report [ioda:patch-target] of ioda-agent]
+    [ report [ioda:target ] of ioda-agent]
+end
+
+to ioda:set-target-of [agent target]
+  ifelse (is-patch? agent)
+    [ ask agent [set ioda:patch-target target ]]
+    [ ask agent [set ioda:target target ]]
+end
+
+; decision
+to-report ioda:my-decision
+  report ioda:decision-of self
+end
+ 
+to ioda:set-my-decision [ioda-value]
+  ioda:set-decision-of self ioda-value
+end
+
+; decision (internal use)
+to-report ioda:decision-of [ioda-agent]
+  ifelse (is-patch? ioda-agent) 
+    [ report [ioda:patch-decision] of ioda-agent]
+    [ report [ioda:decision] of ioda-agent]
+end
+
+to ioda:set-decision-of [ioda-agent ioda-value]
+  ifelse (is-patch? ioda-agent)
+    [ ask ioda-agent [set ioda:patch-decision ioda-value]]
+    [ ask ioda-agent [set ioda:decision ioda-value]]
+end
+
+
+
+
+
+
+to-report ioda:encode-list [ioda-alist]
+  if (not empty? ioda-alist)
+    [ report fput (ioda:encode first ioda-alist) (ioda:encode-list but-first ioda-alist) ]
+  report []
+end
+
+to-report ioda:encode [ioda-agent]
+  if (is-list? ioda-agent) 
+    [ report ioda:encode-list ioda-agent ]
+  if (is-patch? ioda-agent)
+    [ report (list [pxcor] of ioda-agent [pycor] of ioda-agent) ]
+  if (is-turtle? ioda-agent)
+    [ report (list [who] of ioda-agent) ]
+  report [] 
+end   
+
+to-report ioda:decode-list [ioda-alist]
+  if (not empty? ioda-alist)
+    [ report fput (ioda:decode first ioda-alist) (ioda:decode-list butfirst ioda-alist) ]
+  report []
+end
+   
+to-report ioda:decode [ioda-alist]
+  if (empty? ioda-alist)
+    [ report nobody ]
+  if (is-list? first ioda-alist)
+    [ report ioda:decode-list ioda-alist ]
+  if (length ioda-alist = 1)
+    [ report turtle first ioda-alist]
+  report patch (item 0 ioda-alist) (item 1 ioda-alist)
+end
+
+to ioda:kill-dead-agents
+  ask ioda:dead-agents [ die ]
+  set ioda:dead-agents no-turtles
+end
+
+to-report ioda:read-file [filename]
+  let content ""
+  file-open filename
+  while [not file-at-end?]
+    [ set content (word content file-read-line "\n")]
+  file-close
+  report content
+end
+
+to ioda:load-interactions [filename]
+  if not file-exists? filename
+    [ error (sentence "File " filename " not found")]
+  ioda:read-interactions filename ioda:read-file filename
+end
+
+to ioda:load-matrices [filename delims]
+  if not file-exists? filename
+    [ error (sentence "File " filename " not found")]
+  ioda:read-matrices filename (ioda:read-file filename) delims
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; SIMULATION MAINLOOP
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; initialization of ioda variables
+to ioda:setup
+  ;!; 2_3 change
+  set ioda:neighborhoods table:make
+  set ioda:primitive-tasks table:make
+  set ioda:ordering-policy-for-update "random"
+  set ioda:ordering-policy-for-selection "random"
+  ioda:set-metric "Euclidean"        
+  set ioda:performed-interactions []
+  set ioda:performed-updates []
+  set ioda:dead-agents no-turtles
+  ask turtles [set ioda:alive? true set ioda:target nobody ]
+  ask patches [set ioda:patch-alive? true set ioda:patch-target nobody ]
+end
+
+; one simulation time step 
+to ioda:go
+  set ioda:performed-interactions []
+  set ioda:performed-updates []
+  ioda:update-step		; all labile agents perform their update interactions
+  ioda:interaction-step		; all active agents try to perform an interaction
+  ioda:kill-dead-agents
+end
+
+; the update step aims at making all labile agents change their state if needed
+to ioda:update-step
+  ; get labile breeds
+  let ioda-labiles ioda:labile-agents
+  let ioda-all-labiles []
+  ; collect all corresponding agents
+  foreach ioda-labiles 
+    [ set ioda-all-labiles filter [ioda:is-alive?-of ?] (sentence ioda-all-labiles [self] of ?)]
+  ; define evaluation order according to the corresponding reporter (or "random" by default)
+  ifelse (ioda:ordering-policy-for-update = "random")
+    [ set ioda-all-labiles shuffle ioda-all-labiles ]
+    [ set ioda-all-labiles sort-by ioda:ordering-policy-for-update ioda-all-labiles ]
+  ; ask each agent to perform ALL realizable update interactions
+  ; in the order defined by priorities (if an EXCLUSIVE interaction is
+  ; performed, then the evaluation stops)
+  let ioda-um ioda:get-update-matrix
+  foreach ioda-all-labiles [
+    ask ? [ ioda:perform-update-interactions ioda-um ]
+  ]
+end
+
+; performs all realizable update interactions in this agent,
+to ioda:perform-update-interactions [ ioda-um ]
+  ; identify the breed of this agent (possibly a patch)
+  let ioda-my-breed ioda:my-breed  
+  ; retrieve my update interactions
+  let ioda-my-upd ioda:get-matrix-line ioda-um ioda-my-breed
+  foreach ioda-my-upd 
+    [ let ioda-block ?   ; a block of interactions with same priority
+      foreach shuffle ioda-block 
+        [ let ioda-inter ioda:get-interaction-of ?
+          if ((ioda:sources-eval-reporters ioda:eval-trigger ioda-inter nobody)
+            and (ioda:sources-eval-reporters ioda:eval-condition ioda-inter nobody))
+            [ ioda:sources-perform-commands ioda:perform-actions ioda-inter nobody 
+              set ioda:performed-updates 
+                fput (list self ioda:interaction-name ioda-inter) ioda:performed-updates
+              if (ioda:is-exclusive? ioda-inter) [stop]
+	    ]
+        ] 
+    ]
+end
+
+; the interaction step aims at making all active agents select an
+; interaction together with a target and perform it
+to ioda:interaction-step
+  ; initialize the ability to participate in interactions either
+  ; as a source or as a target  
+  foreach (remove-duplicates sentence ioda:active-agents ioda:passive-agents)  
+     [ ask ? [ioda:make-operative true]]
+  ; get active breeds
+  let ioda-actives ioda:active-agents 
+  let ioda-all-actives []
+  ; collect all corresponding agents
+  foreach ioda-actives 
+    [ set ioda-all-actives (sentence ioda-all-actives (filter [ioda:is-alive?-of ?] [self] of ?))]
+   ; define evaluation order according to the corresponding reporter (or "random" by default)
+   ifelse (ioda:ordering-policy-for-selection = "random")
+     [ set ioda-all-actives shuffle ioda-all-actives ]
+     [ set ioda-all-actives sort-by ioda:ordering-policy-for-selection ioda-all-actives ]
+   ; ask each agent to select and perform an interaction
+   let ioda-im ioda:get-interaction-matrix
+   foreach ioda-all-actives [
+     ask ? [ ioda:select-and-perform-interaction ioda-im ]]
+end
+
+
+; searches for all realizable interactions with possible targets, by
+; decreasing priority
+; when a set of interaction/target pairs is found, selects one of 
+; them and performs corresponding actions
+to ioda:select-and-perform-interaction [ioda-im]
+  if (ioda:is-alive?) and (ioda:is-operative? ) 
+    [ ; identify the breed of this agent (possibly a patch)
+      let ioda-my-breed ioda:my-breed 
+      ; retrieve breeds of agents that can be a target for this agent  
+      let ioda-target-breeds ioda:get-breed-targets ioda-my-breed
+      ; perceive potential target among neighbors
+      ioda:perceive-neighbors ioda-target-breeds
+      ; retrieve relevant line in the interaction matrix
+      let ioda-my-assignations ioda:get-matrix-line ioda-im ioda-my-breed
+      ; select and perform interaction
+      ioda:eval-and-select ioda-my-assignations
+    ]
+end
+
+
+
+; tries to interact with one of the neighbors through one of the interactions
+to ioda:eval-and-select [ ioda-my-assignations ]
+  ifelse (not empty? ioda-my-assignations) 
+    [ ; retrieve assignations with same priority level
+      let ioda-assignations first ioda-my-assignations
+      ; computes realizable interactions with corresponding targets
+      let ioda-realizable ioda:find-realizable ioda-assignations ioda:my-neighbors 
+      ; among realizable interactions/targets, select one to perform
+      let ioda-to-realize ioda:select-among ioda-realizable
+      ; if no realizable interaction then try with lower priority level
+      ifelse (empty? ioda-to-realize)
+        [ ioda:eval-and-select but-first ioda-my-assignations ]
+	; else select one interaction/target pair and perform actions
+        [ ioda:perform-interaction  ioda-to-realize
+          ; makes this agent unable to be again the source of an interaction
+          ; or to participate to an EXCLUSIVE interaction
+          ioda:make-operative  false 
+        ]
+    ]
+    [ ioda:set-my-decision  [] ]
+end
+
+; computes realizable interactions based on the specified assignation list
+; and the perceived neighbors
+; to be realizable, an interaction must fulfill both trigger and condition, applied 
+; to the candidate target, and the target must be within the limit distance (specified
+; in the assignation)
+; additionnally, an EXCLUSIVE interaction is realizable only on operative targets
+; (while PARALLEL interactions can be performed over any target)
+to-report ioda:find-realizable [ ioda-assignations ioda-my-neighbors ]
+  let ioda-potential-interactions []
+  foreach ioda-assignations 
+    [ let ioda-assignation ?
+      ; retrieve the interaction
+      let ioda-inter ioda:get-interaction-of ioda-assignation
+      ; degenerate interaction are reflexive, thus no need to search for another target
+      ifelse (ioda:is-degenerate? ioda-assignation)
+        [ if ((ioda:sources-eval-reporters ioda:eval-trigger ioda-inter nobody)
+          and (ioda:sources-eval-reporters ioda:eval-condition ioda-inter nobody)) 
+          [ set ioda-potential-interactions fput (list ioda-inter nobody "RANDOM") ioda-potential-interactions ]
+        ]
+      	; for regular interactions, all neighbors with the convenient breed 
+       	; must be examined
+        [ ; retrieve the limit distance between source and target
+          let ioda-max-dist ioda:get-distance ioda-assignation
+          ; retrieve the breed of target agents for that assignation
+          let ioda-target-breed ioda:get-target-breed ioda-assignation
+          ; then examine corresponding neighbors
+          foreach filter [(ioda:breed-of ?) = ioda-target-breed] ioda-my-neighbors 
+            [ let ioda-target ? 
+              if ioda:valid-target? ioda-inter ioda-target ioda-max-dist
+                [ set ioda-potential-interactions 
+                  		fput (list ioda-inter ioda-target (ioda:target-selection-method ioda-assignation)) ioda-potential-interactions]  
+            ]
+        ]
+    ]
+  report ioda-potential-interactions
+end
+
+; evaluate a target for a regular interaction
+to-report ioda:valid-target? [ ioda-interaction ioda-target ioda-max-dist ]
+  report (((not ioda:is-exclusive? ioda-interaction) or ((ioda:is-exclusive? ioda-interaction) and (ioda:is-operative?-of ioda-target)))
+    and (ioda:distance ioda-target <= ioda-max-dist) 
+    and (ioda:sources-eval-reporters ioda:eval-trigger ioda-interaction ioda-target)
+    and (ioda:sources-eval-reporters ioda:eval-condition ioda-interaction ioda-target))
+end
+
+; performs the interaction/target list 
+to ioda:perform-interaction [ ioda-int-and-target ]
+  let ioda-inter item 0 ioda-int-and-target
+  let ioda-target item 1 ioda-int-and-target
+  ioda:set-my-decision  (list ioda-inter ioda-target)
+  ; output-show (word "TRYING TO PERFORM: " ioda:my-decision )
+  ;output-show (word "ON TARGET(S): " target)
+  set ioda:performed-interactions 
+    fput (list self ioda:interaction-name ioda-inter ioda-target) ioda:performed-interactions
+  ioda:sources-perform-commands ioda:perform-actions ioda-inter ioda-target
+  ; in case of EXCLUSIVE interaction, make target(s) non-operative
+  if (ioda:is-exclusive? ioda-inter)
+    [ if (ioda-target != nobody) 
+      [ ifelse (is-list? ioda-target)
+          [ foreach ioda-target [ ioda:make-operative-of ? false ]]
+          [ ioda:make-operative-of ioda-target false ]
+      ]
+    ]
+end
+
+ 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; INTERACTION/TARGET SELECTION POLICIES
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; the search for interaction/target candidates provides a list like
+; [[int1 targ1 method1] [int2 targ2 method2] ... [int_n targ_n method_n]]
+; to avoid greedy simulation biases it would be convenient to select randomly
+; one of the interaction/target pairs, but in order to express preferences we
+; allow SELECTION POLICIES which introduce refinements (see Pheromones tutorial)
+; The SELECTION METHOD is one of the following:
+; - "RANDOM" means that all valid target must be considered equiprobable
+; - "BEST:REPORTERNAME" means that among all targets, for the chosen interaction,
+;   that with the higher value of targetbreed::REPORTERNAME must be chosen
+; - "PRORATA:REPORTERNAME" means that for all targets for the chosen interaction,
+;   the probability of being chosen is proportional to targetbreed::REPORTERNAME 
+; - "ALL" means the interaction must be performed on all possible targets at the 
+; same time
+; - "ALL-BEST:REPORTERNAME" means that among all targets, for the chosen interaction,
+;   all those with the higher value of targetbreed::REPORTERNAME must be chosen
+; - "NUMBER:x-y" means that the chosen interaction can occur if at least x targets,
+;   and up to y, are available. The largest number of available targets is chosen. 
+;   This policy can be used with the following syntax: x-y (at least x, up to y);
+;   x- (at least x); -y (up to y); x (exactly x)
+; - "FILTER:REPORTERNAME" means that all possible targets of each breed, for the
+;   chosen interaction, are filtered through the sourcebreed::REPORTERNAME procedure
+
+to-report ioda:select-among [ioda-realizable]
+  ; if nothing realizable, game over
+  if (empty? ioda-realizable) [ report []]
+  ; retrieves target selection method of realizable interactions (degenerate 
+  ; interactions are considered "RANDOM") which are NOT "RANDOM"
+  let ioda-methods remove-duplicates filter [? != "RANDOM"] (map [item 2 ?] ioda-realizable)
+  ifelse (empty? ioda-methods) ; very simple case: choose randomly among interaction/target pairs
+    [ report one-of ioda-realizable ]
+    ; now the hard case: try to group elements by method, by interaction and by target-breed
+    ; so as to compute an effective (interaction, target-list) list
+    [ let ioda-candidates (list ioda:select-with-methods "RANDOM" (filter [item 2 ? = "RANDOM"] ioda-realizable))
+      if (empty? first ioda-candidates)
+        [ set ioda-candidates []]
+      foreach ioda-methods [
+        let ioda-m ?
+        let ioda-res (ioda:select-with-methods ioda-m (filter [(item 2 ?) = ioda-m] ioda-realizable))
+        if (not empty? ioda-res) 
+          [ set ioda-candidates fput ioda-res ioda-candidates ]
+      ]
+      if (empty? ioda-candidates) 
+        [ report [] ]
+      let ioda-result one-of ioda-candidates
+      report (list (item 0 ioda-result) (item 1 ioda-result))
+    ]
+end
+
+to-report ioda:select-with-methods [ ioda-method ioda-candidates ]
+  if (empty? ioda-candidates) [ report [] ]
+  let ioda-inters remove-duplicates map [item 0 ?] ioda-candidates
+  ifelse ((ioda-method = "RANDOM") or (ioda-method = "RANDOM-INT"))
+  ; first, an interaction is chosen randomly ; then, a target for that interaction is chosen
+    [ let ioda-it one-of ioda-inters
+      report one-of (filter [item 0 ? = ioda-it] ioda-candidates) 
+    ]
+    [ ifelse ((position "BEST:" ioda-method = 0) or (position "PRORATA:" ioda-method = 0))
+      ; first, an interaction is chosen ; then, the "best" target is  chosen according
+      ; to the reporter, either in a deterministic ("BEST") or probabilistic ("PRORATA") way
+        [ let ioda-i one-of ioda-inters
+          let ioda-concurrents filter [(item 0 ? = ioda-i)] ioda-candidates
+          ifelse (position "BEST:" ioda-method = 0)
+          [ let ioda-reporter substring ioda-method 5 (length ioda-method) 
+            report ioda:select-best-one-of ioda-concurrents ioda-reporter ]
+          [ if (position "PRORATA:" ioda-method = 0)
+            [ let ioda-reporter substring ioda-method 8 (length ioda-method)  
+              report ioda:select-prorata-one-of ioda-concurrents ioda-reporter ]
+          ]
+        ]
+        ; in the other cases, the first step is to group targets by interaction and by breed
+        [ let ioda-concurrents []
+          foreach ioda-inters 
+            [ let ioda-j ? 
+              let ioda-tgt filter [ item 0 ? = ioda-j ] ioda-candidates
+              let ioda-tgtbr remove-duplicates map [ ioda:breed-of (item 1 ?) ] ioda-tgt
+              foreach ioda-tgtbr
+                [ let ioda-br ?
+                  let ioda-winners filter [ ioda:breed-of ? = ioda-br  ] (map [item 1 ?] ioda-tgt)
+                  if (ioda-method != "ALL")
+                  [ ifelse (position "ALL-BEST:" ioda-method = 0)
+                      [ let ioda-reporter substring ioda-method 9 (length ioda-method)
+                        set ioda-winners ioda:select-best ioda-winners ioda-reporter
+                      ]
+                      [ifelse (position "NUMBER:" ioda-method = 0)
+                        [ let ioda-nb length ioda-winners
+                          let ioda-interval substring ioda-method 7 length ioda-method
+                          let ioda-nmin 0 let ioda-nmax ioda-nb
+                          let ioda-p position "-" ioda-interval
+                          ifelse (ioda-p = false) 
+                            [ set ioda-nmin read-from-string ioda-interval
+                              set ioda-nmax ioda-nmin ]
+                            [ if (ioda-p > 0) 
+                              [ set ioda-nmin read-from-string substring ioda-interval 0 ioda-p ]
+                            if (ioda-p < length ioda-interval - 1)
+                              [ set ioda-nmax read-from-string substring ioda-interval (ioda-p + 1) length ioda-interval  ]
+                            ]                        
+                          ifelse (ioda-nb < ioda-nmin)
+                            [ set  ioda-winners [] ]
+                            [ if (ioda-nb > ioda-nmax)
+                              [ set ioda-winners n-of ioda-nmax ioda-winners]]
+                        ]                      
+                        [ ifelse (position "FILTER:" ioda-method = 0)
+                          [ let ioda-reporter substring ioda-method 7 length ioda-method 
+                            set ioda-winners ioda:select-with-filter ioda-winners ioda-reporter
+                          ]
+                          []
+                        ]
+                      ]
+                  ]
+                  if (not empty? ioda-winners)
+                    [ set ioda-concurrents fput (list ioda-j ioda-winners) ioda-concurrents ]
+                ]
+            ]
+          ifelse (not empty? ioda-concurrents) 
+            [ report one-of ioda-concurrents ]
+            [ report [] ]
+        ]
+    ]
+end
+
+
+to-report ioda:select-with-filter [ ioda-candidates ioda-filter ]
+  ioda:set-my-target ioda-candidates
+  let ioda-source self
+  foreach ioda-candidates [ask ? [ioda:set-my-target ioda-source]]
+  ;!; 2.3 change
+  report runresult ioda:concrete-primitive-task self ioda-filter 
+end
+
+; selects all targets, group them by breed
+; reports a list of the form [[br1_ag1 br1_ag2 ... br1_ag_n] .. [br_p_ag1 ... br_p_ag_m]]
+to-report ioda:select-all [ ioda-targets ]
+  let ioda-breeds map [ioda:breed-of ?] ioda-targets
+  let ioda-result []
+  foreach ioda-breeds 
+    [ let ioda-br ?
+      set ioda-result fput (filter [ioda:breed-of ? = ioda-br] ioda-targets) ioda-result ]
+  report ioda-result
+end
+  
+; selects all the best targets for the specified reporter
+to-report ioda:select-best [ioda-candidates ioda-reporter]
+  let ioda-source self
+  let ioda-x first ioda-candidates
+  foreach ioda-candidates [ask ? [ioda:set-my-target ioda-source]]
+  let ioda-maxrep  [runresult ioda:concrete-primitive-task ioda-x ioda-reporter] of ioda-x
+  let ioda-bests (list first ioda-candidates)
+  foreach but-first ioda-candidates [
+    set ioda-x ?
+    let ioda-rep  [runresult ioda:concrete-primitive-task ioda-x ioda-reporter] of ioda-x
+    ifelse (ioda-rep > ioda-maxrep) 
+      [ set ioda-maxrep ioda-rep 
+        set ioda-bests (list ?)
+      ]
+      [ if (ioda-rep = ioda-maxrep)
+          [ set ioda-bests fput ? ioda-bests ]]
+  ]
+  report ioda-bests
+end
+
+; selects one of the best targets for the specified reporter
+to-report ioda:select-best-one-of [ioda-realizable ioda-reporter]
+  let ioda-source self
+  let ioda-x item 1 (first ioda-realizable)
+  foreach (map [item 1 ?] ioda-realizable) [ask ? [ioda:set-my-target ioda-source]]
+  let ioda-maxrep  [runresult ioda:concrete-primitive-task ioda-x ioda-reporter] of ioda-x
+  let ioda-bests (list first ioda-realizable)
+  foreach but-first ioda-realizable [
+    set ioda-x item 1 ?
+    let ioda-rep  [runresult ioda:concrete-primitive-task ioda-x ioda-reporter] of ioda-x
+    ifelse (ioda-rep > ioda-maxrep) 
+      [ set ioda-maxrep ioda-rep 
+        set ioda-bests (list ?)
+      ]
+      [ if (ioda-rep = ioda-maxrep)
+          [ set ioda-bests fput ? ioda-bests ]]
+  ]
+  report one-of ioda-bests
+end
+
+
+; selects one of the target with a probability proportional to the reporter
+to-report ioda:select-prorata-one-of [ioda-realizable ioda-reporter]
+  let ioda-weights map [[runresult ioda:concrete-primitive-task ? ioda-reporter] of ?] (map [item 1 ?] ioda-realizable)  
+  let ioda-index ioda:prorata-random ioda-weights
+  report item ioda-index ioda-realizable
+end
+
+to-report ioda:prorata-random [ioda-weights]
+  let min-w min ioda-weights
+  set ioda-weights map [? + min-w] ioda-weights
+  let ioda-total sum ioda-weights
+  let ioda-x random-float ioda-total
+  let ioda-s 0
+  let ioda-k 0
+  foreach ioda-weights 
+    [ set ioda-s ioda-s + ?
+      if (ioda-s > ioda-x) [ report ioda-k ]
+      set ioda-k ioda-k + 1 
+    ]
+  report ioda-k
+end
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; EVALUATION OF BREED-DEPENDENT REPORTERS OR COMMANDS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; reports a boolean caculated as the conjunction of all reporters in the list
+; the first item of replist is the agent which evaluates the reporter
+to-report ioda:sources-eval-reporters [ioda-replist]
+  if empty? ioda-replist 
+    [ report true ]
+  foreach ioda-replist
+    [ if (ioda:sources-eval-conj-reporters ?)
+      [ report true ]
+    ]
+  report false 
+end
+
+to-report ioda:sources-eval-conj-reporters [ioda-replist]  
+  foreach ioda-replist
+    [ let ioda-arg ? 
+      if (not empty? ioda-arg) 
+        [ let ioda-ag ioda:decode first ioda-arg
+          let ioda-reps but-first ioda-arg
+          if (not [ioda:eval-reporters ioda-reps] of ioda-ag)
+            [ report false ]
+        ]
+     ]
+  report true
+end
+
+to-report ioda:eval-reporters [ ioda-replist ]
+  foreach ioda-replist 
+    [ let ioda-rep ?
+      let ioda-neg false
+      if (first ioda-rep = "not")
+        [ set ioda-rep but-first ioda-rep
+          set ioda-neg true 
+        ]
+      ioda:set-my-target ioda:decode item 1 ioda-rep
+      if not ((run-result ioda:get-task item 0 ioda-rep) xor ioda-neg)
+        [ report false ]
+    ]
+  report true
+end
+
+; performs all commands in the list
+; the first item of comlist is the agent which performs the commands
+to ioda:sources-perform-commands [ ioda-comlist ]
+  foreach ioda-comlist
+    [ let ioda-arg ?
+      if (not empty? ioda-arg)
+        [ let ioda-ag ioda:decode first ioda-arg 
+          let ioda-coms but-first ioda-arg
+          ifelse (is-list? ioda-ag)
+            [ foreach ioda-ag [ ask ? [ ioda:perform-commands ioda-coms]]]
+            [ ask ioda-ag [ ioda:perform-commands ioda-coms ]]
+        ]
+    ]
+end
+
+to ioda:perform-commands [ioda-comlist]
+  foreach ioda-comlist 
+    [ ioda:set-my-target ioda:decode item 1 ?
+      run ioda:get-task item 0 ? ]
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; AGENT ORDERING POLICIES
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+to ioda:set-ordering-policy-for-update [ ioda-reporter ]
+  if (not is-reporter-task? ioda-reporter) and (ioda-reporter != "random")
+    [ error (word ioda-reporter " should be a boolean reporter with two parameters (agents to order)")]
+  set ioda:ordering-policy-for-update ioda-reporter
+end
+
+to ioda:set-ordering-policy-for-interaction-selection [ ioda-reporter ]
+  if (not is-reporter-task? ioda-reporter) and (ioda-reporter != "random")
+    [ error (word ioda-reporter " should be a boolean reporter with two parameters (agents to order)")]
+  set ioda:ordering-policy-for-selection ioda-reporter
+end
+  
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; 2_3 CHANGES IN PERCEPTION CAPABILITIES
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; procedures dedicated to neigbhors filtering
+
+; reports true if ioda-target is within ioda-radius from ioda-source 
+; w.r.t. ioda:metrics, false otherwise
+to-report ioda:in-radius? [ioda-source ioda-target ioda-radius]
+  report [(ioda:distance ioda-target) <= ioda-radius] of ioda-source
+end
+
+; generic reporter for determining which agents (turtles/patches) are 
+; within the perception halo of the caller
+; therefore the specified parameter is applied to all breeds that are likely to
+; undergo interactions from the caller
+; the parameter "ioda-reporter" is the name of a reporter which takes 3 parameters :
+; ?1 = the source agent, ?2 = the target agent, ?3 = specific parameters 
+; e.g. : "ioda:in-radius?" takes 3 args: source, target and radius
+; when many parameters are required (such as distance and angle), they
+; have to be concatenated within a single list
+to ioda:build-generic-neighborhood-task [ioda-reporter]
+  let ioda-key (list (word ioda:my-breed) ioda-reporter)
+  let ioda-target-breeds ioda:get-breed-targets ioda:my-breed
+  let ioda-method map 
+    [ runresult (word "task [other " ? " with [" ioda-reporter " ?2 self ?1]]") ]
+    ioda-target-breeds
+  ; output-show (word ioda-key " -> " ioda-method)
+  table:put ioda:neighborhoods ioda-key ioda-method
+end
+
+; builds a "in-radius" task (w.r.t. the chosen metric) 
+; aimed at filtering the relevant breeds (internal use)
+to ioda:build-radius-neighborhood-task 
+  let ioda-key (list (word ioda:my-breed) (word "in-radius-" ioda:metric))
+  let ioda-target-breeds ioda:get-breed-targets ioda:my-breed
+  let ioda-method ifelse-value (ioda:metric = "Euclidean") 
+    [ map [ runresult (word "task [other " ? " in-radius ?1 ]") ] ioda-target-breeds ] 
+    [ map [ runresult 
+        (word "task [(other " ? " in-radius (?1 * " ioda:metric-factor ")) with [ioda:in-radius? ?2 self ?1]]")] 
+      ioda-target-breeds ]    
+  ; output-show (word ioda-key " -> " ioda-method)
+  table:put ioda:neighborhoods ioda-key ioda-method
+end
+
+; builds a "in-cone" task (w.r.t. the chose metric)  
+; aimed at filtering the relevant breeds (internal use)
+to ioda:build-cone-neighborhood-task 
+  let ioda-key (list (word ioda:my-breed) (word "in-cone-" ioda:metric))
+  let ioda-target-breeds ioda:get-breed-targets ioda:my-breed
+  let ioda-method ifelse-value (ioda:metric = "Euclidean") 
+    [ map [ runresult (word "task [other " ? " in-cone (item 0 ?1) (item 1 ?1) ]") ] ioda-target-breeds ] 
+    [ map [ runresult 
+        (word "task [(other " ? " in-cone ((item 0 ?1) * " ioda:metric-factor ") (item 1 ?1)) with [ioda:in-radius? ?2 self (item 0 ?1)]]")] 
+      ioda-target-breeds ]    
+  ; output-show (word ioda-key " -> " ioda-method)
+  table:put ioda:neighborhoods ioda-key ioda-method
+end
+
+; buils a "on patches" task aimed at filtering the relevant breeds (internal use)
+to ioda:build-patches-neighborhood-task 
+  let ioda-key (list (word ioda:my-breed) "on-patches")
+  let ioda-target-breeds ioda:get-breed-targets ioda:my-breed
+  let ioda-method map 
+    [ runresult ifelse-value (? = patches) 
+        [(word "task [ ?1 ]")]
+        [(word "task [other " ? "-on ?1 ]") ]]
+    ioda-target-breeds
+  ; output-show (word ioda-key " -> " ioda-method)
+  table:put ioda:neighborhoods ioda-key ioda-method
+end
+
+; applies the generic neighborhood task with specified parameters for the caller
+; reports the list of neighbors (internal use)
+to-report ioda:apply-generic-neighborhood [ioda-reporter ioda-params]
+  let ioda-key (list (word ioda:my-breed) ioda-reporter)
+  if (not table:has-key? ioda:neighborhoods ioda-key)
+    [ ioda:build-generic-neighborhood-task ioda-reporter ]
+  let ioda-method table:get ioda:neighborhoods ioda-key
+  let me self 
+  ;ioda:set-my-neighbors 
+  report (reduce sentence map 
+    [[self] of (runresult ? ioda-params me)]
+    ioda-method)
+end
+
+; applies the "in-radius" neighborhood task with specified radius for the caller
+; reports the list of neighbors (internal use)
+to-report ioda:apply-radius-neighborhood [ioda-radius]
+  let ioda-key (list (word ioda:my-breed) (word "in-radius-" ioda:metric))
+  if (not table:has-key? ioda:neighborhoods ioda-key)
+    [ ioda:build-radius-neighborhood-task ]
+  let ioda-method table:get ioda:neighborhoods ioda-key
+  ;ioda:set-my-neighbors 
+  ifelse (ioda:metric = "Euclidean")
+    [ report (reduce sentence map [[self] of (runresult ? ioda-radius)] ioda-method)]
+    [ let me self 
+      report (reduce sentence map [[self] of (runresult ? ioda-radius me)] ioda-method)]
+end
+
+; applies the "in-cone" neighborhood task with specified radius for the caller
+; reports the list of neighbors (internal use)
+to-report ioda:apply-cone-neighborhood [ioda-distance ioda-angle]
+  let ioda-key (list (word ioda:my-breed) (word "in-cone-" ioda:metric))
+  if (not table:has-key? ioda:neighborhoods ioda-key)
+    [ ioda:build-cone-neighborhood-task ]
+  let ioda-method table:get ioda:neighborhoods ioda-key
+  ;ioda:set-my-neighbors 
+  ifelse (ioda:metric = "Euclidean")
+    [ report (reduce sentence map [[self] of (runresult ? (list ioda-distance ioda-angle))] ioda-method)]
+    [ let me self 
+      report (reduce sentence map [[self] of (runresult ? (list ioda-distance ioda-angle) me)] ioda-method)]
+end
+
+; applies the "on patches" neighborhood task with specified radius for the caller
+; reports the list of neighbors (internal use)
+to-report ioda:apply-patches-neighborhood [ioda-patches]
+  let ioda-key (list (word ioda:my-breed) "on-patches")
+  if (not table:has-key? ioda:neighborhoods ioda-key)
+    [ ioda:build-patches-neighborhood-task ]
+  let ioda-method table:get ioda:neighborhoods ioda-key
+  let me self 
+  ;ioda:set-my-neighbors 
+  report (reduce sentence map 
+    [[self] of (runresult ? ioda-patches)]
+    ioda-method)
+end
+
+
+; perceives potential target among neighbors
+; rewritten in version 2.3 to handle tasks
+; INTERNAL USE
+to ioda:perceive-neighbors [ ioda-target-breeds ]
+  ; resets perceptions
+  ioda:set-my-neighbors []
+  if (member? ioda:my-breed  ioda:active-agents-with-targets) 
+    [ run ioda:concrete-primitive-task self "filter-neighbors" 
+      ioda:set-my-neighbors filter [[ioda:is-alive?] of ?] ioda:my-neighbors 
+    ]
+end
+
+; sets the list of neighbors to all relevant breeds (i.e. potential targets) which are
+; located within the specified radius from the caller
+to ioda:filter-neighbors-in-radius [ ioda-radius ]
+  ioda:set-my-neighbors ioda:apply-radius-neighborhood ioda-radius
+end
+
+; sets the list of neighbors to all relevant breeds (i.e. potential targets) which are
+; located within the specified cone from the caller
+to ioda:filter-neighbors-in-cone [ ioda-distance ioda-angle ]
+  ioda:set-my-neighbors ioda:apply-cone-neighborhood ioda-distance ioda-angle
+end
+
+; sets the list of neighbors to all relevant breeds (i.e. potential targets) which are
+; located on the specified patches (patchset)
+to ioda:filter-neighbors-on-patches [ ioda-patches ]
+  ioda:set-my-neighbors  ioda:apply-patches-neighborhood ioda-patches
+end
+
+; sets the list of neighbors to all relevant breeds (i.e. potential targets) which are
+; on the links from the caller (w.r.t. the possible orientation of the links)
+to ioda:filter-neighbors-on-links [ ioda-links ]
+  ioda:set-my-neighbors ioda:collect-link-neighbors ioda-links
+end
+
+to-report ioda:collect-link-neighbors [ ioda-links ]
+  if (is-patch? self) [ report []]
+  let ioda-link-ends remove self (map 
+    [[ifelse-value (is-directed-link? self) [end2] [other-end]] of ?]
+    ([self] of ioda-links))
+  let ioda-target-breeds ioda:get-breed-targets ioda:my-breed 
+  report filter [member? ([ioda:my-breed] of ?) ioda-target-breeds] ioda-link-ends
+end
+  
+; sets the list of neighbors to all relevant breeds (i.e. potential targets) which are
+; found by the caller through the specified reporter and its parameter list 
+to ioda:filter-neighbors-custom [ ioda-reporter ioda-params ]
+   ioda:set-my-neighbors ioda:apply-generic-neighborhood ioda-reporter ioda-params
+end
+
+to ioda:add-neighbors-custom [ioda-reporter ioda-params]
+  ioda:set-my-neighbors remove-duplicates
+    (sentence ioda:my-neighbors ioda:apply-generic-neighborhood ioda-reporter ioda-params)
+end
+
+to ioda:add-neighbors-in-radius [ioda-radius]
+  ioda:set-my-neighbors remove-duplicates 
+    (sentence ioda:my-neighbors ioda:apply-radius-neighborhood ioda-radius)
+end
+
+to ioda:add-neighbors-in-cone [ioda-distance ioda-angle]
+  ioda:set-my-neighbors remove-duplicates 
+    (sentence ioda:my-neighbors ioda:apply-cone-neighborhood ioda-distance ioda-angle)
+end
+
+to ioda:add-neighbors-on-patches [ioda-patches]
+  ioda:set-my-neighbors remove-duplicates 
+    (sentence ioda:my-neighbors ioda:apply-patches-neighborhood ioda-patches)
+end
+
+to ioda:add-neighbors-on-links [ioda-links]
+  ioda:set-my-neighbors remove-duplicates 
+    (sentence ioda:my-neighbors ioda:collect-link-neighbors ioda-links)
+end
+  
+to ioda:retain-only-neighbors-custom [ioda-reporter ioda-params]
+  let ioda-others ioda:apply-generic-neighborhood ioda-reporter ioda-params
+  ioda:set-my-neighbors filter [member? ? ioda-others] ioda:my-neighbors 
+end
+
+to ioda:retain-only-neighbors-in-radius [ioda-radius]
+  let ioda-others ioda:apply-radius-neighborhood ioda-radius
+  ioda:set-my-neighbors filter [member? ? ioda-others] ioda:my-neighbors   
+end
+
+to ioda:retain-only-neighbors-in-cone [ioda-distance ioda-angle]
+  let ioda-others ioda:apply-cone-neighborhood ioda-distance ioda-angle
+  ioda:set-my-neighbors filter [member? ? ioda-others] ioda:my-neighbors   
+end
+
+to ioda:retain-only-neighbors-on-patches [ioda-patches]
+  let ioda-others ioda:apply-patches-neighborhood ioda-patches
+  ioda:set-my-neighbors filter [member? ? ioda-others] ioda:my-neighbors 
+end
+
+to ioda:retain-only-neighbors-on-links [ioda-links]
+  let ioda-others ioda:collect-link-neighbors ioda-links
+  ioda:set-my-neighbors filter [member? ? ioda-others] ioda:my-neighbors 
+end
+ 
+ 
+to ioda:remove-neighbors-custom [ioda-reporter ioda-params]
+  let ioda-others ioda:apply-generic-neighborhood ioda-reporter ioda-params
+  ioda:set-my-neighbors filter [not member? ? ioda-others] ioda:my-neighbors 
+end
+
+to ioda:remove-neighbors-in-radius [ioda-radius]
+  let ioda-others ioda:apply-radius-neighborhood ioda-radius
+  ioda:set-my-neighbors filter [not member? ? ioda-others] ioda:my-neighbors   
+end
+
+to ioda:remove-neighbors-in-cone [ioda-distance ioda-angle]
+  let ioda-others ioda:apply-cone-neighborhood ioda-distance ioda-angle
+  ioda:set-my-neighbors filter [not member? ? ioda-others] ioda:my-neighbors   
+end
+
+to ioda:remove-neighbors-on-patches [ioda-patches]
+  let ioda-others ioda:apply-patches-neighborhood ioda-patches
+  ioda:set-my-neighbors filter [not member? ? ioda-others] ioda:my-neighbors 
+end
+
+to ioda:remove-neighbors-on-links [ioda-links]
+  let ioda-others ioda:collect-link-neighbors ioda-links
+  ioda:set-my-neighbors filter [not member? ? ioda-others] ioda:my-neighbors 
+end
+ 
+; adds the specified agentset to the list of neighbors
+to ioda:add-to-neighbors [ ioda-agset ]
+  ioda:set-my-neighbors remove-duplicates 
+    (sentence ioda:my-neighbors ([self] of ioda-agset))
+end

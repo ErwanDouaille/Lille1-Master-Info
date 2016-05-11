@@ -1,0 +1,23 @@
+[["bazooka" 1000] ["mine" 1000] ["grenade" 20]]
+
+                                      XXXXX                 
+                                  XXXX     XXXX       	         
+             XXXXXXX           XXXX            XX            
+         XXXX      XXXXXX     XX    XXXXXXXX     XX          
+      XXX    XX         XX     XX          XXX 
+       X                        XX           XXX         
+              XXXXXX                       
+ X       XXXXX                                        	 
+  X                        XX                	 
+   X                        XXX        XXXXXXX	
+    X                         XX             XXXXXX
+     X                XX
+      X
+                                                  xxxxxxxxxx
+                  xxxxxxxxxxxx                   xx         xx
+                  xxxxxxxxxxxx                  xx           xxx
+                  xxxxxxxxxxxx     XXXXXXXX    x               xx
+       XXXXXXXXX  xxxxxxxxxxxx
+
+
+XXXXXXXXXXXXXX           XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXX
