@@ -1,0 +1,31 @@
+\chapter{État de l’art}
+
+Malgré la nouveauté du concept que nous voulons mettre en place, nous avons trouvé plusieurs liens avec des travaux réalisés il y a quelques années.
+
+\section{Problème du retour visuel et sensoriel pour l’espace virtuel d’interaction}
+
+Comme dit dans l’article de \textit{Gustafson et al.} \cite{Gustafson:2010:IIS:1866029.1866033}, l’utilisateur possède une mémoire à court termes concernant la géo-localisation de son espace d’interaction. Compte tenu de cette information, il va de soit que sans retour visuel l’utilisateur perdra rapidement l’emplacement de son espace virtuel d’interaction. De plus, avec une utilisation multi-utilisateur, le partage d’un espace virtuel se retrouve encore plus compliqué, voir impossible. 
+
+Pour pallier ce problème et pour supprimer l’idée d’interaction dans l’air nous avons concentré nos recherches sur des solutions avec supports physiques. Ce qui rend la manipulation plus facile pour l’utilisateur et entre utilisateurs.
+
+Dans l’article de \textit{Benko et al.} \cite{kinect-wear}, n’importe quelle surface est destinée à pouvoir interagir avec l’utilisateur. Dans cet article un équivalent de la Kinect est placé sur l’épaule de l’utilisateur. 
+
+Pour notre projet, nous reprendrons l’idée d’utiliser n’importe quelle surface mais nous avons décidé d’enlever la contrainte de la Kinect posé sur l’utilisateur pour rester dans un style classique d’utilisation de la Kinect (face à l’utilisateur). Cela aura pour conséquence d'être moins précis et donc possiblement de nous empêcher de détecter l’équivalent d’un clic souris, ce qui dans notre cas n’est pas important puisque nous souhaitons uniquement pouvoir déplacer le curseur distant. Nous choisirons d’utiliser dans un premier temps un support physique type bloc-notes pour simplifier l’implémentation de la reconnaissance d’objet d’interaction.
+
+\section{Occlusion de la main par le support physique}
+
+Comme décrit précédemment dans le rapport, le support physique provoque une occultation lorsqu’il est orienté d’un certain angle par rapport à la caméra . Il est donc possible d’utiliser plusieurs Kinects pour résoudre ce problème. L’article de \textit{Tong et al.} \cite{6165146} propose une méthode pour reconstruire un corps avec plusieurs Kinect en trois étapes :
+
+\begin{itemize}
+	\item un scan complet du corps
+	\item une méthode d’enregistrement avec un template
+	\item un alignement des différentes parties du corps qui permet de supprimer les occultations
+\end{itemize}
+
+Cela permettrait donc d’avoir la position de la main par rapport au support physique pour pouvoir sélectionner l’espace virtuel de travail.
+
+Une fois l’espace de travail virtuel sélectionné, il faut connaître les mouvements de la main pour pouvoir effectuer les actions correspondantes sur cet espace. Pour cela, nous pouvons utiliser plusieurs méthodes définies dans l’ article de \textit{Asteriadis et al.} \cite{Asteriadis:2013:EHM:2466715.2466727}, qui estime un mouvement à partir d’une fusion de plusieurs capteurs basés sur une série de facteurs qui permet de réduire les occultations et le bruit. Un deuxième article, de \textit{Zhang et al.} \cite{6385968}, définie le MDCA (Multiple Depth Camera Approach). Cette méthode consiste à fusionner les images de profondeurs des caméras pour avoir un nuage de points correspondants aux squelettes, définir la forme du modèle puis estimer la pose du modèle. On propage ensuite les particules selon un modèle de mouvement,  puis on compare les poses réelles et celles de référence. Il faut ensuite ensuite les points à la partie du corps correspondante. Il suffit ensuite d’initialiser le tracking.
+
+\section{Tracking du support physique}
+
+Afin de tracker l’objet qui servira de support physique pour l’interaction, Hanaë Rateau nous a suggéré d’utiliser le kit de développement de Metaio. En effet, Metaio est le leader mondial dans le domaine de la réalité augmentée. Metaio met donc à disposition un SDK qui permet notamment de tracker efficacement des objets tels que des jouets ou des voitures. Cette librairie est donc adapté pour controler la position du support physique représentant l’espace d’interaction. Site officiel : \hyperref[http://www.metaio.com]{www.metaio.com}

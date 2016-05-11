@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt]{report}
+\input{macros.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDF INFO 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+	pdfauthor   = {Rémy François, Damien Druel, Erwan Douaille et Yoan Miranda},
+	pdftitle    = {Rapport de Projet Scientifique},
+	pdfsubject  = {Kinect interraction},
+	pdfkeywords = {Rémy François Damien Druel Kinect Erwan Douaille Yoan Miranda Lille},
+	pdfcreator  = {PDFLaTeX},
+	pdfproducer = {PDFLaTeX}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Rémy François, Damien Druel, Erwan Douaille et Yoan Miranda}
+\title{}
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
+
+
+\begin{document}
+
+\input{Couverture.tex}
+\thispagestyle{empty}
+\input{Remerciement.tex}
+\thispagestyle{empty}
+\input{Resume.tex}
+\thispagestyle{empty}
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contenu futur
+\input{Introduction.tex}
+\input{Presentation.tex}
+\input{StateOfArt.tex}
+\input{Travail.tex}
+\input{Tache.tex}
+\input{Conclusion.tex}
+\input{Glossaire.tex}
+
+\bibliography{Bibliography}
+
+\pagestyle{empty}
+\begin{figure}[!ht]
+\chapter{Annexes}
+	\center	
+	\includegraphics[scale=0.4,angle=90]{image/gantt.png}
+	\caption{Diagramme de Gant des tâches}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contenu futur
+
+\newpage
+%\input{Resume.tex}
+
+\end{document}
