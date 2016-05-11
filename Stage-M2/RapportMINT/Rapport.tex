@@ -1,0 +1,49 @@
+\documentclass[a4paper,12pt]{report}
+\input{macros.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDF INFO 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+	pdfauthor   = {Erwan Douaille},
+	pdftitle    = {Douaille Erwan - Stage M2 IVI},
+	pdfsubject  = {Anamorphose dynamique},
+	pdfkeywords = {Erwan Douaille Lille},
+	pdfcreator  = {PDFLaTeX},
+	pdfproducer = {PDFLaTeX}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Erwan Douaille}
+\title{}
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
+
+
+\begin{document}
+
+\input{Couverture.tex}
+\thispagestyle{empty}
+\input{Remerciement.tex}
+\thispagestyle{empty}
+\input{Resume.tex}
+\thispagestyle{empty}
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contenu futur
+
+\input{Introduction.tex}
+\input{StateOfArt.tex}
+\input{Contribution.tex}
+\input{Conclusion.tex}
+\input{Glossaire.tex}
+\bibliography{Bibliography}
+\input{Annexe.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contenu futur
+
+\newpage
+\input{Resume.tex}
+
+\end{document}

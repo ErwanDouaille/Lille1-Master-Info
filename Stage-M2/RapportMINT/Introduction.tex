@@ -1,0 +1,29 @@
+\chapter{Introduction}
+
+Avec la montée en puissance de calcul des processeurs graphiques (GPU) le monde de l'imagerie a ces vingts dernières années énormément évolué. L'une de ces évolutions est l'apparition d'écran large. Les écrans larges d'il y a dix ans, qui représentent des écrans 21"\cite{Czerwinski:2006:LDR:1125451.1125471}, sont aujourd'hui très courants dans le milieu des ordinateurs de bureau et sont souvent utilisés en multi-monitoring. Notre définition d'écrans larges correspond à des murs, soit des écrans par exemple de quatre mètres de large pour deux mètres de haut. Alors que Czerwinsky et al.\cite{czerwinski2003toward} démontrent que les écrans d'une vingtaine de pouces apportent un gain de confort, de performance et de précision dans l'utilisation des ordinateurs, on remarque que pour des écrans larges faisant la taille d'un mur ce constat n'est plus valable. Comme visible dans de nombreuses études \cite{Schmidt:2013:SEP:2470654.2466227, Vogel:2004:IPA:1029632.1029656, jakobsen2013information} les écrans larges apportent de nouvelles questions comme, comment interagir avec des grands écrans, comment afficher une image pour différents points de vue, ou encore comment apporter un confort visuel aux personnes ayant des troubles visuels tout en utilisant de grands écrans. L'interaction et l'appréhension de l'image sur écran géant sont différentes de ce que l'on rencontre sur des écrans classiques d'une vingtaine de pouces.
+
+\section{Problématique} 
+
+Deux problèmes en particulier apparaissent lors de l'utilisation d'écrans géants. L'un étant que lorsque l'utilisateur est proche de l'écran un effet de perspective apparaît ce qui pose problème pour interagir avec ce qui est situé aux bords de l'écran. Le second problème est lors d'une interaction distante, à cause de la grande densité de pixel que l'écran fournit, il est difficile de voir tout les détails de l'écran ce qui apporte une difficulté et une imprécision dans l'interaction.
+
+Pour répondre à ces deux problèmes, deux solutions sont envisageables. La première est de travailler sur la partie interaction pour permettre d'aider l'utilisateur à mieux interagir avec ces grands écrans. La seconde solution est de déformer l'image pour obtenir une taille d'affichage cohérente avec les capacités d'interaction. Dans cette étude nous travaillerons sur la seconde solution qui est la déformation d'image.
+
+Nous verrons donc comment correctement déformer l'image en tenant compte de la position de l'utilisateur face à l'écran pour lui fournir la meilleure interaction possible.
+
+
+%
+%\chapter{Introduction}
+%
+%Une anamorphose est une déformation réversible d'une image à l'aide d'un système optique, tel un miroir courbe, ou un procédé mathématique. Le but de ce projet est d'étudier l’anamorphose dite dynamique qui fut introduite pour la première fois en 2007 par Solina, F. et Batagelj, B \cite{dynamicAnamorphosis}. L’aspect dynamique de l’anamorphose consiste à ne pas appliquer une déformation statique de l’image, mais à déformer l’image en temps réel en tenant compte de paramètres tels que la position de l’utilisateur face à l’image. 
+%
+%\section{Contexte}
+%
+%Ce projet, se basant sur l’anamorphose dynamique de Solina, F. et Batagelj, B \cite{solina2007dynamic}, consiste à appliquer l'anamorphose à un système d'exploitation autrement dit, à un ordinateur avec lequel l’utilisateur peut interagir. Dans notre cas, l'ordinateur utilise un écran géant de 2 mètres de haut sur 4 mètres de largeur. Face à un tel écran l'utilisateur voit apparaître un effet de perspective lorsque celui-ci est très proche de l’écran et qu’il souhaite regarder les éléments qui sont présents au bord de l’écran.
+%
+%\section{Problématique} 
+%
+%L'objectif principal de ce projet est de pouvoir apporter un confort visuel à l'utilisateur. Cet objectif vise à corriger l'effet de perspective qui pourrait apparaître sur des écrans géants ou encore apporter une facilité visuelle d'interaction avec ce type d'écran qui possède une densité de pixel par pouce élevé et pour lesquels les systèmes d'exploitation moderne ne sont aujourd'hui pas adaptés. 
+
+\section{Plan du projet}
+
+Dans un premier temps, un état de l'art présente ce qui a déjà été réalisé autour de la déformation d'image ainsi que des techniques pour apporter du confort visuel. Une seconde partie concerne les contributions apportées par cette étude: proposition d'un cadre logiciel permettant la déformation totale ou partielle de l'image tout en conservant les propriétés d'interaction,  et la mise en œuvre sur deux cas d'usage. Ce rapport se finit par une conclusion et des perspectives sur la suite de ce travail sont proposées.

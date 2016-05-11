@@ -1,0 +1,56 @@
+\appendix
+\chapter{Chapitre annexe}
+\section{Code source de déformation de l'image}
+\label{sec:SCDefImage}
+%\lstinputlisting[language=C]{annexe/shell-anamorphosis-effect.c}
+
+\section{Code source de déformation des inputs}
+\label{sec:SCDefInputs}
+%\begin{lstlisting}[language=C]
+%
+%void
+%anamorphosis_input_device_deformation(ClutterInputDevice   *device, 
+%            ClutterPoint *point) 
+%{
+%  float width = clutter_actor_get_width(device->stage);
+%  float height = clutter_actor_get_height(device->stage);
+%  float x = CLUTTER_INPUT_DEVICE_GET_CLASS (device)->x;
+%  float y = CLUTTER_INPUT_DEVICE_GET_CLASS (device)->y;
+%  float z = CLUTTER_INPUT_DEVICE_GET_CLASS (device)->z;
+%  float coeffZx, coeffZy;
+%  float tmpX, tmpY;
+%  float x1, y1, x2, y2;
+%
+%  if(x < 0.0) x = 0.0; if(x > 1.0) x = 1.0;
+%  if(y < 0.0) y = 0.0; if(y > 1.0) y = 1.0;
+%  if(z < 0.0) z = 0.0; if(z > 1.0) z = 1.0;
+%  coeffZx =  8.0*width*(1-z);
+%  coeffZy =  8.0*height*(1-z);
+%
+%  x1 = x - (atan(width*fabs(x - 0)/coeffZx) / atan(1.0/coeffZx))/width;
+%  y1 = y - (atan(height*fabs(y- 0)/coeffZy) / atan(1.0/coeffZy))/height;
+%  x2 = x + (atan(width*fabs(x - 1)/coeffZx) / atan(1.0/coeffZx))/width;
+%  y2 = y + (atan(height*fabs(y- 1)/coeffZy) / atan(1.0/coeffZy))/height;
+%
+%  if (x > point->x/width)
+%    tmpX = (x - (atan(width*fabs(x - point->x/width)/coeffZx) / atan(1.0/coeffZx))/width)*width;
+%  else
+%    tmpX = (x + (atan(width*fabs(x - point->x/width)/coeffZx) / atan(1.0/coeffZx))/width)*width;
+%  if (y > point->y/height)
+%    tmpY = (y - (atan(height*fabs(y- point->y/height)/coeffZy) / atan(1.0/coeffZy))/height)*height;
+%  else
+%    tmpY = (y + (atan(height*fabs(y- point->y/height)/coeffZy) / atan(1.0/coeffZy))/height)*height;
+%
+%  if(tmpX < width*x1)
+%    tmpX = width*x1;
+%  if(tmpX > width*x2)
+%    tmpX = width*x2;
+%  if(tmpY < height*y1)
+%    tmpY = height*y1;
+%  if(tmpY > height*y2)
+%    tmpY = height*x2;
+%
+%  point->x = tmpX;
+%  point->y = tmpY;
+%}
+%\end{lstlisting}
