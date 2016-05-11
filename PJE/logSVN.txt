@@ -1,0 +1,124 @@
+------------------------------------------------------------------------
+r33 | miranda | 2014-01-12 22:30:39 +0100 (dim., 12 janv. 2014) | 1 line
+
+fonction calculant les coefs,vecteurs propres et valeurs propres de la matrice d'inertie faite
+------------------------------------------------------------------------
+r32 | douaille | 2014-01-12 19:30:34 +0100 (dim., 12 janv. 2014) | 1 line
+
+fix du bug sur les paths quand il y a acces concurrent sur la liste
+------------------------------------------------------------------------
+r31 | miranda | 2014-01-12 18:57:56 +0100 (dim., 12 janv. 2014) | 2 lines
+
+modification isInside pour prendre en commpte l'angle de rotation
+dernier tp fait jusque la question 2 inclue
+------------------------------------------------------------------------
+r30 | douaille | 2014-01-01 21:15:08 +0100 (mer., 01 janv. 2014) | 1 line
+
+fix pour la translation
+------------------------------------------------------------------------
+r29 | douaille | 2014-01-01 21:11:01 +0100 (mer., 01 janv. 2014) | 1 line
+
+Tout fonctionne, il faut faire la derniere question du tp10, j'ai changé la taille de la fenetre :p
+------------------------------------------------------------------------
+r28 | douaille | 2014-01-01 19:55:05 +0100 (mer., 01 janv. 2014) | 1 line
+
+Le delete fonctionne, j'ai par contre un petit probleme pour le raz de tout les components via OBB
+------------------------------------------------------------------------
+r27 | douaille | 2014-01-01 17:45:26 +0100 (mer., 01 janv. 2014) | 1 line
+
+Petit clean du templateManager et du OneDollar, suppresion des warnings
+------------------------------------------------------------------------
+r26 | douaille | 2014-01-01 17:41:09 +0100 (mer., 01 janv. 2014) | 1 line
+
+Le one dollar est fonctionnel il reconnait tout les signes dessines
+------------------------------------------------------------------------
+r25 | douaille | 2013-12-30 23:49:11 +0100 (lun., 30 déc. 2013) | 1 line
+
+J'ai fais le truc du fire, j'ai teste le recognizer, il y a un bug dans pathDistance quand notre ligne est trop grande
+------------------------------------------------------------------------
+r24 | douaille | 2013-12-30 16:19:03 +0100 (lun., 30 déc. 2013) | 1 line
+
+Je suis arrive jusque la Q10 du TP10, il manque une valeur dans recognize
+------------------------------------------------------------------------
+r23 | douaille | 2013-12-30 14:28:31 +0100 (lun., 30 déc. 2013) | 1 line
+
+fix du bug de rotation :)
+------------------------------------------------------------------------
+r22 | miranda | 2013-12-27 23:14:10 +0100 (ven., 27 déc. 2013) | 2 lines
+
+methode pour calculer l'ordre de rotation effectué.
+probleme sur TRSRotate
+------------------------------------------------------------------------
+r21 | douaille | 2013-12-24 12:42:05 +0100 (mar., 24 déc. 2013) | 1 line
+
+j'avance sur le tp de reconnaissance de gestes, je suis a la question 4
+------------------------------------------------------------------------
+r20 | douaille | 2013-12-23 18:23:32 +0100 (lun., 23 déc. 2013) | 1 line
+
+modification pour que la methode computeTRSScale fonctionne
+------------------------------------------------------------------------
+r19 | douaille | 2013-12-23 16:32:10 +0100 (lun., 23 déc. 2013) | 1 line
+
+fix d'un bug sur le premier point d'une image et ajout de translate, je vais faire rotation la formule ne me parait pas cool
+------------------------------------------------------------------------
+r18 | douaille | 2013-12-23 15:25:32 +0100 (lun., 23 déc. 2013) | 1 line
+
+modification pour que la methode computeTRSScale fonctionne
+------------------------------------------------------------------------
+r17 | douaille | 2013-12-12 02:37:37 +0100 (jeu., 12 déc. 2013) | 1 line
+
+fin tp obb
+------------------------------------------------------------------------
+r16 | miranda | 2013-12-10 12:16:08 +0100 (mar., 10 déc. 2013) | 1 line
+
+tp transformation question 10
+------------------------------------------------------------------------
+r15 | miranda | 2013-12-03 12:15:06 +0100 (mar., 03 déc. 2013) | 1 line
+
+avancement tp3 (question 6)
+------------------------------------------------------------------------
+r14 | douaille | 2013-12-03 08:30:04 +0100 (mar., 03 déc. 2013) | 1 line
+
+Ajout OBB et modification de MTComponent
+------------------------------------------------------------------------
+r13 | douaille | 2013-12-03 01:28:24 +0100 (mar., 03 déc. 2013) | 1 line
+
+suppression d un fichier
+------------------------------------------------------------------------
+r12 | douaille | 2013-12-03 01:23:54 +0100 (mar., 03 déc. 2013) | 1 line
+
+un oublie
+------------------------------------------------------------------------
+r11 | douaille | 2013-12-03 01:21:53 +0100 (mar., 03 déc. 2013) | 1 line
+
+retour a 0 bug fixe, maintenant on rattrape le retard prit ! J'ai tout retape, tout fonctionne
+------------------------------------------------------------------------
+r9 | miranda | 2013-11-26 12:00:06 +0100 (mar., 26 nov. 2013) | 1 line
+
+
+------------------------------------------------------------------------
+r8 | miranda | 2013-11-26 11:59:22 +0100 (mar., 26 nov. 2013) | 1 line
+
+tp2 question 11
+------------------------------------------------------------------------
+r7 | miranda | 2013-11-19 12:12:49 +0100 (mar., 19 nov. 2013) | 2 lines
+
+question 4 tp 2
+
+------------------------------------------------------------------------
+r6 | miranda | 2013-11-19 09:51:48 +0100 (mar., 19 nov. 2013) | 1 line
+
+avancement tp (question isobarycentre en cours)
+------------------------------------------------------------------------
+r5 | miranda | 2013-11-12 12:18:30 +0100 (mar., 12 nov. 2013) | 1 line
+
+TP1 avancé jusqu'à la question 11(en cours)
+------------------------------------------------------------------------
+r4 | miranda | 2013-11-12 10:59:00 +0100 (mar., 12 nov. 2013) | 1 line
+
+ajout de MT_Widget
+------------------------------------------------------------------------
+r3 | miranda | 2013-11-12 10:54:18 +0100 (mar., 12 nov. 2013) | 1 line
+
+ajout dossier tp
+------------------------------------------------------------------------
