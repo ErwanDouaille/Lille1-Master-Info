@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<scene>
+
+<light x="0" y="4" z="0" intensity="0.7" />
+<light x="0" y="0" z="4" intensity="0.7" />
+<light x="2" y="0" z="-1" intensity="0.7" />
+
+
+<node operation="union">
+  <translate x="0" y="0" z="0" />
+  <rotate angle="-60" x="1" y="0" z="0" />
+  <scale x="1.5" y="1.5" z="1.5" />
+  <primitive type="cube">
+    <translate x="0" y="0" z="-2.5" />
+    <scale x="20" y="20" z="1" />
+    <diffuse red="0.8" green="0.2" blue="0" />
+    <reflection coefficient="0.7" />
+  </primitive>
+  <primitive type="sphere">
+    <diffuse red="0.0" green="0.1" blue="0.6" />
+    <scale x="1.2" y="1.2" z="1.2" />
+    <specular red="0.0" green="0.8" blue="0.0" shininess="50" />
+    <reflection coefficient="0.1" />
+    <refraction coefficient="0.4" index="1.1" />
+  </primitive>
+</node>
+
+</scene>

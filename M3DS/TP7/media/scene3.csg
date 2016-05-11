@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<scene>
+
+<light x="0" y="4" z="0" intensity="0.7" />
+<light x="0" y="0" z="4" intensity="0.7" />
+<light x="2" y="0" z="-1" intensity="0.7" />
+
+<node operation="union">
+    <node operation="union">
+        <node operation="difference">
+          <translate x="0" y="0" z="0" />
+          <scale x="1.5" y="1.5" z="1.5" />
+
+          <primitive type="cube">
+            <diffuse red="0.8" green="0.2" blue="0" />
+            <ambient red="0.1" green="0" blue="0" />
+            <specular red="0.1" green="0.7" blue="0" shininess="100" />
+            </primitive>
+
+          <primitive type="sphere">
+            <scale x="1.2" y="1.2" z="1.2" />
+            <diffuse red="0.0" green="0.2" blue="0.7" />
+            <ambient red="0.0" green="0.0" blue="0.1" />
+          </primitive>
+        </node>
+        <primitive type="cube">
+          <translate x="0" y="0" z="-2.5" />
+          <scale x="20" y="20" z="1" />
+          <diffuse red="0.8" green="0.2" blue="0" />
+          <reflection coefficient="0.7" />
+        </primitive>
+    </node>
+    <node operation="intersection">
+        <translate x="5" y="0" z="0" />
+        <scale x="1.5" y="0.5" z="1.5" />
+        <primitive type="cube">
+            <diffuse red="0.8" green="0.2" blue="0" />
+            <ambient red="0.0" green="0" blue="0.8" />
+            <specular red="0.1" green="0.7" blue="0" shininess="100" />
+        </primitive>
+        <primitive type="sphere">
+            <translate x="1" y="0" z="0" />
+            <diffuse red="0.8" green="0.2" blue="0" />
+            <ambient red="0.8" green="0" blue="0" />
+            <specular red="0.1" green="0.7" blue="0" shininess="100" />
+        </primitive>
+    </node>
+</node>
+</scene>
