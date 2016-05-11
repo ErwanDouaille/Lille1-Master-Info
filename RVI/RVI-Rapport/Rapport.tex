@@ -1,0 +1,44 @@
+\documentclass[a4paper,12pt]{report}
+\input{macros.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDF INFO 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+	pdfauthor   = {Erwan Douaille, Rémy François et Saténik Kherounts},
+	pdftitle    = {Rapport de Projet RVI},
+	pdfsubject  = {},
+	pdfkeywords = {Erwan Douaille, Rémy François et Saténik Kherounts},
+	pdfcreator  = {PDFLaTeX},
+	pdfproducer = {PDFLaTeX}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Erwan Douaille, Rémy François et Saténik Kherounts}
+\title{}
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
+
+
+\begin{document}
+
+\input{Couverture.tex}
+\newpage\null\thispagestyle{empty}\newpage
+
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contenu futur
+\input{Introduction.tex}
+\input{StateOfArt.tex}
+\input{Solution.tex}
+\input{Logiciel.tex}
+\input{Conclusion.tex}
+\bibliography{Bibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% contenu futur
+
+\newpage
+%\input{Resume.tex}
+
+\end{document}

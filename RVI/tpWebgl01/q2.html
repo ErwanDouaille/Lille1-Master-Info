@@ -1,0 +1,47 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta charset ="UTF-8"/>
+		<title>RVI WebGL</title>
+		<script type="text/javascript" src="video360.js"></script>
+
+		<script id="hello-fs" type="x-shader/x-fragment">
+			precision highp float;
+
+			varying vec2 fTexCoord;
+	
+			uniform sampler2D texture0;
+
+			void main(void){
+				vec4 color = texture2D(texture0 , fTexCoord);
+				gl_FragColor=color;
+			}
+		</script>
+
+		<script id="hello-vs" type="x-shader/x-vertex">
+			attribute vec4 vertex;
+			attribute vec4 vColor;
+			attribute vec2 texCoord;
+
+			varying vec4 fColor;
+			varying vec2 fTexCoord;
+
+			void main(void){
+				fColor = vColor;
+				fTexCoord = texCoord;
+				gl_Position=vertex;
+			}
+		</script>
+
+
+	</head>
+	<body>
+		<video  controls="controls">		
+			<source src="repas.webm" type="video/webm" />
+		</video>
+    		<img src="EarthDay1024.jpg" id="image" alt="texture" />
+
+		<canvas id="webglCanvas" width="512" height="512"></canvas>  
+	</body>
+</html>
+
