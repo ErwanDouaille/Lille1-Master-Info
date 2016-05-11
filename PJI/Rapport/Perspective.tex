@@ -1,0 +1,31 @@
+\chapter{Perspective}
+Avant le réglage du filtre, des recherches sur le dead reckoning ont été effectué pour pouvoir masquer la latence si elle persistait.
+
+\section{Dead Reckoning}
+
+Le filtrage du tracé provoquant une latence avant le réglage du filtre, il était nécessaire de trouver un moyen pour prédire la position du point suivant pour pouvoir masquer cette latence au cas où celle-ci serait toujours présente une fois le filtre réglé. C'est dans cette optique que nous avons effectué des recherches sur le dead reckoning.
+
+Le dead reckoning est un algorithme qui permet de calculer une position à partir de la trajectoire actuelle et de la vitesse. Cet algorithme est notamment utilisé dans la navigation navale et aerienne, et dans les jeux-videos en ligne. 
+La formule du dead recknoning trouvé et qui est utilisé dans les jeux-videos  est \textit{P$_{t}$ = P$_{0}$ + V$_{0}$T + A$_{0}$*T\up{2}} avec :
+
+\begin{itemize}
+	\item P$_{t}$ = position à l'instant T
+	\item V$_{0}$ = vitesse au dernier point
+	\item T = temps entre deux points
+	\item A$_{0}$ = acceleration entre les deux derniers points
+\end{itemize}
+
+Toutefois, cette formule est incomplète car elle ne prend pas en compte l'angle d'orientation. Mais la formule compléte et générale n'a pus être trouvé, en effet le dead reckoning est différent selon les données traitées.
+
+Par exemple, dans un jeu de voiture, l'algorithme va prendre en compte la présence d'un virage proche dans le vitesse pour freiner et dans l'angle d'orientation pour commencer à tourner dans la direction.
+Aprés avoir paramétré le filtre, la latence est fortement amoindri et est devenu acceptable. A cause de la difficulté de l'implementation du dead recknoning, il a été decidé de ne pas le coder.
+
+\section{Changement du geste de déclenchement du mode dessin}
+Lors du déclenchement du mode dessin, effectué en tapant dans les mains, un tracé non desiré d'effectue car OpenNI ne reconstitue pas correctement le squelette, une des mains cachant l'autre. 
+Pour régler ce probléme, plusieurs idées ont été soulevées. Tout d'abord, à declencher le mode dessin lorsque le poing est fermé. Mais pour pouvoir effectuer cela, il est nécessaire que la caméra Kinect soit proche de la main ce qui est incompatible avec le dessin pour lequel la caméra doit étre eloigné pour pouvoir dessiner avec une fenetre de dessin dont la dimension en largeur correspond à la distance les bras écartés du corps.
+Ensuite , il a été pensé de declencher le dessin cinq secondes aprés la détection du geste de declenchement. Cela permettrait d'enlever le tracé non désiré au début et de laisser la possibilité à l'utilisateur de placer correctement sa main à l'endroit de début de tracé voulue. L'affichage du message se faisant dans le fichier .json correspondant à l'affichage desiré.
+
+
+
+
+

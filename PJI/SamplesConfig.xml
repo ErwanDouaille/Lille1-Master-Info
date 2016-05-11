@@ -1,0 +1,17 @@
+<OpenNI>
+	<Licenses>
+		<!-- NONE -->
+	</Licenses>
+	<ProductionNodes>
+		<Node type="Depth" name="Depth1">
+			<Configuration>
+				<Mirror on="true"/>
+			</Configuration>
+		</Node>
+		<Node type="Image" name="Image1" stopOnError="false">
+			<Configuration>
+				<Mirror on="true"/>
+			</Configuration>
+		</Node>
+	</ProductionNodes>
+</OpenNI>

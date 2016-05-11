@@ -1,0 +1,26 @@
+\chapter{Dead reckoning}
+Le filtrage du tracé provoquant une latence, il est nécessaire de trouver un moyen pour prédire la position du point suivant pour pouvoir masquer cette latence. C'est dans cette optique que nous avons utilisé le dead reckoning.
+
+\section{Présentation}
+Le dead reckoning est un algorithme qui permet de calculer une position à partir de la trajectoire actuelle et de la vitesse. Cet algorithme est notamment utilisé dans la navigation navale et aerienne, et dans les jeux-videos en ligne. 
+La formule du dead recknoning utilisé est \textit{P$_{t}$ = P$_{0}$ + V$_{0}$T + A$_{0}$*T\up{2}} avec :
+
+\begin{itemize}
+	\item P$_{t}$ = position à l'instant T
+	\item V$_{0}$ = vitesse au dernier point
+	\item T = temps entre deux points
+	\item A$_{0}$ = angle d'orientation au dernier point
+\end{itemize}
+
+	
+\section{Programmation}
+Pour des raisons pratiques, nous avons decidés de coder l'algorithme de dead recknoning dans une classe specifique. Ainsi, nous aurions ensuite seulement besoin de réutiliser cette classe pour pouvoir integrer le dead reckoning dans l'application Wabipaint.
+Nous avons donc créé une classe contenant les differentes methodes permettant d'obtenir les valeurs neccessaires pour ensuite utiiser une fonction qui calcule la position predite du point suivant à partir des deux points precedents. 
+
+\section{Integration}
+TODO
+
+
+
+
+

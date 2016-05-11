@@ -1,0 +1,10 @@
+\chapter{Analyse du bruit}
+
+Lors de l'utilisation de Kinect, la position du curseur était bruité, celui-ci tremblait. Le bruit est un signal "haute-fréquence" parasite qui se superpose au mouvement du curseur qui est un signal "basse-fréquence". Il faut donc garder uniquement le signal "haute-fréquence".
+
+Pour faire cela, l'utilisation d'un filtre passe-bas est possible. Le filtre passe-bas est un type de filtre qui permet de supprimer les signaux qui dépassent une fréqeunce indiqué et donc de garder uniquement les signaux inférieures à la fréquence voulue. Le désavantage des filtres est qu'ils introduisent une latence, ce qui est génant dans une application de dessin, le dessin n'étant plus effectué en même temps que le déplacement de la main. Le filtre utilisé est le One Euro Filter. C'est un filtre passe-bas developpé par l'INRIA et qui permet d'avoir une fréquence variable. Le filtrage peut donc être plus ou moins important selon le tracé effectué ?
+
+Le filtrage du tracé pouvant provoquer une latence importante, il était nécessaire de trouver un moyen pour prédire la position du point suivant pour pouvoir masquer cette latence.
+
+Le dead reckoning est un algorithme qui permet de calculer une position à partir de la trajectoire actuelle et de la vitesse. Cet algorithme est notamment utilisé dans la navigation navale et aerienne, et dans les jeux-videos en ligne. 
+

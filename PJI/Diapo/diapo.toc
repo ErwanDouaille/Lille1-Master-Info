@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.10pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Contexte}{3}{0}{1}
+\beamer@sectionintoc {2}{Pr\IeC {\'e}sentation du projet}{4}{0}{2}
+\beamer@sectionintoc {3}{Analyse de l'existant}{6}{0}{3}
+\beamer@sectionintoc {4}{Kinect}{8}{0}{4}
+\beamer@subsectionintoc {4}{1}{Serveur}{8}{0}{4}
+\beamer@subsectionintoc {4}{2}{Client}{8}{0}{4}
+\beamer@sectionintoc {5}{Filtre}{8}{0}{5}
+\beamer@sectionintoc {6}{D\IeC {\'e}mo }{10}{0}{6}
+\beamer@sectionintoc {7}{Bilan}{10}{0}{7}
+\beamer@sectionintoc {8}{Conclusion}{11}{0}{8}
