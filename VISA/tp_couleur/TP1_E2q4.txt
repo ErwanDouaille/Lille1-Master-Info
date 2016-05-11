@@ -1,0 +1,7 @@
+open("/home/m2ivi/douaille/VISA/tp_couleur/it3_72pp_saturation_faible.bmp");
+run("Color Space Converter", "from=RGB to=HSB white=D65");
+run("Split Channels");
+selectWindow("it3_72pp_saturation_faible.bmp (HSB) (green)");
+run("Multiply...", "value=1.250");
+run("Merge Channels...", "red=[it3_72pp_saturation_faible.bmp (HSB) (red)] green=[it3_72pp_saturation_faible.bmp (HSB) (green)] blue=[it3_72pp_saturation_faible.bmp (HSB) (blue)] gray=*None*");
+run("Color Space Converter", "from=HSB to=RGB white=D65");

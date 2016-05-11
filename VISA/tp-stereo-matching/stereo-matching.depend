@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1411488657 source:/home/m2ivi/douaille/VISA/tp-stereo-matching/erwan-douaille.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	"glue.hpp"
+	"erwan-douaille.hpp"
+	"iostream"
+
+1322906391 /home/m2ivi/douaille/VISA/tp-stereo-matching/glue.hpp
+
+1322906391 /home/m2ivi/douaille/VISA/tp-stereo-matching/erwan-douaille.hpp
+
+1322906391 source:/home/m2ivi/douaille/VISA/tp-stereo-matching/glue.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	"glue.hpp"
+
+1411488746 source:/home/m2ivi/douaille/VISA/tp-stereo-matching/stereo-matching.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<opencv2/calib3d/calib3d.hpp>
+	<getopt.h>
+	"glue.hpp"
+	"erwan-douaille.hpp"
+
+1411505406 source:/home/wawan/VISA/tp-stereo-matching/erwan-douaille.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	"glue.hpp"
+	"erwan-douaille.hpp"
+	"iostream"
+
+1411496191 /home/wawan/VISA/tp-stereo-matching/glue.hpp
+
+1411496191 /home/wawan/VISA/tp-stereo-matching/erwan-douaille.hpp
+
+1411496191 source:/home/wawan/VISA/tp-stereo-matching/glue.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	"glue.hpp"
+
+1411505472 source:/home/wawan/VISA/tp-stereo-matching/stereo-matching.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<opencv2/calib3d/calib3d.hpp>
+	<getopt.h>
+	"glue.hpp"
+	"erwan-douaille.hpp"
+

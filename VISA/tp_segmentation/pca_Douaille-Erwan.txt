@@ -1,0 +1,108 @@
+// Une macro-squelette calculer OTSU.
+// Version: 0.1
+// Date: sept 2010
+// Author: L. Macaire
+ 
+macro "modification_saturation" {
+
+	image = getImageID();
+
+	W = getWidth();
+	H = getHeight();
+
+run("Split Channels");
+selectWindow("3_classes_RGB.tif (green)");
+selectWindow("3_classes_RGB.tif (red)");
+selectWindow("3_classes_RGB.tif (blue)");
+run("Images to Stack", "name=Stack title=[] use");
+run("PCA ");
+selectWindow("PCA of Stack");
+run("Stack to Images");
+close();
+close();
+run("8-bit");
+getHistogram (level,histo,256);
+W = getWidth();
+H = getHeight();
+
+// valeur initiale de omega1 mu1 omega2 mu2
+omega1=histo[255];
+somme1=0;
+mu1 = 0;
+
+somme2 = 0;
+omega2= histo[255];
+mu2=255;
+
+somme3=0;
+omega3=histo[255]
+mu3=255
+
+max_sigma_between1 = omega1 * omega2 * ( mu1 - mu2) * (mu1 - mu2);
+i_maxV = 0;
+i_maxV2=0;
+
+for (val = 2; val <255;val++){	
+		for(val2 =0 ;val2<val-1;val2++){
+			
+			omega1=0;
+			omega2=0;
+			somme1=0;
+			somme2=0;
+			omega3=0;
+			somme3=0;
+			for(x=val;x<255;x++){
+				omega3=histo[x]+ omega3;
+				somme3=x*histo[x]+ somme3;
+			}
+			for(x=0;x<val2;x++){
+				omega1=histo[x]+ omega1;
+				somme1=x*histo[x]+ somme1;
+			}
+			for(x=val2;x<val;x++){
+				omega2=histo[x]+ omega2;
+				somme2=x*histo[x]+ somme2;
+			}
+	
+		if (omega1 * omega2* omega3 !=0)
+			{
+		
+			//print ("cond verifiee");
+			//print("mu1 :",mu1,"mu2 :",mu2,"mu3 :",mu3);
+	
+			mu1 = somme1/omega1;
+			mu2 = somme2/omega2;
+			mu3=somme3/omega3;
+	
+			sigma_between1 = omega1 * omega2 * ( mu1 - mu2) * (mu1 - mu2);
+			sigma_between2 = omega3 * omega2 * ( mu3 - mu2) * (mu3 - mu2);
+			sigma_between3 = omega1 * omega3 * ( mu1 - mu3) * (mu1 - mu3);
+			sigma_between=sigma_between1+sigma_between2+sigma_between3;
+				
+			if (sigma_between > max_sigma_between1)
+				{
+					i_maxV = val2;
+					i_maxV2 = val;
+					max_sigma_between1 = sigma_between;
+				}
+					
+			}
+		}
+	}
+print(i_maxV," ",i_maxV2);
+for (j=0; j<H; j++) {
+   for (i=0; i<W; i++) 
+	{	
+	couleur_apres=0;
+	couleur_avant = getPixel(i,j);
+	if(couleur_avant>i_maxV2)
+		couleur_apres+=255;
+	else if(couleur_avant>i_maxV)
+		couleur_apres+=127;	
+	setPixel(i,j,couleur_apres);
+	}
+}
+Dialog.create("Fin");
+Dialog.addMessage(" Cliquer sur OK pour terminer le traitement sur la saturation");
+Dialog.show();
+}

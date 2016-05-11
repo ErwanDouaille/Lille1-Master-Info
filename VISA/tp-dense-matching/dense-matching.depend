@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1412101503 source:/home/wawan/VISA/tp-dense-matching/dense-matching.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<getopt.h>
+	"glue.hpp"
+	"prenom-nom.hpp"
+
+1411582641 /home/wawan/VISA/tp-dense-matching/glue.hpp
+
+1411582641 /home/wawan/VISA/tp-dense-matching/prenom-nom.hpp
+
+1411582641 source:/home/wawan/VISA/tp-dense-matching/glue.cpp
+	<stdio.h>
+	<string>
+	"glue.hpp"
+
+1412112087 source:/home/wawan/VISA/tp-dense-matching/prenom-nom.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<math.h>
+	"prenom-nom.hpp"
+
+1412143712 source:/home/m2ivi/douaille/VISA/tp-dense-matching/dense-matching.cpp
+	<stdio.h>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<getopt.h>
+	"glue.hpp"
+	"prenom-nom.hpp"
+
+1412143712 /home/m2ivi/douaille/VISA/tp-dense-matching/glue.hpp
+
+1412143712 /home/m2ivi/douaille/VISA/tp-dense-matching/prenom-nom.hpp
+
+1412143712 source:/home/m2ivi/douaille/VISA/tp-dense-matching/glue.cpp
+	<stdio.h>
+	<string>
+	"glue.hpp"
+

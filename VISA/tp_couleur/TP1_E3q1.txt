@@ -1,0 +1,7 @@
+open("/home/m2ivi/douaille/VISA/tp_couleur/it3_72pp.bmp");
+run("Color Space Converter", "from=RGB to=HSB white=D65");
+run("Split Channels");
+selectWindow("it3_72pp.bmp (HSB) (red)");
+run("Add...", "value=50");
+run("Merge Channels...", "red=[it3_72pp.bmp (HSB) (red)] green=[it3_72pp.bmp (HSB) (green)] blue=[it3_72pp.bmp (HSB) (blue)] gray=*None*");
+run("Color Space Converter", "from=HSB to=RGB white=D65");
