@@ -1,0 +1,48 @@
+// Une macro exemple qui fait un filtre passe-bas sur l'image.
+//Le spectre du filtre est un disque binaire sur le plan de fourier.
+//Le filtrage est appliqué par produit du spectre de la FFT de l'image avec le spectre du filtre
+// l'image filtrée résulte de la FFT inverse
+ 
+macro "filtrage passe-basFFT" {
+
+run("FFT", "title='FFT du moire'f");
+// récupération de ID de la FFT
+fourier = getImageID();
+
+// récupération de la taille W x H du plan de Fourier
+W = getWidth();
+H = getHeight();
+
+// création d'un masque binaire
+
+// fond noir
+
+newImage("masque", "8-bit", W, H, 1);
+masque = getImageID();
+setColor(0);
+makeRectangle (0,0, W,H);
+fill();
+
+// calcul de la fréquence de coupure en cycle/pixel
+// aidez vous des calculs du TP1
+
+
+// disque binaire
+rayon = 110;
+
+print ( "rayon =", rayon);
+setColor(255);
+makeOval (W/2-rayon,H/2-rayon, 2*rayon,2*rayon);
+fill ();
+
+// Filtrage passe-bas
+imageCalculator("AND", fourier, masque);
+
+selectImage (fourier);
+// Transformée de fourier inverse pour fournir l'image filtrée
+
+run("Inverse FFT");
+
+image_filtree = getImageID();
+selectImage (image_filtree);
+

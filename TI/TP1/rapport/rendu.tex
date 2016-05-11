@@ -1,0 +1,529 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{ amssymb }
+
+
+\frenchbsetup{StandardLists=true}
+\newcommand{\marge}{18mm}
+\usepackage[left=\marge,right=\marge,top=\marge,bottom=\marge]{geometry}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\chead{
+  \textbf{Binôme :} Douaille Erwan \& François Rémy
+  \hspace{2em}
+  \textbf{Groupe :} M1 Info RDF}
+\renewcommand{\headrulewidth}{1pt}
+\linespread{1}
+\setlength{\columnseprule}{0.2pt}
+
+
+
+\begin{document}
+
+\section*{Code R}
+
+\subsection*{Analysez le code contenu dans ce fichier et expliquez comment est codé le calcul des doubles sommes nécessaires à l'estimation des moments géométriques. Quel est l'intérêt de cette technique?}
+
+Les doubles sommes sont calculées grâce à:
+
+\begin{lstlisting}
+  x <- (1 : (dim (im)[1])) ^ p
+  y <- (1 : (dim (im)[2])) ^ q
+  as.numeric (rbind (x) %*% im %*% cbind (y))
+\end{lstlisting}
+La première ligne calcule les index x en appliquant la puissance,  la deuxième sur y. La dernière ligne fait une multiplication de matrice. Ca permet d'être très rapide, optimisation avec les matrices, la somme des vecteurs est calculé dans la multiplication matricielle. Les 
+
+\section*{Moments d'une forme}
+
+\subsection*{Rectangle}
+\subsubsection*{Horizontal}
+\begin{itemize}
+\item Matrice d'inertie 
+\[
+   \left (
+   \begin{array}{cc}
+      1360 & 0 \\
+      0 & 80 \\
+   \end{array}
+   \right )
+\]
+
+\item Vecteurs propres
+\[
+   \left (
+   \begin{array}{cc}
+      -1 & 0  \\
+      0 & -1 \\
+   \end{array}
+   \right )
+\]
+
+\item Axe principale d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0 \\
+      -1 \\
+   \end{array}
+   \right )
+\]
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      1360 \\
+      80 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{Vertical}
+\begin{itemize}
+\item Matrice d'inertie 
+\[
+   \left (
+   \begin{array}{cc}
+      80 & 0 \\
+      0 & 1360 \\
+   \end{array}
+   \right )
+\]
+
+\item Vecteurs propres
+\[
+   \left (
+   \begin{array}{cc}
+      0 & -1  \\
+      1 & 0 \\
+   \end{array}
+   \right )
+\]
+
+\item Axe principale d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      1 \\
+      0 \\
+   \end{array}
+   \right )
+\]
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      1360 \\
+      80 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{Diagonale}
+\begin{itemize}
+\item Matrice d'inertie 
+\[
+   \left (
+   \begin{array}{cc}
+      678.5 & -619.5 \\
+      -619.5 & 678.5 \\
+   \end{array}
+   \right )
+\]
+
+\item Vecteurs propres
+\[
+   \left (
+   \begin{array}{cc}
+      -0.7071068 & -0.7071068  \\
+      0.7071068 & -0.7071068 \\
+   \end{array}
+   \right )
+\]
+
+\item Axe principale d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.7071068 \\
+      -0.7071068 \\
+   \end{array}
+   \right )
+\]
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      1298 \\
+      59 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{Diagonale lissé}
+\begin{itemize}
+\item Matrice d'inertie 
+\[
+   \left (
+   \begin{array}{cc}
+      745.0080 & -647.0326\\
+      -647.0326 & 748.4077 \\
+   \end{array}
+   \right )
+\]
+\item Vecteurs propres
+\[
+   \left (
+   \begin{array}{cc}
+      -0.7061774 & -0.7080350  \\
+      0.7080350 & -0.7061774 \\
+   \end{array}
+   \right )
+\]
+
+\item Axe principale d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.7080350 \\
+      -0.7061774 \\
+   \end{array}
+   \right )
+\]
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      1393.74269 \\
+      99.67303 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsection*{Quelle est la différence entre les deux images d'un rectangle diagonal?}
+L'image non lissé a des bordures plus nettes que la version lissé.
+
+\subsection*{Comment cela influence t'il le calcul des moments?}
+La plus grande différence se trouve au niveau des matrices d'inertie et donc sur les moments principaux d'inertie.
+
+Cependant on constate que les axes principaux sont similaires, ceci est lié à l'orientation du rectangle.
+
+\subsection*{Carré}
+
+\subsubsection*{Coté 6}
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      105 \\
+      105 \\
+   \end{array}
+   \right )
+\]
+\end{itemize}
+
+\subsubsection*{Coté 10}
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      825 \\
+      825 \\
+   \end{array}
+   \right )
+\]
+\end{itemize}
+
+\subsubsection*{Coté 10 rotation 30}
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      843.2815 \\
+      842.4202 \\
+   \end{array}
+   \right )
+\]
+\end{itemize}
+
+\subsubsection*{Coté 10 rotation 45}
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      841.5171 \\
+      838.5359 \\
+   \end{array}
+   \right )
+\]
+\end{itemize}
+
+\subsubsection*{Coté 20}
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      13300 \\
+      13300 \\
+   \end{array}
+   \right )
+\]
+\end{itemize}
+
+\subsection*{Conclure sur la possibilité d'utiliser ces moments comme attributs de forme.}
+
+Les valeurs propres nous informes si il s'agit d'un carré ou non (les deux valeurs sont égales). Elles sont également utiles pour reconnaître un carré orienté d'un non-orienté (sensiblement les mêmes valeurs). Cependant un carré de taille 10 ne sera pas similaire à un 20.
+
+\section*{Moments normalisés}
+
+\begin{itemize}
+\item Carré 6 0.006564
+\item Carré 10 0.00680625
+\item Carré 10 30  0.003928728
+\item Carré 10 45 0.003086341
+\item Carré 20 0.006909766
+\item Rectangle horizontal 0.006484985
+\item Rectangle vertical 0.006484985
+\item Rectangle diagonal 0.06342831
+\item Rectangle diagonal lissé 0.04725043
+\end{itemize}
+
+
+
+\subsection*{Rectangle}
+\subsubsection*{Horizontal}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.3320312 \\
+      0.01953125 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{Vertical}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.3320312 \\
+      0.01953125 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{Diagonale}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.2016944 \\
+      0.2016944 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{Diagonale lissé}
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.1790886 \\
+      0.1799058 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+\subsection*{Carré}
+\subsubsection*{10}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.0825 \\
+      0.0825 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{10 degré 30}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      8.403202e-02 \\
+      8.410270e-02 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{10 degré 45}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.0853135108 \\
+      0.0852506202 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{20}
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.083125 \\
+      0.083125 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+
+\subsection*{Triangle}
+\subsubsection*{10}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.095086775 \\
+      0.100529916 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{10 degré 15}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.096032203 \\
+      0.099139389 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{10 degré 45}
+\begin{itemize}
+
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.098649894 \\
+      0.097011576 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{10 degré 60}
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.093866912 \\
+      0.101051482 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+\subsubsection*{20 }
+\begin{itemize}
+\item Moments principaux d'inertie
+\[
+   \left (
+   \begin{array}{c}
+      0.096299491 \\
+      0.094765998 \\
+   \end{array}
+   \right )
+\]
+
+\end{itemize}
+
+
+\subsection*{Est-ce que ces moments principaux d'inertie normalisés peuvent être utilisés comme attributs de forme?}
+
+Hormis pour les rectangles, on remarque que peu importe la rotation les valeurs sont sensiblement identiques. Pour des triangles équilatéral et pour des carrés, les moments principaux d'inertie normalisés peuvent être utilisés comme attributs de forme.
+
+Pour conclure sur cette partie, le moment invarié permet de reconnaître une forme peu importe sa rotation et sa taille.
+
+
+\section*{Moments invariants}
+
+Nous n'allons pas mettre tout les résultats des invariants. Cependant on peut remarquer que l'on peut que les invariants du chiffre 6 et 9 (0.383 et 0.387) sont très similaires, tout comme le 1 et le 7. 
+
+Utiliser une seule invariance de Hu est suffisante pour trouver des similitudes entre les deux formes. 
+
+
+
+
+\end{document}

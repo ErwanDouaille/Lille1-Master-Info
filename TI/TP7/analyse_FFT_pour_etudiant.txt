@@ -1,0 +1,61 @@
+// Une macro-squelette pour determiner la direction et la fréquence d'un cosinus.
+// Version: 0.1
+// Date: 14/07/2006
+// Author: L. Macaire
+ 
+macro "direction FFT" {
+
+// Ouverture d'une image si nécessaire - sinon la macro analyse l'image courante
+// open ("C:\\lagis-pc-serv2\\enseignement\\enseigne.0910\\master ivi\\seance 1 cours ludo fft\\omega_zero_sept_x.jpg");
+// récupération du ID de l'image
+image = getImageID();
+
+// application de la FFT
+run("FFT", "title='FFT de l'image courante'");
+
+// récupération de ID de la FFT : du plan de fourier
+fourier = getImageID();
+
+// récupération de la taille W x H du plan de fourier
+W = getWidth();
+H = getHeight();
+// recherche du max (normalement localise au centre du plan de fourier
+max_1 = 0; 
+i_max_1 = 0;
+j_max_1 = 0;
+
+for (j=0; j<H; j++) {
+   for (i=0; i<W; i++){
+	p = getPixel(i,j);
+	if ( max_1 < p){
+		max_1 =p;
+		i_max_1 = i;
+		j_max_1 =j;
+	} 
+   }
+}
+// mise a zero de la valeur max
+setPixel (i_max_1,j_max_1,0);
+i_max_2 = 0;
+j_max_2 = 0;
+max_2=0;
+for(j=0;j<H;j++){
+	for(i=0;i<W;i++){
+			p=getPixel(i,j);
+			if(p>max_2){
+				max_2=p;
+				i_max_2 = i;
+				j_max_2 =j;
+			}
+	}
+}
+distance = sqrt(pow(i_max_2 - i_max_1, 2) + pow(j_max_2 - j_max_1, 2));
+if(i_max_1!=i_max_2 && j_max_1!=j_max_2){
+	print("texture diagonale");
+} else if(i_max_1==i_max_2 && j_max_1!=j_max_2){
+	print("texture verticale");
+} else if(i_max_1!=i_max_2 && j_max_1==j_max_2){
+	print("texture horizontal");
+}
+omega=distance/sqrt(W*H);
+print("omega=",omega);

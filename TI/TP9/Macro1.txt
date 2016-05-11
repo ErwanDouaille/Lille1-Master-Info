@@ -1,0 +1,113 @@
+// Calcul de la norme du gradient par masque de Sobel
+//
+requires("1.41i");	// requis par substring(string, index)
+setBatchMode(true);
+
+sourceImage = getImageID();
+filename = getTitle();
+extension = "";
+if (lastIndexOf(filename, ".") > 0) {
+    extension = substring(filename, lastIndexOf(filename, "."));
+    filename = substring(filename, 0, lastIndexOf(filename, "."));
+}
+filenameGradX = filename+"_grad_x"+extension;
+filenameGradY = filename+"_grad_y"+extension;
+run("Duplicate...", "title="+filenameGradX);
+run("32-bit");
+run("Convolve...","text1=[-1 -2 -1 0 0 0 1 2 1]  normalize");
+
+px=getImageID();
+selectImage(sourceImage);
+
+run("Duplicate...", "title="+filenameGradY);
+run("32-bit");
+run("Convolve...","text1=[-1 0 1  -2 0 2  -1 0 1]  normalize");
+
+py=getImageID();
+
+/****** Calcul de la norme du gradient ******/
+// récupération de la taille de l'image
+w = getWidth();
+h = getHeight();
+// Calculs pour chaque pixel
+run("Duplicate...", "title=norme");
+Grad=getImageID();
+run("Duplicate...", "title=direction");
+direction=getImageID();
+
+for(j=0 ;j<h ; j++){
+	for(i=0 ; i<w ; i++){
+		selectImage(px);
+		valX=getPixel(i,j);
+
+		selectImage(py);
+		valY=getPixel(i,j);
+
+		selectImage(Grad);
+		norme=sqrt(valX*valX+valY*valY);
+		setPixel(i,j,norme);
+
+		selectImage(direction);
+		dir=atan2(valX,valY)*180/PI;
+		setPixel(i,j,dir);
+	}
+}
+
+run("Duplicate...", "title=sansNonMaxima");
+sansNonMax=getImageID();
+for(j=1 ;j<h-1 ; j++){
+	for(i=1 ; i<w-1 ; i++){
+		selectImage(direction);
+		val=getPixel(i,j);
+		val=val/45;
+		val=round(val);
+		val=val*45;
+		selectImage(Grad);
+			if(val==180){
+				P1=getPixel(i,j-1);
+				P2=getPixel(i,j+1);
+			}
+			if(val==135){
+				P1=getPixel(i+1,j-1);
+				P2=getPixel(i-1,j+1);
+			}
+			if(val==90){
+				P1=getPixel(i-1,j);
+				P2=getPixel(i+1,j);
+			}
+			if(val==45){
+				P1=getPixel(i+1,j+1);
+				P2=getPixel(i-1,j-1);
+			}
+			if(val==0){
+				P1=getPixel(i,j-1);
+				P2=getPixel(i,j+1);
+			}
+			if(val==-45){
+				P1=getPixel(i+1,j-1);
+				P2=getPixel(i-1,j+1);
+			}
+			if(val==-90){
+				P1=getPixel(i-1,j);
+				P2=getPixel(i+1,j);
+			}
+			if(val==-135){
+				P1=getPixel(i+1,j+1);
+				P2=getPixel(i-1,j-1);
+			}
+			if(val==-180){
+				P1=getPixel(i,j-1);
+				P2=getPixel(i,j+1);
+			}
+		pixel=getPixel(i,j);
+		if(pixel<P1 || pixel<P2){
+			pixel=0;
+		}
+		selectImage(sansNonMax);
+		setPixel(i,j,pixel);
+	}
+}
+
+
+
+setBatchMode("exit and display");

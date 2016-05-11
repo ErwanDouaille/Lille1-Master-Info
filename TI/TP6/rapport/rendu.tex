@@ -1,0 +1,244 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{grey}{rgb}{0.9,0.9,0.9}
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{amssymb}
+
+
+\frenchbsetup{StandardLists=true}
+\newcommand{\marge}{18mm}
+\usepackage[left=\marge,right=\marge,top=\marge,bottom=\marge]{geometry}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\chead{
+  \textbf{Binôme :} Douaille Erwan \& Yanis Nait Abdelaziz
+  \hspace{2em}
+  \textbf{Groupe :} M1 Info TI}
+\renewcommand{\headrulewidth}{1pt}
+\linespread{1}
+\setlength{\columnseprule}{0.2pt}
+\definecolor{javakeyword}{rgb}{0,0,0.5}
+\definecolor{javastring}{rgb}{0,0.5,0}
+\definecolor{javacomment}{rgb}{0.5,0.5,0.5}
+\lstdefinestyle{java}{
+   language=Java, basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+   stringstyle=\color{javastring},
+   keywordstyle=\color{javakeyword}\ttfamily\textbf,
+   commentstyle=\color{javacomment}\ttfamily\textit
+ }
+
+\begin{document}
+
+
+
+\input{Couverture.tex}
+
+\setcounter{page}{1} 
+\newpage
+
+\section*{Introduction}
+
+Dans ce tp, nous allons travailler sur des images dicrètes en analysant la transformée de Fourier de celle-ci. En effet la tranformée de Fourier d'une image permet de passer d'une représentation spatiale de l'image dans le domaine fréquentiel.
+
+\subsection*{Manipulations}
+
+En chargeant l'image 256$\_$a.jpg nous permet d'obtenir l'image suivante
+\begin{figure}[!ht]
+	\center
+	\includegraphics[scale=0.5]{image/256_a.jpg}
+\end{figure}
+
+Pour déterminer la période spatiale $T$ séparant deux maxima locaux consécutifs du motif cyclique il suffit de prendre deux points se trouvant au même niveau dans deux motifs blancs consécutifs:
+\begin{center}
+$y1$=9 \\
+$y2$=14 \\
+$T$=14-9=5 pixels 
+\end{center}
+
+\subsubsection*{Question 1}
+
+La fréquence spatiale $w$ du motif cyclique correspond à l'inverse de la période spatiale $T$ calculée précédemment:
+\begin{center}
+$\omega$=1/$T$ \\
+$\omega$=1/5 \\
+$\omega$=0.2 cycles/pixel
+\end{center} 
+
+\newpage
+
+\subsubsection*{Question 2}
+En exécutant la macro qui calcule la FFT de l'image '256$\_$a.jpg' on obtient l'image suivante:
+
+\begin{figure}[!ht]
+	\center
+	\includegraphics[scale=0.5]{image/question2.png}
+\end{figure}
+
+	
+Les coordonnées et la valeur de la raie maximale obtenus sont:
+\begin{center}
+	$i$=128 \\
+	$j$=128 \\
+	$value$=254
+\end{center}
+
+\newpage
+
+\subsubsection*{Question 3}
+%Insérer le code de la macro ici
+Les coordonnées et la valeur de la raie secondaire ainsi que la valeur de la distance $D$ séparant la raie principale de la raie secondaire obtenus sont:
+\begin{center}
+$i$=128 \\
+$j$=77 \\
+$value$=240 \\
+$D$=51 pixels
+\end{center}
+
+\subsubsection*{Question 5}
+La valeur de la fréquence spatiale peut être obtenu avec la formule suivante: \\
+\begin{center}
+	$\omega$=$D$/$H$ (Pour un motif cyclique vertical) \\
+	$\omega$=$D$/$W$ (Pour un motif cyclique horizontal)
+\end{center}
+
+\subsubsection*{Question 6}
+La fréquence spatiale peut donc être calculée de la façon suivante :
+\begin{center}
+	$\omega$=D/$\sqrt{H*W)}$
+\end{center}
+Pour les images de taille 256*256 on obtient le tableau de résultats suivants:
+
+\begin{center}
+\begin{longtable}[c]{|p{0.1\linewidth}| p{0.2\linewidth}| p{0.1\linewidth}|p{0.3\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|} 
+
+	\hline
+		
+	\cellcolor{gray!40}\textbf{Image}	& \cellcolor{gray!40}\textbf{Direction} & \cellcolor{gray!40}\textbf{Distance}& \cellcolor{gray!40}\textbf{Fréquence sptaiale}& \cellcolor{gray!40}\textbf{Px} & \cellcolor{gray!40}\textbf{Py} \\ \hline
+	
+	
+256$\_$a	&Verticale		&51			&0.2					&128						&77 \\ \hline
+256$\_$b	&Diagonale		&72.1249		&0.28				&77						&77\\ \hline
+256$\_$c	&Horizontale		&51			&0.2					&77						&128\\ \hline
+256$\_$d	&Verticale		&26			&0.1					&128						&102\\ \hline
+256$\_$e	&Diagonale		&108.8944	&0.43				&51						&51\\ \hline
+256$\_$f	&Horizontale		&26			&0.1					&102						&128\\ \hline
+256$\_$g	&Verticale		&5			&0.02				&128						&123\\ \hline
+256$\_$h	&Diagonale		&7.0711		&0.03				&123						&123\\ \hline
+256$\_$i	&Horizontale		&5			&0.02				&123						&128\\ \hline
+	
+\end{longtable}
+\end{center}
+
+ 
+Pour les images de taille 512*512 on obtient le tableau de résultats suivants:
+
+
+\begin{center}
+\begin{longtable}[c]{|p{0.1\linewidth}| p{0.2\linewidth}| p{0.1\linewidth}|p{0.3\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|} 
+
+	\hline
+		
+	\cellcolor{gray!40}\textbf{Image}	& \cellcolor{gray!40}\textbf{Direction} & \cellcolor{gray!40}\textbf{Distance}& \cellcolor{gray!40}\textbf{Fréquence sptaiale}& \cellcolor{gray!40}\textbf{Px} & \cellcolor{gray!40}\textbf{Py} \\ \hline
+	
+	
+
+512$\_$a	&Verticale		&102			&0.2					&256						&154\\ \hline
+512$\_$b&	Diagonale	&	289.9138	&0.57				&51						&51\\ \hline
+512$\_$c&	Horizontale&		102		&	0.2			&		154				&		256\\ \hline
+512$\_$d	&Verticale	&	51			&0.1			&		256					&	205\\ \hline
+512$\_$e	&Diagonale	&	72.1249		&0.14			&	205				&		205\\ \hline
+512$\_$f	&Horizontale		&51			&0.1				&	205				&		256\\ \hline
+512$\_$g	&Verticale		&10			&0.02			&	256				&		246\\ \hline
+512$\_$h	&Diagonale		&14.1421		&0.03			&	246				&		246\\ \hline
+512$\_$i	&Horizontale		&10			&0.02			&	246				&		256\\ \hline
+	
+\end{longtable}
+\end{center}
+
+
+\subsubsection*{Question 7}
+Pour classifier les images, il suffit d'analyser les variations entre les positions x et y de la raie principale et de la raie secondaire. Si seule la valeur de x qui varie alors on a à faire à une texture horizontale; si seule la valeur de y qui varie alors on à faire à une texture verticale; et si les valeurs de x et y varient alors on a à faire à une texture diagonale.
+%Insérer le code ici 
+
+\begin{lstlisting}[float,style=Java,caption={Code question 7},label=lst:question 7]
+// recherche du max (normalement localise au centre du plan de fourier
+max_1 = 0; 
+i_max_1 = 0;
+j_max_1 = 0;
+
+for (j=0; j<H; j++) {
+   for (i=0; i<W; i++){
+	p = getPixel(i,j);
+	if ( max_1 < p){
+		max_1 =p;
+		i_max_1 = i;
+		j_max_1 =j;
+	} 
+   }
+}
+// mise a zero de la valeur max
+setPixel (i_max_1,j_max_1,0);
+i_max_2 = 0;
+j_max_2 = 0;
+max_2=0;
+for(j=0;j<H;j++){
+	for(i=0;i<W;i++){
+			p=getPixel(i,j);
+			if(p>max_2){
+				max_2=p;
+				i_max_2 = i;
+				j_max_2 =j;
+			}
+	}
+}
+distance = sqrt(pow(i_max_2 - i_max_1, 2) + pow(j_max_2 - j_max_1, 2));
+if(i_max_1!=i_max_2 && j_max_1!=j_max_2){
+	print("texture diagonale");
+} else if(i_max_1==i_max_2 && j_max_1!=j_max_2){
+	print("texture verticale");
+} else if(i_max_1!=i_max_2 && j_max_1==j_max_2){
+	print("texture horizontal");
+}
+omega=D/sqrt(W*H);
+print("omega=",omega);
+\end{lstlisting}
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONCLU
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Conclusion}
+Dans ce tp , nous avons pu analyser un image discrète numérique en travaillant sur sa transformée de Fourier et non sur l'image elle même. La transformée de Fourier nous a permis en effet de déterminer la direction d'un motif cyclique contenue dans une image en étudiant les positions des raies principale et secondaire.   
+\end{document}

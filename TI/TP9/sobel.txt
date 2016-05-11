@@ -1,0 +1,110 @@
+requires("1.41i");	// requis par substring(string, index)
+setBatchMode(true);
+
+sourceImage = getImageID();
+filename = getTitle();
+
+/********** Récupération des infos de l'image originale **************/
+// récupération de la taille de l'image
+w = getWidth();
+h = getHeight();
+
+/************************* Creation title ***************************/
+extension = "";
+if (lastIndexOf(filename, ".") > 0) {
+    extension = substring(filename, lastIndexOf(filename, "."));
+    filename = substring(filename, 0, lastIndexOf(filename, "."));
+}
+filenameGradX = filename+"_grad_x"+extension;
+filenameGradY = filename+"_grad_y"+extension;
+/*******************Convultion selon l'axe X **********************/
+run("Duplicate...", "title="+filenameGradX);
+run("32-bit");
+run("Convolve...","text1=[-1 0 1 \n -2 0 2 \n -1 0 1 \n] normalize");
+
+convolutionX = getImageID();
+/****************************************************************/
+selectImage(sourceImage);
+/*******************Convultion selon l'axe Y**********************/
+run("Duplicate...", "title="+filenameGradY);
+run("32-bit");
+run("Convolve...","text1=[-1 -2 -1 \n 0 0 0 \n 1 2 1 \n] normalize");
+convolutionY = getImageID();
+/***************************************************************/
+resultat = filename+"ResultatNorme";
+run("Duplicate...", "title=resultat norme");
+nouvelle_Image = getImageID();
+
+resultat1 = filename+"ResultatDirection";
+run("Duplicate...", "title=resultat direction");
+nouvelle_Image_Direction = getImageID();
+
+// Calculs pour chaque pixel
+// à compléter
+for (j=0; j<h; j++) {
+	for (i=0; i<w;i++) {
+		selectImage(convolutionX);
+		px = getPixel(i,j);
+		selectImage(convolutionY);
+		py = getPixel(i,j);
+		norme = sqrt(px*px+py*py);
+
+		directionGradient = abs(atan2(py,px)*180/PI);
+
+		selectImage(nouvelle_Image);
+		setPixel(i,j, norme);
+		
+		
+
+		selectImage(nouvelle_Image_Direction);
+		setPixel(i,j, directionGradient);
+		
+	}
+}
+selectImage(sourceImage);
+run("Duplicate...", "title=maxima");
+maxima=getImageID();
+for(j=1 ;j<h-1 ; j++){
+	for(i=1 ; i<w-1 ; i++){
+		x1=i;
+		x2=i;
+		y1=j;
+		y2=j;
+		selectImage(nouvelle_Image_Direction);
+		val = round(getPixel(i,j)/45)*45;
+		selectImage(nouvelle_Image);
+			if(val==180 || val==-180){
+				y1=j-1;
+				y2=j+1;
+			}
+			if(val==135 || val==-45){
+				x1=i+1;
+				x2=i-1;
+				y1=j-1;
+				y2=j+1;
+			}
+			if(val==90 || val==-90){
+				x1=i-1;
+				x2=i+1;			}
+			if(val==45 || val==-135){
+				x1=i+1;
+				x2=i-1;
+				y1=j+1;
+				y2=j-1;
+			}
+			if(val==0){
+				y1=j-1;
+				y2=j+1;
+			}
+			
+			p1=getPixel(x1,y1);
+			p2=getPixel(x2,y2);
+			p=getPixel(i,j);
+			
+			if(abs(p)<abs(p1) || abs(p)<abs(p2))
+				p=0;
+			selectImage(maxima);
+			setPixel(i,j,p);
+	}
+}
+setBatchMode("exit and display");
