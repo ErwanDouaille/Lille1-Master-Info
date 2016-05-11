@@ -1,0 +1,441 @@
+library(MASS) 
+library(tree)
+
+noms=c(
+'abeille',
+'ablette',
+'acarien',
+'agneau',
+'aigle',
+'aigrette',
+'albatros',
+'alligator',
+'alouette',
+'anaconda',
+'anchois',
+'ane',
+'anguille',
+'antilope',
+'aoutat',
+'araignee',
+'aspic',
+'asticot',
+'autruche',
+'babouin',
+'baleine',
+'basilic',
+'baudet',
+'belette',
+'belier',
+'biche',
+'bique',
+'bison',
+'blaireau',
+'boa',
+'boeuf',
+'bouc',
+'bouquetin',
+'brebis',
+'buffle',
+'bulot',
+'busard',
+'buse',
+'cabri',
+'cacatoes',
+'cachalot',
+'cafard',
+'caiman',
+'calamar',
+'cameleon',
+'canard',
+'canari',
+'cane',
+'caneton',
+'caribou',
+'carpe',
+'castor',
+'cerf',
+'chacal',
+'chameau',
+'chamois',
+'chat',
+'chatte',
+'chenille',
+'cheval',
+'chevre',
+'chevreau',
+'chevreuil',
+'chien',
+'chimpanze',
+'chouette',
+'cigale',
+'cigogne',
+'cloporte',
+'cobra',
+'coccinelle',
+'cochon',
+'colibri',
+'coq',
+'corbeau',
+'corneille',
+'coucou',
+'couleuvre',
+'coyote',
+'crabe',
+'crapaud',
+'crevette',
+'criquet',
+'crocodile',
+'cygne',
+'daim',
+'dalmatien',
+'dauphin',
+'daurade',
+'dinde',
+'dindon',
+'doryphore',
+'dragon',
+'dromadaire',
+'ecrevisse',
+'ecureuil',
+'elan',
+'elephant',
+'escargot',
+'espadon',
+'esturgeon',
+'etourneau',
+'faisan',
+'faon',
+'faucheux',
+'faucon',
+'fauvette',
+'fouine',
+'fourmi',
+'frelon',
+'furet',
+'gazelle',
+'geai',
+'girafe',
+'gnou',
+'goeland',
+'gorille',
+'grenouille',
+'grillon',
+'grue',
+'guenon',
+'guepard',
+'guepe',
+'hamster',
+'hareng',
+'herisson',
+'hermine',
+'heron',
+'hibou',
+'hippocampe',
+'hippopotame',
+'hirondelle',
+'homard',
+'hyene',
+'ibis',
+'iguane',
+'jaguar',
+'jument',
+'kangourou',
+'koala',
+'labrador',
+'lama',
+'lamantin',
+'lamproie',
+'langouste',
+'lapin',
+'leopard',
+'lezard',
+'libellule',
+'lievre',
+'limace',
+'lion',
+'lionceau',
+'lionne',
+'loir',
+'lombric',
+'lotte',
+'loup',
+'loutre',
+'louve',
+'lucane',
+'luciole',
+'lycaon',
+'lynx',
+'macaque',
+'manchot',
+'mangouste',
+'mante',
+'maquereau',
+'marabout',
+'marcassin',
+'marmotte',
+'marsouin',
+'meduse',
+'merlan',
+'merle',
+'mesange',
+'moineau',
+'morse',
+'morue',
+'mouche',
+'mouette',
+'mouflon',
+'moustique',
+'mouton',
+'mulet',
+'murene',
+'musaraigne',
+'mygale',
+'oie',
+'oiseau',
+'okapi',
+'ornithorynque',
+'orque',
+'oryx',
+'otarie',
+'ouistiti',
+'ours',
+'oursin',
+'panda',
+'panthere',
+'paon',
+'papillon',
+'pekinois',
+'pelican',
+'perche',
+'percheron',
+'perdrix',
+'perroquet',
+'perruche',
+'petoncle',
+'phacochere',
+'phasme',
+'phoque',
+'pie',
+'pieuvre',
+'pigeon',
+'pingouin',
+'pintade',
+'piranha',
+'pivert',
+'poisson',
+'poney',
+'porc',
+'pou',
+'poulain',
+'poule',
+'poulet',
+'poussin',
+'puce',
+'puceron',
+'puma',
+'punaise',
+'putois',
+'python',
+'ragondin',
+'raie',
+'rainette',
+'rat',
+'raton',
+'renard',
+'renne',
+'requin',
+'rhinoceros',
+'rossignol',
+'roussette',
+'rouget',
+'salamandre',
+'sanglier',
+'sardine',
+'sauterelle',
+'seiche',
+'serpent',
+'siamois',
+'singe',
+'sole',
+'souris',
+'tamanoir',
+'taon',
+'tapir',
+'tarentule',
+'taupe',
+'taureau',
+'termite',
+'tetard',
+'thon',
+'tigre',
+'tortue',
+'toucan',
+'triton',
+'truite',
+'vache',
+'vampire',
+'varan',
+'vautour',
+'veau',
+'vipere',
+'vison',
+'wapiti',
+'yack',
+'yeti',
+'zebre',
+'zebu');
+
+n=length(noms)
+alphabetIndex <- function(x) 
+{ 
+	strtoi(charToRaw(x),16L)-96 
+}
+
+## Renvoies un tableau indiquant quels mots contiennent quelles lettres
+containsLetter <- function(names)
+{
+	mat = matrix(rep(0,26*length(names)),nrow=26, ncol=length(names));
+	for (i in 1:length(names))
+	{
+	    c = alphabetIndex(names[i]);
+	    mat[c,i] <- 1;
+	}
+	mat;
+}
+
+
+## Renvoies le nombre de fois ou apparaissent les lettres dans l'ensemble names
+nbLettres <- function(names)
+{
+	nbLettre = matrix(rep(0,26*length(names)),nrow=1, ncol=26);
+	for (i in 1:length(names))
+	{
+	    c = alphabetIndex(names[i]);
+	    nbLettre[1,c] <- nbLettre[1,c]+1;
+	}
+	nbLettre;
+}
+
+#Calcul de l'entropie
+#log2(t^t)
+calculEntropie <- function(indexLettre, names)
+{
+	n = length(names);
+	nl = nbLettres(names)[1,indexLettre]
+
+	entropie <- log2((nl/n)^(-nl/n)) - log2(((n-nl)/n)^((n-nl)/n));
+	entropie;
+}
+
+#premiere question
+firstQuestion <- function(names)
+{
+	mat = containsLetter(names);
+	entropies = matrix(rep(0,26),nrow=1,ncol=26);
+	props = matrix(rep(0,26),nrow=1,ncol=26);
+	for (i in 0:26)
+	{
+		entropies[1,i] <- calculEntropie(i,names);	
+	}
+	entropies;
+}
+
+#partage
+partage <- function(names) 
+{
+	questionTab <- firstQuestion(names);
+	indiceLettre <- which.max(questionTab);
+	partition <- sum(containsLetter(names)[indiceLettre,]);
+	partition2 <- length(names) - sum(containsLetter(names)[indiceLettre,]);
+	cpt <- 1;
+	cpt2 <- 1;
+	for (i in 1 : length(names))
+	{
+		if (identical(TRUE, (containsLetter(names)[indiceLettre, i]) == 1)) {
+			partition[cpt] <- names[i];
+			cpt <- cpt +1 ;
+		} else {
+			partition2[cpt2] <- names[i];
+			cpt2 <- cpt2 +1 ;
+		}
+	}
+	return(list('lettre'=indiceLettre,'partition1'=partition,'partition2'=partition2));	
+}
+
+#partageIteratif
+partageIteratif <- function(names,cpt)
+{
+	ensemble <- partage(names);
+	ens <- names;
+	if(length(names)>1 && (calculEntropie(ensemble$lettre, names)>0.01)) { 
+		part1 <- partageIteratif(ensemble$partition1,cpt+1);
+		part2 <- partageIteratif(ensemble$partition2,cpt+1);
+		ens <- list(part1, part2);
+	}
+	return(ens);
+}
+
+#interactif
+interactif <- function(names)
+{
+	print("Saisir un mot a devinner dans l'ensemble donne:");
+	mot <- scan("",what="character",nlines=1);
+	print("Mode auto: (y/n)");
+	mode <- scan("",what="character",nlines=1);
+	if(mode == "y"){
+		jeuAuto(names, mot);
+	} else {
+		jeuManuel(names);			
+	}
+}
+
+jeuManuel <- function(names)
+{
+	if(length(names)==1){
+		print("trouve: ");
+		print(names)
+	} else {
+		ensemble <- partage(names);
+		print("Ce mot contient-il la lettre: (y/n)");
+		print(ensemble$lettre);
+		confirm <- scan("",what="character",nlines=1);
+		if(confirm == "y"){
+			jeuManuel(ensemble$partition1);
+		} else {
+			jeuManuel(ensemble$partition2);			
+		}		
+	}
+}
+
+jeuAuto <- function(names, mot)
+{
+	if(length(names)==1){
+		print("trouve: ");
+		print(names)
+	} else {
+		ensemble <- partage(names);
+		containLettre <- containsLetter(mot);
+		if(containLettre[ensemble$lettre,]==1){
+			jeuAuto(ensemble$partition1, mot);
+		} else {
+			jeuAuto(ensemble$partition2, mot);			
+		}		
+	}
+}
+
+#on n'arrrive pas a utiliser avec les partitions ... mais l'idee cool est avec le package tree
+drawTree <- function()
+{
+	data(fgl, package="MASS")
+	fgl.tr <- tree(type ~ ., fgl)
+	summary(fgl.tr)
+	plot(fgl.tr); text(fgl.tr, all=TRUE, cex=0.5)
+	fgl.tr1 <- snip.tree(fgl.tr, node=c(108, 31, 26))
+	tree.screens()
+	plot(fgl.tr1)
+	text(fgl.tr1)
+	tile.tree(fgl.tr1, fgl$type)
+	close.screen(all = TRUE)
+
+}

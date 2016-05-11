@@ -1,0 +1,135 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{grey}{rgb}{0.9,0.9,0.9}
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{color}
+
+
+\lstset{ %
+  language=R,                     % the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},      % keyword style
+  commentstyle=\color{green},   % comment style
+  stringstyle=\color{magenta},      % string literal style
+  escapeinside={\%*}{*)},         % if you want to add a comment within your code
+  morekeywords={*,...}            % if you want to add more keywords to the set
+} 
+
+
+\frenchbsetup{StandardLists=true}
+\newcommand{\marge}{18mm}
+\usepackage[left=\marge,right=\marge,top=\marge,bottom=\marge]{geometry}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\chead{
+  \textbf{Binôme :} Douaille Erwan \& François Rémy
+  \hspace{2em}
+  \textbf{Groupe :} M1 Info RDF}
+\renewcommand{\headrulewidth}{1pt}
+\linespread{1}
+\setlength{\columnseprule}{0.2pt}
+
+
+
+
+
+\begin{document}
+
+
+\input{Couverture.tex}
+
+\setcounter{page}{1} 
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introduction}
+
+Dans ce tp nous allons manipuler l'entropie pour nous permettre de construire un arbre de décision, comme nous l'avons fait précédemment dans le jeu du pendu. La différence avec le tp précédent est que nous tenterions de discriminer un élément en se basant sur plusieurs exemples pour une classe au lieu d'un seul. Concrétement un visage doit être reconnaissable parmis une liste contenant des séries de visages.
+
+
+\section*{Préparation des données}
+
+La taille de chaque visage est de 33x40 px.\\
+Taille de l'image 800x600, contenant 20 séries de 20 visages.
+800/20 = 40 et 
+600/20 = 33
+
+\section*{Méthodologie}
+
+delta H difference entre pere et dils pour p1
+
+
+p1 : .H(E1) - p(E2) * H(E2) - p(E3) * H(E3)
+
+Séparaer les images contenant la pixel de ceux qui ne l'ont pas.  La pixel p1 nous permet de séparer l'ensemble. p2 (mieu) permet de séparer en 2 classes 
+
+Avec les visages on s'intérèse à la variation de l'entropie. H Q6 toujours pareil	
+
+\section*{Différence aevc le jeu du pendu}
+
+\begin{lstlisting}
+calculEntropie <- function(serie)
+{
+	entropie = matrix(rep(0,40*33),nrow=33,ncol=40);
+	res = 0;
+	for (i in 1:33) {
+		for (j in 1:40) {
+			for (k in 1:400) {
+				res = res +serie[i,j,k];
+			}
+		}
+		m = res /400;
+		entropie[i,j] <- log2((m)^(m)) - log2((1-m)^(1-m));
+	}
+	entropie;
+}
+\end{lstlisting}
+
+La différence avec le jeu du pendu, c'est que maintenant nous avons une notion de classe. Nous n'avons plus un mot correspondant mais une série d'image. Dans l'idée on va parcourir l'ensemble des images, ensuite on va déterminer la série qui correspond le mieux au pixel donné. 
+
+Cependant nous n'obtenons aucun résultat convenable. Nous savons que cette méthode est correcte mais sa mise en application est complexe.
+
+\section*{Conclusion}
+
+Nous savons maintenant réaliser un arbre de décision permettant de décider si un élément fait partie d'une classe en se basant sur plusieurs exemples pour cette classe.
+
+
+\end{document}
+

@@ -1,0 +1,33 @@
+
+library ("EBImage")
+source ("rdfSegmentation.R")
+
+# Seuillage fixe
+nom <- "2classes_100_100_8bits.png"
+image <- rdfReadGreyImage(nom)
+seuil1 <- 0.35
+seuil2 <- 0.36
+seuil3 <- 0.37
+binaire1 <- (image - seuil1)>= 0##
+binaire2 <- (image - seuil2)>= 0##
+binaire3 <- (image - seuil3)>= 0##
+#display(binaire1, "binaire 1")
+#display(binaire2, "binaire 2")
+#display(binaire3, "binaire 3")
+nbins <- 256
+h <- hist (as.vector (image), breaks = seq (0, 1, 1 / nbins))
+
+
+#Seuillage automatique - Proba a priori
+omega1 <- rdfReadGreyImage("2classes_100_100_8bits_omega1.png")
+omega2 <- rdfReadGreyImage("2classes_100_100_8bits_omega2.png")
+h1 <- hist (as.vector (omega1), breaks = seq (0, 1, 1 / nbins))
+
+N = sum(h$counts) # Nb de pixels total de l'image
+N1 = sum(h1$counts) # Nb de pixels de la classe omega 1
+N2 = sum(h2$counts) # Nb de pixels de la classe omega 2
+Pomega1 = N1/N
+Pomega2 = N2/N
+ print(Pomega1)
+ print(Pomega2)
+
